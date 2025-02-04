@@ -21,3 +21,23 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# Ignore system files
+.DS_Store
+.Trash/
+.zsh_history
+.zsh_sessions
+npm-debug.log
+node_modules/
+logs/
+*.log
+
+# Ignore macOS system folders
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+
+
