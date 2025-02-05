@@ -4,7 +4,7 @@ import './Foot.css';
 function Foot() {
   return (
     <div className="NavBar">
-      
+      Lancherix 2025
     </div>
   );
 }
