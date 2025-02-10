@@ -5,6 +5,8 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Foot from './components/Foot/Foot';
 import Home from './components/Home/Home';
+import Physics from './components/Physics/Physics';
+import DeformationOfSolids from './components/Physics/components/DeformationOfSolids/DeformationOfSolids';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/physics" element={<Physics />} />
+          <Route path="/physics/defomation-of-solids" element={<DeformationOfSolids />} />
         </Routes>
         <div className='App-Foot'>
           <Foot />

@@ -74,7 +74,7 @@ function NavBar() {
               <div className="NavBar-Item">
                 <Link to="/physics/option3">Forces, density and pressure</Link>
                 <Link to="/physics/option3">Work, energy and power</Link>
-                <Link to="/physics/option3">Deformation of solids</Link>
+                <Link to="/physics/defomation-of-solids">Deformation of solids</Link>
               </div>
               <div className="NavBar-Item">
                 <Link to="/physics/option3">Waves</Link>
