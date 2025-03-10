@@ -17,8 +17,6 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/physics" element={<Physics />} />
-          <Route path="/physics/defomation-of-solids" element={<DeformationOfSolids />} />
         </Routes>
         <div className='App-Foot'>
           <Foot />

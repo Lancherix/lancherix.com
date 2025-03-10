@@ -56,7 +56,7 @@ function NavBar() {
           onMouseEnter={() => handleMouseEnter('physics')}
           onMouseLeave={handleMouseLeave}
         >
-          <Link to="/physics" className="Link"><button className='NavBar-button'>Physics</button></Link>
+          <Link to="physics.lancherix.com" target='_blank' className="Link"><button className='NavBar-button'>Physics</button></Link>
           {hoveredItem === 'physics' && (
             <div
               className="NavBar-SubMenu"
@@ -67,23 +67,23 @@ function NavBar() {
                 <Link to="/physics">Physics</Link>
               </div>
               <div className="NavBar-Item">
-                <Link to="/physics/option1">Quantities and units</Link>
-                <Link to="/physics/option2">Kinematics</Link>
-                <Link to="/physics/option3">Dynamics</Link>
+                <Link to="physics.lancherix.com">Quantities and units</Link>
+                <Link to="physics.lancherix.com">Kinematics</Link>
+                <Link to="physics.lancherix.com">Dynamics</Link>
               </div>
               <div className="NavBar-Item">
-                <Link to="/physics/option3">Forces, density and pressure</Link>
-                <Link to="/physics/option3">Work, energy and power</Link>
-                <Link to="/physics/defomation-of-solids">Deformation of solids</Link>
+                <Link to="physics.lancherix.com">Forces, density and pressure</Link>
+                <Link to="physics.lancherix.com">Work, energy and power</Link>
+                <Link to="physics.lancherix.com">Deformation of solids</Link>
               </div>
               <div className="NavBar-Item">
-                <Link to="/physics/option3">Waves</Link>
-                <Link to="/physics/option3">Superposition</Link>
-                <Link to="/physics/option3">Electricity</Link>
+                <Link to="physics.lancherix.com">Waves</Link>
+                <Link to="physics.lancherix.com">Superposition</Link>
+                <Link to="physics.lancherix.com">Electricity</Link>
               </div>
               <div className="NavBar-Item">
-                <Link to="/physics/option3">D.C. circuitsy</Link>
-                <Link to="/physics/option3">Particle physics</Link>
+                <Link to="physics.lancherix.com">D.C. circuitsy</Link>
+                <Link to="physics.lancherix.com">Particle physics</Link>
               </div>
             </div>
           )}
