@@ -36,20 +36,7 @@ function NavBar() {
           onMouseEnter={() => handleMouseEnter('store')}
           onMouseLeave={handleMouseLeave}
         >
-          <Link to="/store" className="Link"><button className='NavBar-button'>Store</button></Link>
-          {hoveredItem === 'store' && (
-            <div
-              className="NavBar-SubMenu"
-              onMouseEnter={() => handleSubMenuMouseEnter('store')}
-              onMouseLeave={handleSubMenuMouseLeave}
-            >
-              <div className="NavBar-Item">
-                <Link to="/store/option1">Option 1</Link>
-                <Link to="/store/option2">Option 2</Link>
-                <Link to="/store/option3">Option 3</Link>
-              </div>
-            </div>
-          )}
+          <Link to="https://studio.lancherix.com" className="Link"><button className='NavBar-button'>Studio</button></Link>
         </div>
         <div
           className="NavBar-Physics"
