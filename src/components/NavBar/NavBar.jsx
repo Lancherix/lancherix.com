@@ -93,7 +93,7 @@ function NavBar() {
           onMouseEnter={() => handleMouseEnter('register')}
           onMouseLeave={handleMouseLeave}
         >
-          <Link to="/" className="Link"><button className='NavBar-button'>Register</button></Link>
+          <Link to="https://studio.lancherix.com/register" className="Link"><button className='NavBar-button'>Register</button></Link>
           {hoveredItem === 'music' && (
             <div
               className="NavBar-SubMenu"
@@ -113,7 +113,7 @@ function NavBar() {
           onMouseEnter={() => handleMouseEnter('login')}
           onMouseLeave={handleMouseLeave}
         >
-          <Link to="/sports" className="Link"><button className='NavBar-button'>Login</button></Link>
+          <Link to="https://studio.lancherix.com/login" className="Link"><button className='NavBar-button'>Login</button></Link>
           {hoveredItem === 'login' && (
             <div
               className="NavBar-SubMenu"
