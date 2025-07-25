@@ -94,19 +94,6 @@ function NavBar() {
           onMouseLeave={handleMouseLeave}
         >
           <Link to="https://studio.lancherix.com/register" className="Link"><button className='NavBar-button'>Register</button></Link>
-          {hoveredItem === 'music' && (
-            <div
-              className="NavBar-SubMenu"
-              onMouseEnter={() => handleSubMenuMouseEnter('register')}
-              onMouseLeave={handleSubMenuMouseLeave}
-            >
-              <div className="NavBar-Item">
-                <Link to="/music/option1">Option 1</Link>
-                <Link to="/music/option2">Option 2</Link>
-                <Link to="/music/option3">Option 3</Link>
-              </div>
-            </div>
-          )}
         </div>
         <div
           className="NavBar-Login"
@@ -114,19 +101,6 @@ function NavBar() {
           onMouseLeave={handleMouseLeave}
         >
           <Link to="https://studio.lancherix.com/login" className="Link"><button className='NavBar-button'>Login</button></Link>
-          {hoveredItem === 'login' && (
-            <div
-              className="NavBar-SubMenu"
-              onMouseEnter={() => handleSubMenuMouseEnter('login')}
-              onMouseLeave={handleSubMenuMouseLeave}
-            >
-              <div className="NavBar-Item">
-                <Link to="/sports/option1">Option 1</Link>
-                <Link to="/sports/option2">Option 2</Link>
-                <Link to="/sports/option3">Option 3</Link>
-              </div>
-            </div>
-          )}
         </div>
         <Link to="/"><img className="NavBar-searchIcon" src={searchIcon} alt="Search" /></Link>
       </div>
