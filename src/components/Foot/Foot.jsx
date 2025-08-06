@@ -23,18 +23,9 @@ function Foot() {
         </div>
         <div className='Foot-subComponent'>
           <b>Physics</b>
-          <p>Introduction</p>
-          <p>Quantities and units</p>
-          <p>Kinematics</p>
-          <p>Dynamics</p>
-          <p>Forces, density and pressure</p>
-          <p>Work, energy and power</p>
-          <p>Deformation of solids</p>
-          <p>Waves</p>
-          <p>Superposition</p>
-          <p>Electricity</p>
-          <p>D.C. circuitsy</p>
-          <p>Particle physics</p>
+          <p>Option 1</p>
+          <p>Option 2</p>
+          <p>Option 3</p>
         </div>
         <div className='Foot-subComponent'>
           <b>Music</b>

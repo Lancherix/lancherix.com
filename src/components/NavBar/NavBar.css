@@ -1,7 +1,7 @@
 .NavBar {
     display: flex;
     flex-direction: row;
-    background-color: rgba(245,245,247,0.8);
+    background-color: rgba(245,245,247,0.9);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     align-items: center;
@@ -52,9 +52,9 @@
     top: 100%;
     left: 0;
     width: 76%;
-    background-color: rgba(245,245,247,0.8);
+    background-color: rgba(245,245,247,0.9);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /*-webkit-backdrop-filter: blur(10px);*/
     padding: 2% 12% 3% 12%;
     z-index: 1001;
 }

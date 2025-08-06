@@ -1,0 +1,28 @@
+.Home-Hero {
+  display: flex;
+  flex-direction: column;
+  height: 65vh;
+  background-color: aliceblue;
+  background-image: url('https://i.pinimg.com/1200x/eb/e3/9f/ebe39f98b70c788787ee569f711454c6.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  align-items: center;
+  padding: 10vh 0;
+  font-size: 2rem;
+}
+
+.Home-Hero h1 {
+    margin-bottom: 2vh;
+}
+
+.Home-Hero a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.Home-Hero a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
