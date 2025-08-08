@@ -26,3 +26,18 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+.Home-Secondary {
+    height: 35vh;
+    margin: 1vh 0 1vh 0;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    gap: 1vh;
+}
+
+.Home-SecondaryContent {
+    flex: 1;
+    height: 100%;
+    background-color: lightgray;
+}

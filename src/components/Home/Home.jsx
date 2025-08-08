@@ -9,6 +9,12 @@ function Home() {
         <h1>Your Studio, Your Way.</h1>
         <a href="https://studio.lancherix.com/register" target='blanck_'>Discover the power of Lancherix Studio</a>
       </div>
+      <div className='Home-Secondary'>
+        <div className='Home-SecondaryContent'></div>
+        <div className='Home-SecondaryContent'></div>
+        <div className='Home-SecondaryContent'></div>
+        <div className='Home-SecondaryContent'></div>
+      </div>
     </div>
   );
 }
