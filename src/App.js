@@ -5,6 +5,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Foot from './components/Foot/Foot';
 import Home from './components/Home/Home';
+import Reminders from './components/Reminders/Reminders';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/reminders" element={<Reminders />} />
         </Routes>
         <div className='App-Foot'>
           <Foot />

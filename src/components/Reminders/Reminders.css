@@ -1,0 +1,127 @@
+.Reminders {
+    display: flex;
+    width: 100vw;
+    height: 76vh;
+    background-color: white;
+    padding: 11vh 0 5vh 0;
+}
+
+.RemindersMain {
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+  margin: 0 30vh 0 30vh;
+  border-radius: 1rem;
+  box-shadow:
+    0 40px 90px -35px rgba(0,0,0,0.08),
+    0 16px 32px -28px rgba(0,0,0,0.05),
+    0 2px 4px -2px rgba(0,0,0,0.03);
+}
+
+/* macOS-style window */
+.RemindersWindow {
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+}
+
+/* macOS top bar */
+.RemindersWindowBar {
+  height: 32px;
+  background-color: #e4e4e4;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  gap: 16px;
+}
+
+/* macOS red button */
+.mac-btn {
+  width: 12px;
+  height: 12px;
+  background-color: #0074ff;
+  border: 1pt solid #0074ff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mac-btn:hover {
+    background-color: #0074ff;
+}
+
+/* table header now INSIDE the bar */
+.TableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* Distribuye todo el ancho */
+  width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+  color: #444;
+  padding: 0 8px;
+}
+
+.TableHeader span {
+  flex: 1;                /* Cada columna ocupa el mismo espacio */
+  text-align: center;     /* Centra el texto de cada título */
+}
+
+
+/* SAME column widths as before */
+.Col {
+  white-space: nowrap;
+}
+
+.col-reminder { width: 130px; }
+.col-subject  { width: 130px; }
+.col-date     { width: 100px; }
+.col-priority { width: 70px; }
+
+.RemindersWindowContent {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+/* rows */
+.Row {
+  display: flex;
+  align-items: center;
+  gap: 25px;            /* espacio entre círculo y número */
+  padding: 7px 12px;
+  font-size: 12px;
+  user-select: none;
+  color: #333;          /* ahora sí visible */
+}
+
+.Row.even { background-color: white; }
+.Row.odd  { background-color: #f6f6f6; }
+
+.Row:hover {
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+/* circulito azul claro (igual que el top bar button) */
+.RowCircle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;   /* azul clarito */
+  border: 1pt solid gray;
+}
+
+.RowCircle:hover {
+  border: 1pt solid #0074ff;
+}
+
+/* número */
+.RowNumber {
+  font-size: 11px;
+  color: #333;
+}
+

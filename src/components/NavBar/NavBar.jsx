@@ -43,7 +43,7 @@ function NavBar() {
           onMouseEnter={() => handleMouseEnter('physics')}
           onMouseLeave={handleMouseLeave}
         >
-          <Link to="https://physics.lancherix.com" target='_blank' className="Link"><button className='NavBar-button'>Physics</button></Link>
+          <Link to="/reminders" target='_blank' className="Link"><button className='NavBar-button'>Physics</button></Link>
           {hoveredItem === 'physics' && (
             <div
               className="NavBar-SubMenu"
