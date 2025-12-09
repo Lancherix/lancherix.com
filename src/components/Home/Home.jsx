@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="Home">
       <div className='Home-Hero'>
-        <h1>Your Studio, Your Way</h1>
+        <h1>Your Studio, Your Way.</h1>
         <a href="https://studio.lancherix.com/register" target='blanck_'>Discover the power of Lancherix Studio</a>
       </div>
       <div className='Home-Secondary'>
