@@ -1,0 +1,22 @@
+body {
+  overflow-x: hidden;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App-NavBar {
+  width: 100vw;
+  height: 6vh;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+}
+
+.App-Foot {
+  width: 100vw;
+}

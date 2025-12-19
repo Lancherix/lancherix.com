@@ -1,0 +1,103 @@
+.NavBar {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(245,245,247,0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 90%;
+    padding: 0 5% 0 5%;
+    position: relative;
+}
+
+.NavBar-Top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+}
+
+.NavBar-button {
+    background-color: transparent;
+    border: none;
+    height: 6vh;
+    max-width: 100vw;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.NavBar-button:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.NavBar-Logo1 {
+    height: 2.3vh;
+}
+
+.NavBar-searchIcon {
+    height: 2.5vh;
+}
+
+.NavBar-SubMenu {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 76%;
+    background-color: rgba(245,245,247,0.9);
+    backdrop-filter: blur(10px);
+    /*-webkit-backdrop-filter: blur(10px);*/
+    padding: 2% 12% 3% 12%;
+    z-index: 1001;
+}
+
+.NavBar-Store:hover .NavBar-SubMenu,
+.NavBar-Physics:hover .NavBar-SubMenu,
+.NavBar-Music:hover .NavBar-SubMenu,
+.NavBar-Sports:hover .NavBar-SubMenu {
+    opacity: 1;
+    transform: translateY(0) ease 0.3s;
+}
+
+.NavBar-ItemTitle {
+    font-weight: bold;
+    color: black;
+    font-size: 2rem;
+    width: 15%;
+}
+
+.NavBar-ItemTitle a {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.NavBar-Item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    margin-right: 4%;
+}
+
+.NavBar-Item a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.NavBar-Item a:hover {
+    color: gray;
+    cursor: pointer;
+}
