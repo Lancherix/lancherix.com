@@ -42,7 +42,7 @@ function Foot() {
       </div>*/}
       <div className='Foot-component3'>
         <div>Copyright © 2025 Lancherix Inc. All rights reserved.</div>
-        <div className='Foot-terms'><a href="">Privacy policy</a><p>|</p><a href="">Terms of Use</a></div>
+        <div className='Foot-terms'><a href="">Made By Andrés Lancheros</a><p>|</p><a href="">Terms of Use</a></div>
       </div>
     </div>
   );
