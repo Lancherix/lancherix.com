@@ -88,8 +88,8 @@
 
 .Home-HeroStudio button:hover {
     cursor: pointer;
-    background-color: white;
-    color: rgba(0, 147, 203, 1);
+    border: lightgray;
+    color: lightgray;
 }
 
 .Home-SecondaryStudio {
