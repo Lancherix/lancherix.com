@@ -88,7 +88,7 @@
 
 .Home-HeroStudio button:hover {
     cursor: pointer;
-    border: lightgray;
+    border: 1x solid lightgray;
     color: lightgray;
 }
 
