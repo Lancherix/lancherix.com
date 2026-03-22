@@ -16,7 +16,7 @@
 }
 
 .NavBarMobile-Logo {
-    height: 3vh;
+    height: 2.5vh;
 }
 
 .NavBarMobile-Burger {
@@ -30,7 +30,7 @@
 
 .NavBarMobile-FullMenu {
     position: fixed;
-    top: -100vh;
+    top: calc(-100vh + 6vh);
     left: 0;
 
     width: 100%;
