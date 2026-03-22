@@ -39,8 +39,8 @@ body {
 .mobile-block div {
   display: flex;
   flex-direction: column;
-  background-color: var(--theme);
-  color: var(--textTheme);
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
   border-radius: 10px;
   height: 30vh;
   width: 70vw;
