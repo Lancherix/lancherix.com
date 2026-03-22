@@ -13,11 +13,10 @@
 
     background-color: rgba(245,245,247,0.9);
     backdrop-filter: blur(10px);
-    z-index: 2001;
 }
 
 .NavBarMobile-Logo {
-    height: 4vh;
+    height: 2vh;
 }
 
 .NavBarMobile-Burger {
