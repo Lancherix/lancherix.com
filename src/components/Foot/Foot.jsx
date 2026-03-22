@@ -1,6 +1,6 @@
 import React from 'react';
 import './Foot.css';
-{/*import { Link } from 'react-router-dom';*/}
+// import { Link } from 'react-router-dom';
 
 import lancherixArt from '../ArtWork/navBar.svg';
 
