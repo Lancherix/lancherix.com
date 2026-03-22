@@ -24,7 +24,7 @@ body {
 .mobile-block {
   height: 100vh;
   width: 100vw;
-  background-image: url('/public/Images/backgroundImage.jpeg');
+  background-image: url('./components/ArtWork/backgroundImage.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
