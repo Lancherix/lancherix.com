@@ -22,6 +22,9 @@
 
 .NavBarMobile-LogoMenu {
     height: 3vh;
+    border: none;
+    background: transparent;
+    cursor: pointer;
 }
 
 /* Full screen menu */
