@@ -10,9 +10,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 1vh 2vh;
-    height: 2vh;
+    height: 4vh;
     background-color: rgba(245,245,247,0.9);
     backdrop-filter: blur(10px);
+    z-index: 2001;
 }
 
 .NavBarMobile-Logo {
@@ -51,7 +52,7 @@
 /* When menu opens */
 
 .NavBarMobile-FullMenu.open {
-    top: 4vh;
+    top: 6vh;
 }
 
 /* Menu items */
