@@ -21,7 +21,7 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (isMobile) {
+  /*if (isMobile) {
     return (
       <div className="mobile-block">
         <div><img src={logo} alt='Lancherix' />
@@ -29,13 +29,13 @@ function App() {
 Access it from a desktop or laptop computer.</div>
       </div>
     );
-  }
+  }*/
 
   return (
     <Router>
       <div className="App">
         <div className='App-NavBar'>
-          <NavBar />
+          {isMobile ? <NavBarMobile /> : <NavBar />}
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
