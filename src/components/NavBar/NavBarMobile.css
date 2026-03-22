@@ -51,7 +51,7 @@
 /* When menu opens */
 
 .NavBarMobile-FullMenu.open {
-    top: 0;
+    top: 6vh;
 }
 
 /* Menu items */
