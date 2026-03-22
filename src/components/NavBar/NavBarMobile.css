@@ -25,9 +25,12 @@
 }
 
 .NavBarMobile-Burger {
+    display: flex;
     border: none;
     background: transparent;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Full screen menu */
