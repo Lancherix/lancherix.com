@@ -79,3 +79,33 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+
+    .Foot {
+        width: 100%;
+        padding: 4vh 6vw;
+    }
+
+    /* keep logo and country in one row */
+
+    .Foot-component1 {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* bottom section stacked */
+
+    .Foot-component3 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6vh;
+    }
+
+    .Foot-terms {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+}
