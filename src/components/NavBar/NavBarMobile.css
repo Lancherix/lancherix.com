@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1vh 2vh;
-
+    height: 2vh;
     background-color: rgba(245,245,247,0.9);
     backdrop-filter: blur(10px);
 }
@@ -30,7 +30,7 @@
 
 .NavBarMobile-FullMenu {
     position: fixed;
-    top: calc(-100vh + 6vh);
+    top: -100vh;
     left: 0;
 
     width: 100%;
@@ -51,7 +51,7 @@
 /* When menu opens */
 
 .NavBarMobile-FullMenu.open {
-    top: 6vh;
+    top: 4vh;
 }
 
 /* Menu items */
