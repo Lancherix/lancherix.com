@@ -7,6 +7,8 @@ import Foot from './components/Foot/Foot';
 import Home from './components/Home/Home';
 import Reminders from './components/Reminders/Reminders';
 
+import logo from './components/ArtWork/logotypeBlueBlack.png';
+
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
 
