@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 12vh 6vw 6vh 6vw;
     height: 82vh;
@@ -56,7 +57,7 @@
 }
 
 .HomeMobile-Secondary h2 {
-    margin-bottom: 2vh;
+    margin: 0;
 }
 
 .HomeMobile-Secondary p {
@@ -119,7 +120,7 @@
 }
 
 .HomeMobile-Aspect h2 {
-    margin-bottom: 2vh;
+    margin: 0;
 }
 
 .HomeMobile-Aspect p {
