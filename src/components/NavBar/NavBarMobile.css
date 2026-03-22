@@ -20,11 +20,8 @@
     height: 2.5vh;
 }
 
-.NavBarMobile-Burger {
-    font-size: 28px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
+.NavBarMobile-LogoMenu {
+    font-size: 2rem;
 }
 
 /* Full screen menu */
