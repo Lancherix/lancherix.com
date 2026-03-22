@@ -21,7 +21,10 @@
 }
 
 .NavBarMobile-LogoMenu {
-    height: 3vh;
+    font-size: 3vh;
+}
+
+.NavBarMobile-Burger {
     border: none;
     background: transparent;
     cursor: pointer;
