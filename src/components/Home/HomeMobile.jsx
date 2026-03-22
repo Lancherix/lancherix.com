@@ -65,7 +65,7 @@ function HomeMobile() {
 
       <section className="HomeMobile-Secondary">
 
-        <h2>Designed around how work unfolds</h2>
+        <h2>Designed around how work actually unfolds.</h2>
 
         <p>
           Ideas evolve, priorities shift and projects grow in complexity.
@@ -117,7 +117,7 @@ function HomeMobile() {
 
         <img src={home} alt="" />
 
-        <h2>Make it Your Own</h2>
+        <h2>Make it Your Own.</h2>
 
         <p>
           Your workspace should feel personal. Adjust wallpapers,
