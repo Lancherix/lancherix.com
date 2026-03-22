@@ -10,9 +10,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     padding: 12vh 6vw 6vh 6vw;
-
+    height: 82vh;
     background-image: url('../ArtWork/backgroundImage.jpeg');
     background-size: cover;
     background-position: center;

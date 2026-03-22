@@ -29,10 +29,7 @@ function HomeMobile() {
 
         <h1>Your Studio, Your Way.</h1>
 
-        <p>
-          Lancherix Studio provides a unified space where projects,
-          systems and creative processes come together naturally.
-        </p>
+        <p>Lancherix Studio is designed to support thoughtful work from idea to execution. It provides a unified space where projects, systems, and creative processes come together naturally. Organize your work with structure that adapts as your ideas evolve. Shape projects as complete systems, with context always within reach. Build, refine, and grow over time in a studio designed for clarity and focus. With Lancherix Studio, you can work with intention — every step of the way.</p>
 
         <div className="HomeMobile-HeroButtons">
 
