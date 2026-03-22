@@ -15,13 +15,13 @@ function NavBar() {
     setHoveredItem(null);
   };
 
-  {/*const handleSubMenuMouseEnter = (item) => {
+  /*const handleSubMenuMouseEnter = (item) => {
     setHoveredItem(item);
   };
 
   const handleSubMenuMouseLeave = () => {
     setHoveredItem(null);
-  };*/}
+  };*/
 
   useEffect(() => {
     console.log("Hovered item:", hoveredItem);
