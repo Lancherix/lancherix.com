@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import NavBarMobile from './components/NavBar/NavBarMobile';
 import Foot from './components/Foot/Foot';
 import Home from './components/Home/Home';
+import HomeMobile from './components/Home/HomeMobile';
 import Reminders from './components/Reminders/Reminders';
 
 // import logo from './components/ArtWork/logotypeVerticalBlueBlack.png';
@@ -39,7 +40,7 @@ Access it from a desktop or laptop computer.</div>
           {isMobile ? <NavBarMobile /> : <NavBar />}
         </div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={isMobile ? <HomeMobile /> : <Home />} />
           <Route path="/reminders" element={<Reminders />} />
         </Routes>
         <div className='App-Foot'>
