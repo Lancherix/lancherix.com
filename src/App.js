@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
+import NavBarMobile from './components/NavBar/NavBarMobile';
 import Foot from './components/Foot/Foot';
 import Home from './components/Home/Home';
 import Reminders from './components/Reminders/Reminders';
