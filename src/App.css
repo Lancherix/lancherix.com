@@ -20,3 +20,38 @@ body {
 .App-Foot {
   width: 100vw;
 }
+
+.mobile-block {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('/public/Images/backgroundImage.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mobile-block div {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--theme);
+  color: var(--textTheme);
+  border-radius: 10px;
+  height: 30vh;
+  width: 70vw;
+  padding: 5vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.mobile-block div img {
+  width: 40vw;
+  margin-bottom: 3vh;
+}
