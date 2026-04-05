@@ -43,7 +43,7 @@ function NavBar() {
           onMouseEnter={() => handleMouseEnter('store')}
           onMouseLeave={handleMouseLeave}
         >
-          <Link to="https://auth.lancherix.com/login?app=labs" className="Link"><button className='NavBar-button'>Studio</button></Link>
+          <Link to="https://auth.lancherix.com/login?app=labs" className="Link"><button className='NavBar-button'>Labs</button></Link>
         </div>
         {/*<div
           className="NavBar-Physics"

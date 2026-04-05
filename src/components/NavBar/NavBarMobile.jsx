@@ -66,6 +66,10 @@ function NavBarMobile() {
                     Studio
                 </Link>
 
+                <Link to="https://auth.lancherix.com/login?app=labs" onClick={() => setMenuOpen(false)}>
+                    Labs
+                </Link>
+
                 <Link to="https://studio.lancherix.com/register" onClick={() => setMenuOpen(false)}>
                     Register
                 </Link>
