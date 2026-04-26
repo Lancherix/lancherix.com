@@ -62,7 +62,7 @@ function NavBarMobile() {
             {/* Fullscreen menu */}
             <div className={`NavBarMobile-FullMenu ${menuOpen ? "open" : ""}`}>
 
-                <Link to="https://studio.lancherix.com" onClick={() => setMenuOpen(false)}>
+                <Link to="/studio" onClick={() => setMenuOpen(false)}>
                     Studio
                 </Link>
 
