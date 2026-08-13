@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import logo1 from '../ArtWork/navBar.svg';
 import searchIcon from '../ArtWork/search.svg';
 
 function NavBar() {
+  const { t } = useTranslation();
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const handleMouseEnter = (item) => {
@@ -15,14 +17,6 @@ function NavBar() {
     setHoveredItem(null);
   };
 
-  /*const handleSubMenuMouseEnter = (item) => {
-    setHoveredItem(item);
-  };
-
-  const handleSubMenuMouseLeave = () => {
-    setHoveredItem(null);
-  };*/
-
   useEffect(() => {
     console.log("Hovered item:", hoveredItem);
   }, [hoveredItem]);
@@ -30,7 +24,7 @@ function NavBar() {
   return (
     <div className="NavBar">
       <div className="NavBar-Top">
-        <Link to="/"><img className="NavBar-Logo1" src={logo1} alt="Logo" /></Link>
+        <Link to="/"><img className="NavBar-Logo1" src={logo1} alt={t('nav.logoAlt')} /></Link>
         <div
           className="NavBar-Store"
           onMouseEnter={() => handleMouseEnter('store')}
@@ -45,58 +39,21 @@ function NavBar() {
         >
           <Link target='_blanck' to="https://plumiers.lancherix.com" className="Link"><button className='NavBar-button'>Plumiers</button></Link>
         </div>
-        {/*<div
-          className="NavBar-Physics"
-          onMouseEnter={() => handleMouseEnter('physics')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <Link to="/reminders" className="Link"><button className='NavBar-button'>Physics</button></Link>
-          {hoveredItem === 'physics' && (
-            <div
-              className="NavBar-SubMenu"
-              onMouseEnter={() => handleSubMenuMouseEnter('physics')}
-              onMouseLeave={handleSubMenuMouseLeave}
-            >
-              <div className='NavBar-ItemTitle'>
-                <Link to="/physics">Physics</Link>
-              </div>
-              <div className="NavBar-Item">
-                <Link to="https://physics.lancherix.com">Quantities and units</Link>
-                <Link to="https://physics.lancherix.com">Kinematics</Link>
-                <Link to="https://physics.lancherix.com">Dynamics</Link>
-              </div>
-              <div className="NavBar-Item">
-                <Link to="https://physics.lancherix.com">Forces, density and pressure</Link>
-                <Link to="https://physics.lancherix.com">Work, energy and power</Link>
-                <Link to="https://physics.lancherix.com">Deformation of solids</Link>
-              </div>
-              <div className="NavBar-Item">
-                <Link to="https://physics.lancherix.com">Waves</Link>
-                <Link to="https://physics.lancherix.com">Superposition</Link>
-                <Link to="https://physics.lancherix.com">Electricity</Link>
-              </div>
-              <div className="NavBar-Item">
-                <Link to="https://physics.lancherix.com">D.C. circuitsy</Link>
-                <Link to="https://physics.lancherix.com">Particle physics</Link>
-              </div>
-            </div>
-          )}
-        </div>*/}
         <div
           className="NavBar-Register"
           onMouseEnter={() => handleMouseEnter('register')}
           onMouseLeave={handleMouseLeave}
         >
-          <Link to="https://studio.lancherix.com/register" className="Link"><button className='NavBar-button'>Register</button></Link>
+          <Link to="https://studio.lancherix.com/register" className="Link"><button className='NavBar-button'>{t('nav.register')}</button></Link>
         </div>
         <div
           className="NavBar-Login"
           onMouseEnter={() => handleMouseEnter('login')}
           onMouseLeave={handleMouseLeave}
         >
-          <Link to="https://studio.lancherix.com/login" className="Link"><button className='NavBar-button'>Login</button></Link>
+          <Link to="https://studio.lancherix.com/login" className="Link"><button className='NavBar-button'>{t('nav.login')}</button></Link>
         </div>
-        <Link to="/"><img className="NavBar-searchIcon" src={searchIcon} alt="Search" /></Link>
+        <Link to="/"><img className="NavBar-searchIcon" src={searchIcon} alt={t('nav.searchAlt')} /></Link>
       </div>
     </div>
   );

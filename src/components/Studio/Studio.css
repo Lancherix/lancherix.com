@@ -83,7 +83,7 @@
     background-color: transparent;
     padding: 1.3vh;
     margin: 4vh 1vw 0 1vw;
-    width: 7vw;
+    width: auto;
 }
 
 .Home-HeroStudio button:hover {
