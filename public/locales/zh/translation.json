@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "register": "注册",
+    "login": "登录",
+    "logoAlt": "标志",
+    "searchAlt": "搜索"
+  },
+  "footer": {
+    "country": "哥伦比亚",
+    "copyright": "© 2026 Lancherix Inc. 保留所有权利。",
+    "credits": "由 Andrés Lancheros 设计和构建"
+  },
+  "studio": {
+    "hero": {
+      "logoAlt": "",
+      "logoAltMobile": "Studio 标志",
+      "title": "属于你的工作室，属于你的方式。",
+      "description": "Lancherix Studio 旨在支持从构想到执行的深思熟虑的工作。它提供一个统一的空间，让项目、系统和创作过程自然地融合在一起。用可随想法演变而调整的结构来组织你的工作。将项目塑造为完整的系统，让背景信息始终触手可及。在这个为清晰和专注而设计的工作室中不断构建、完善和成长。使用 Lancherix Studio，你可以在每一步都带着明确的意图工作。"
+    },
+    "secondary": {
+      "title": "根据工作实际展开的方式而设计。",
+      "description": "工作很少沿直线推进。想法不断演变，优先事项不断变化，项目也随着时间推移变得更加复杂。Lancherix Studio 旨在支持这一自然过程——在需要时提供结构，在不需要时提供灵活性。"
+    },
+    "secondaryMobile": {
+      "description": "想法不断演变，优先事项不断变化，项目也日益复杂。Lancherix Studio 通过将结构与灵活性相结合，支持这一自然过程。"
+    },
+    "features": {
+      "tasks": "任务",
+      "notes": "笔记",
+      "board": "看板"
+    },
+    "aspect": {
+      "title": "打造专属于你的空间",
+      "description": "你的工作空间应该是个性化的，而不是千篇一律的。Lancherix Studio 让你能够塑造自己的工作环境——从壁纸和强调色到浅色、玻璃质感和深色模式。调整外观和风格，以匹配你的专注力、心情和思维方式。当空间映照出真实的你，工作会显得更加自然和有意图。"
+    },
+    "aspectMobile": {
+      "title": "打造专属于你的空间。",
+      "description": "你的工作空间应该是个性化的。调整壁纸、强调色和主题，以匹配你的思维和工作方式。"
+    }
+  }
+}

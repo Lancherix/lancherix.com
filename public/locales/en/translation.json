@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "register": "Register",
+    "login": "Login",
+    "logoAlt": "Logo",
+    "searchAlt": "Search"
+  },
+  "footer": {
+    "country": "Colombia",
+    "copyright": "Copyright © 2026 Lancherix Inc. All rights reserved.",
+    "credits": "Designed and built by Andrés Lancheros"
+  },
+  "studio": {
+    "hero": {
+      "logoAlt": "",
+      "logoAltMobile": "Studio Logo",
+      "title": "Your Studio, Your Way.",
+      "description": "Lancherix Studio is designed to support thoughtful work from idea to execution. It provides a unified space where projects, systems, and creative processes come together naturally. Organize your work with structure that adapts as your ideas evolve. Shape projects as complete systems, with context always within reach. Build, refine, and grow over time in a studio designed for clarity and focus. With Lancherix Studio, you can work with intention — every step of the way."
+    },
+    "secondary": {
+      "title": "Designed around how work actually unfolds.",
+      "description": "Work rarely moves in straight lines. Ideas evolve, priorities shift, and projects grow in complexity over time. Lancherix Studio is designed to support that natural process — giving structure when you need it, and flexibility when you don't."
+    },
+    "secondaryMobile": {
+      "description": "Ideas evolve, priorities shift and projects grow in complexity. Lancherix Studio supports that natural process by combining structure with flexibility."
+    },
+    "features": {
+      "tasks": "Tasks",
+      "notes": "Notes",
+      "board": "Board"
+    },
+    "aspect": {
+      "title": "Make it Your Own",
+      "description": "Your workspace should feel personal, not generic. Lancherix Studio lets you shape the environment you work in — from wallpapers and accent colors to light, glass, and dark modes. Adjust the look and feel to match your focus, your mood, and the way you think. When the space reflects you, work feels more natural and intentional."
+    },
+    "aspectMobile": {
+      "title": "Make it Your Own.",
+      "description": "Your workspace should feel personal. Adjust wallpapers, accent colors and themes to match the way you think and work."
+    }
+  }
+}

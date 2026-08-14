@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "register": "S'inscrire",
+    "login": "Connexion",
+    "logoAlt": "Logo",
+    "searchAlt": "Rechercher"
+  },
+  "footer": {
+    "country": "Colombie",
+    "copyright": "Copyright © 2026 Lancherix Inc. Tous droits réservés.",
+    "credits": "Conçu et développé par Andrés Lancheros"
+  },
+  "studio": {
+    "hero": {
+      "logoAlt": "",
+      "logoAltMobile": "Logo Studio",
+      "title": "Votre Studio, à votre façon.",
+      "description": "Lancherix Studio est conçu pour accompagner un travail réfléchi, de l'idée à l'exécution. Il offre un espace unifié où projets, systèmes et processus créatifs se rejoignent naturellement. Organisez votre travail avec une structure qui s'adapte à mesure que vos idées évoluent. Façonnez vos projets comme des systèmes complets, avec le contexte toujours à portée de main. Construisez, affinez et évoluez dans un studio conçu pour la clarté et la concentration. Avec Lancherix Studio, vous travaillez avec intention — à chaque étape."
+    },
+    "secondary": {
+      "title": "Conçu selon la manière dont le travail se déroule réellement.",
+      "description": "Le travail avance rarement en ligne droite. Les idées évoluent, les priorités changent et les projets gagnent en complexité avec le temps. Lancherix Studio est conçu pour accompagner ce processus naturel — en offrant de la structure quand vous en avez besoin, et de la flexibilité quand ce n'est pas le cas."
+    },
+    "secondaryMobile": {
+      "description": "Les idées évoluent, les priorités changent et les projets gagnent en complexité. Lancherix Studio accompagne ce processus naturel en combinant structure et flexibilité."
+    },
+    "features": {
+      "tasks": "Tâches",
+      "notes": "Notes",
+      "board": "Tableau"
+    },
+    "aspect": {
+      "title": "Faites-le vôtre",
+      "description": "Votre espace de travail doit être personnel, pas générique. Lancherix Studio vous permet de façonner votre environnement de travail — des fonds d'écran et couleurs d'accent aux modes clair, verre et sombre. Ajustez l'apparence pour qu'elle corresponde à votre concentration, votre humeur et votre façon de penser. Lorsque l'espace vous ressemble, le travail devient plus naturel et intentionnel."
+    },
+    "aspectMobile": {
+      "title": "Faites-le vôtre.",
+      "description": "Votre espace de travail doit être personnel. Ajustez les fonds d'écran, les couleurs d'accent et les thèmes selon votre façon de penser et de travailler."
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "register": "Registrati",
+    "login": "Accedi",
+    "logoAlt": "Logo",
+    "searchAlt": "Cerca"
+  },
+  "footer": {
+    "country": "Colombia",
+    "copyright": "Copyright © 2026 Lancherix Inc. Tutti i diritti riservati.",
+    "credits": "Progettato e sviluppato da Andrés Lancheros"
+  },
+  "studio": {
+    "hero": {
+      "logoAlt": "",
+      "logoAltMobile": "Logo Studio",
+      "title": "Il tuo Studio, a modo tuo.",
+      "description": "Lancherix Studio è progettato per supportare un lavoro riflessivo, dall'idea all'esecuzione. Offre uno spazio unificato in cui progetti, sistemi e processi creativi si uniscono naturalmente. Organizza il tuo lavoro con una struttura che si adatta all'evolversi delle tue idee. Modella i progetti come sistemi completi, con il contesto sempre a portata di mano. Costruisci, perfeziona e cresci nel tempo in uno studio pensato per chiarezza e concentrazione. Con Lancherix Studio lavori con intenzione — in ogni fase del percorso."
+    },
+    "secondary": {
+      "title": "Progettato secondo il modo in cui il lavoro si svolge davvero.",
+      "description": "Il lavoro raramente procede in linea retta. Le idee evolvono, le priorità cambiano e i progetti diventano più complessi nel tempo. Lancherix Studio è progettato per supportare questo processo naturale — offrendo struttura quando serve e flessibilità quando non serve."
+    },
+    "secondaryMobile": {
+      "description": "Le idee evolvono, le priorità cambiano e i progetti diventano più complessi. Lancherix Studio supporta questo processo naturale combinando struttura e flessibilità."
+    },
+    "features": {
+      "tasks": "Attività",
+      "notes": "Note",
+      "board": "Bacheca"
+    },
+    "aspect": {
+      "title": "Rendilo tuo",
+      "description": "Il tuo spazio di lavoro dovrebbe essere personale, non generico. Lancherix Studio ti permette di plasmare l'ambiente in cui lavori — da sfondi e colori d'accento a modalità chiara, vetro e scura. Regola l'aspetto in base al tuo focus, al tuo umore e al tuo modo di pensare. Quando lo spazio ti rispecchia, il lavoro diventa più naturale e intenzionale."
+    },
+    "aspectMobile": {
+      "title": "Rendilo tuo.",
+      "description": "Il tuo spazio di lavoro dovrebbe essere personale. Regola sfondi, colori d'accento e temi in base al tuo modo di pensare e lavorare."
+    }
+  }
+}

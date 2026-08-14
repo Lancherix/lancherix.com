@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "register": "Registrieren",
+    "login": "Anmelden",
+    "logoAlt": "Logo",
+    "searchAlt": "Suche"
+  },
+  "footer": {
+    "country": "Kolumbien",
+    "copyright": "Copyright © 2026 Lancherix Inc. Alle Rechte vorbehalten.",
+    "credits": "Entworfen und entwickelt von Andrés Lancheros"
+  },
+  "studio": {
+    "hero": {
+      "logoAlt": "",
+      "logoAltMobile": "Studio-Logo",
+      "title": "Dein Studio, auf deine Art.",
+      "description": "Lancherix Studio unterstützt durchdachtes Arbeiten von der Idee bis zur Umsetzung. Es bietet einen einheitlichen Raum, in dem Projekte, Systeme und kreative Prozesse natürlich zusammenkommen. Organisiere deine Arbeit mit einer Struktur, die sich mit deinen Ideen weiterentwickelt. Gestalte Projekte als vollständige Systeme, bei denen der Kontext stets griffbereit ist. Baue auf, verfeinere und wachse mit der Zeit in einem Studio, das für Klarheit und Fokus entwickelt wurde. Mit Lancherix Studio arbeitest du mit Absicht — bei jedem Schritt."
+    },
+    "secondary": {
+      "title": "Entwickelt danach, wie Arbeit wirklich abläuft.",
+      "description": "Arbeit verläuft selten geradlinig. Ideen entwickeln sich weiter, Prioritäten verschieben sich, und Projekte werden mit der Zeit komplexer. Lancherix Studio unterstützt diesen natürlichen Prozess — mit Struktur, wenn du sie brauchst, und Flexibilität, wenn nicht."
+    },
+    "secondaryMobile": {
+      "description": "Ideen entwickeln sich weiter, Prioritäten verschieben sich, und Projekte werden komplexer. Lancherix Studio unterstützt diesen natürlichen Prozess durch die Kombination von Struktur und Flexibilität."
+    },
+    "features": {
+      "tasks": "Aufgaben",
+      "notes": "Notizen",
+      "board": "Board"
+    },
+    "aspect": {
+      "title": "Mach es zu deinem eigenen",
+      "description": "Dein Arbeitsbereich sollte sich persönlich anfühlen, nicht generisch. Mit Lancherix Studio gestaltest du deine Arbeitsumgebung — von Hintergründen und Akzentfarben bis hin zu hellen, gläsernen und dunklen Modi. Passe das Erscheinungsbild an deinen Fokus, deine Stimmung und deine Denkweise an. Wenn der Raum dich widerspiegelt, fühlt sich die Arbeit natürlicher und zielgerichteter an."
+    },
+    "aspectMobile": {
+      "title": "Mach es zu deinem eigenen.",
+      "description": "Dein Arbeitsbereich sollte sich persönlich anfühlen. Passe Hintergründe, Akzentfarben und Themes an deine Denk- und Arbeitsweise an."
+    }
+  }
+}

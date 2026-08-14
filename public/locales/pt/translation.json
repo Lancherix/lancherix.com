@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "register": "Registrar",
+    "login": "Entrar",
+    "logoAlt": "Logo",
+    "searchAlt": "Buscar"
+  },
+  "footer": {
+    "country": "Colômbia",
+    "copyright": "Copyright © 2026 Lancherix Inc. Todos os direitos reservados.",
+    "credits": "Projetado e desenvolvido por Andrés Lancheros"
+  },
+  "studio": {
+    "hero": {
+      "logoAlt": "",
+      "logoAltMobile": "Logo do Studio",
+      "title": "Seu Studio, do seu jeito.",
+      "description": "O Lancherix Studio é projetado para apoiar um trabalho reflexivo, da ideia à execução. Ele oferece um espaço unificado onde projetos, sistemas e processos criativos se unem naturalmente. Organize seu trabalho com uma estrutura que se adapta à medida que suas ideias evoluem. Molde projetos como sistemas completos, com contexto sempre ao alcance. Construa, refine e cresça ao longo do tempo em um studio projetado para clareza e foco. Com o Lancherix Studio, você trabalha com intenção — em cada etapa do caminho."
+    },
+    "secondary": {
+      "title": "Projetado de acordo com a forma como o trabalho realmente acontece.",
+      "description": "O trabalho raramente segue uma linha reta. Ideias evoluem, prioridades mudam e projetos ganham complexidade com o tempo. O Lancherix Studio é projetado para apoiar esse processo natural — oferecendo estrutura quando você precisa e flexibilidade quando não precisa."
+    },
+    "secondaryMobile": {
+      "description": "Ideias evoluem, prioridades mudam e projetos ganham complexidade. O Lancherix Studio apoia esse processo natural combinando estrutura com flexibilidade."
+    },
+    "features": {
+      "tasks": "Tarefas",
+      "notes": "Notas",
+      "board": "Quadro"
+    },
+    "aspect": {
+      "title": "Torne-o seu",
+      "description": "Seu espaço de trabalho deve parecer pessoal, não genérico. O Lancherix Studio permite moldar o ambiente onde você trabalha — de papéis de parede e cores de destaque a modos claro, vidro e escuro. Ajuste a aparência para combinar com seu foco, seu humor e sua forma de pensar. Quando o espaço reflete você, o trabalho se torna mais natural e intencional."
+    },
+    "aspectMobile": {
+      "title": "Torne-o seu.",
+      "description": "Seu espaço de trabalho deve parecer pessoal. Ajuste papéis de parede, cores de destaque e temas de acordo com sua forma de pensar e trabalhar."
+    }
+  }
+}

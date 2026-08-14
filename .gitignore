@@ -30,14 +30,3 @@ npm-debug.log
 node_modules/
 logs/
 *.log
-
-# Ignore macOS system folders
-Documents/
-Downloads/
-Library/
-Movies/
-Music/
-Pictures/
-Public/
-
-

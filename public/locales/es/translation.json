@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "register": "Registrarse",
+    "login": "Iniciar sesión",
+    "logoAlt": "Logo",
+    "searchAlt": "Buscar"
+  },
+  "footer": {
+    "country": "Colombia",
+    "copyright": "Derechos de autor © 2026 Lancherix Inc. Todos los derechos reservados.",
+    "credits": "Diseñado y construido por Andrés Lancheros"
+  },
+  "studio": {
+    "hero": {
+      "logoAlt": "",
+      "logoAltMobile": "Logo de Studio",
+      "title": "Tu Studio, a tu manera.",
+      "description": "Lancherix Studio está diseñado para apoyar el trabajo reflexivo desde la idea hasta la ejecución. Ofrece un espacio unificado donde proyectos, sistemas y procesos creativos se integran de forma natural. Organiza tu trabajo con una estructura que se adapta a medida que tus ideas evolucionan. Da forma a tus proyectos como sistemas completos, con el contexto siempre a tu alcance. Construye, perfecciona y crece con el tiempo en un studio diseñado para la claridad y el enfoque. Con Lancherix Studio, puedes trabajar con intención — en cada paso del camino."
+    },
+    "secondary": {
+      "title": "Diseñado según cómo se desarrolla realmente el trabajo.",
+      "description": "El trabajo rara vez avanza en línea recta. Las ideas evolucionan, las prioridades cambian y los proyectos crecen en complejidad con el tiempo. Lancherix Studio está diseñado para apoyar ese proceso natural — brindando estructura cuando la necesitas y flexibilidad cuando no."
+    },
+    "secondaryMobile": {
+      "description": "Las ideas evolucionan, las prioridades cambian y los proyectos crecen en complejidad. Lancherix Studio apoya ese proceso natural combinando estructura con flexibilidad."
+    },
+    "features": {
+      "tasks": "Tareas",
+      "notes": "Notas",
+      "board": "Tablero"
+    },
+    "aspect": {
+      "title": "Hazlo tuyo",
+      "description": "Tu espacio de trabajo debe sentirse personal, no genérico. Lancherix Studio te permite dar forma al entorno en el que trabajas — desde fondos y colores de acento hasta modos claro, cristal y oscuro. Ajusta el aspecto para que coincida con tu enfoque, tu estado de ánimo y tu forma de pensar. Cuando el espacio te refleja, el trabajo se siente más natural e intencional."
+    },
+    "aspectMobile": {
+      "title": "Hazlo tuyo.",
+      "description": "Tu espacio de trabajo debe sentirse personal. Ajusta fondos, colores de acento y temas para que coincidan con tu forma de pensar y trabajar."
+    }
+  }
+}
