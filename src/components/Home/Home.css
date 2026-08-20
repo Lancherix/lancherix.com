@@ -98,6 +98,60 @@
   background: #e8e8ed;
 }
 
+.promo-hero-card-showcase {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.promo-hero-card-frame {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1.586 / 1; /* standard credit-card proportions */
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+  transform: rotate(-6deg);
+  animation: promo-card-float 5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.promo-hero-card-frame:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.promo-hero-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.promo-hero-card-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0) 22%,
+    rgba(255, 255, 255, 0) 78%,
+    rgba(255, 255, 255, 0.18) 100%
+  );
+  pointer-events: none;
+}
+
+@keyframes promo-card-float {
+  0%,
+  100% {
+    transform: rotate(-6deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-6deg) translateY(-10px);
+  }
+}
+
 .promo-hero-footnote {
   text-align: center;
   font-size: 13px;
@@ -392,6 +446,46 @@
   opacity: 0.9;
 }
 
+/* ---------------- Screenshot slots ---------------- */
+
+.promo-screenshot {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.promo-screenshot--placeholder {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 160px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.promo-screenshot--placeholder.promo-screenshot--dark {
+  margin-top: 0;
+  margin-bottom: 18px;
+  min-height: 120px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  color: #8e8e93;
+}
+
+.promo-screenshot-icon {
+  font-size: 22px;
+  opacity: 0.8;
+}
+
+.promo-screenshot-label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
 /* ---------------- Dark insight cards ---------------- */
 
 .promo-insights {
@@ -588,5 +682,9 @@
 @media (prefers-reduced-motion: reduce) {
   .promo-btn {
     transition: none;
+  }
+
+  .promo-hero-card-frame {
+    animation: none;
   }
 }

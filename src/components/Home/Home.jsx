@@ -1,6 +1,11 @@
 import { useState } from "react";
-import Card from "../Card/Card";
+import Card from "./Card";
 import "./Home.css";
+
+// TODO: point this at the real asset once it's added — assumed path/name
+// below, following the same "../ArtWork/LancherixX...png" convention as
+// Studio.jsx. Swap the filename if the actual asset is named differently.
+import lancherixCard from "../ArtWork/grandCanyon.jpg";
 
 /* ============================================================
    Content pulled from / inspired by the real app's own data:
@@ -163,6 +168,27 @@ function TrendBarsPreview() {
   );
 }
 
+/**
+ * ScreenshotPlaceholder
+ * Marks a spot meant for a real app screenshot. Swap the whole element
+ * for an <img src={...} alt="..." className="promo-screenshot" /> once
+ * you have the capture — the className carries the frame styling either
+ * way, so the layout won't shift when you swap it in.
+ */
+function ScreenshotPlaceholder({ label, tone = "light" }) {
+  return (
+    <div
+      className={
+        "promo-screenshot promo-screenshot--placeholder" +
+        (tone === "dark" ? " promo-screenshot--dark" : "")
+      }
+    >
+      <span className="promo-screenshot-icon">🖼️</span>
+      <span className="promo-screenshot-label">{label}</span>
+    </div>
+  );
+}
+
 function FAQItem({ q, a, isOpen, onToggle }) {
   return (
     <div className={"promo-faq-item" + (isOpen ? " promo-faq-item--open" : "")}>
@@ -202,6 +228,17 @@ function Home() {
             See how it works
           </a>
         </div>
+
+        <div className="promo-hero-card-showcase">
+          <div className="promo-hero-card-frame">
+            <img
+              src={lancherixCard}
+              alt="Lancherix Card"
+              className="promo-hero-card-img"
+            />
+            <div className="promo-hero-card-sheen" />
+          </div>
+        </div>
       </section>
 
       <p className="promo-hero-footnote">
@@ -234,6 +271,8 @@ function Home() {
             ))}
           </div>
         </div>
+
+        <ScreenshotPlaceholder label="Dashboard / budgeting screenshot" />
       </section>
 
       {/* ---------------- Goals (orange block) ---------------- */}
@@ -290,6 +329,8 @@ function Home() {
             );
           })}
         </div>
+
+        <ScreenshotPlaceholder label="Goals screen screenshot" />
       </section>
 
       {/* ---------------- Reports (green block) ---------------- */}
@@ -332,6 +373,8 @@ function Home() {
             ))}
           </div>
         </div>
+
+        <ScreenshotPlaceholder label="Reports screen screenshot" />
       </section>
 
       {/* ---------------- Dark insight cards ---------------- */}
@@ -340,6 +383,10 @@ function Home() {
         <div className="promo-insights-row">
           {insightCards.map((c) => (
             <div className="promo-insight-card" key={c.title}>
+              <ScreenshotPlaceholder
+                label={`${c.eyebrow} screenshot`}
+                tone="dark"
+              />
               <span className="promo-insight-eyebrow">{c.eyebrow}</span>
               <h3>{c.title}</h3>
               <p>{c.description}</p>
