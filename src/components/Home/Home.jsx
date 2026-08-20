@@ -5,7 +5,7 @@ import "./Home.css";
 // TODO: point this at the real asset once it's added — assumed path/name
 // below, following the same "../ArtWork/LancherixX...png" convention as
 // Studio.jsx. Swap the filename if the actual asset is named differently.
-import lancherixCard from "../ArtWork/grandCanyon.jpg";
+import lancherixCard from "../ArtWork/LancherixCard.png";
 
 /* ============================================================
    Content pulled from / inspired by the real app's own data:
