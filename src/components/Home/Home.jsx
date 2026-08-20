@@ -1,457 +1,255 @@
 import { useState } from "react";
-import Card from "../Card/Card";
 import "./Home.css";
 
-// TODO: point this at the real asset once it's added — assumed path/name
-// below, following the same "../ArtWork/LancherixX...png" convention as
-// Studio.jsx. Swap the filename if the actual asset is named differently.
-import lancherixCard from "../ArtWork/LancherixCard.png";
+/* ------------------------------------------------------------------ */
+/*  CONTENT BLOCKS                                                    */
+/* ------------------------------------------------------------------ */
 
-/* ============================================================
-   Content pulled from / inspired by the real app's own data:
-   - goal icons + colors come straight from GoalForm's
-     goalIconChoices / goalColorChoices arrays
-   - budget ring mirrors the BudgetSummary ring math
-   - trend bars mirror ReportWidget's income/expense bars
-   - category rows mirror the report's spending breakdown
-   These are static illustrative previews (no live data needed
-   on the marketing site) but the shapes and values are drawn
-   directly from how the product actually looks.
-   ============================================================ */
-
-const goalPreview = [
-  { icon: "💻", label: "New laptop", color: "#0071e3", pct: 0.72 },
-  { icon: "✈️", label: "Trip to Lisbon", color: "#ff9500", pct: 0.4 },
-  { icon: "🚲", label: "Road bike", color: "#34c759", pct: 1 },
-  { icon: "🎫", label: "Concert fund", color: "#af52de", pct: 0.18 },
-];
-
-const categoryPreview = [
-  { name: "Groceries", color: "#34c759", pct: 34 },
-  { name: "Transport", color: "#0071e3", pct: 21 },
-  { name: "Dining out", color: "#ff9500", pct: 17 },
-  { name: "Subscriptions", color: "#af52de", pct: 12 },
-];
-
-const budgetFeatures = [
-  {
-    title: "Log an expense. In two taps.",
-    description:
-      "Type an amount, pick a category, done. No linked accounts to wait on, no syncing to babysit.",
-  },
-  {
-    title: "Categorized automatically.",
-    description:
-      "Every entry gets an icon and color the moment you save it, so your spending is legible at a glance.",
-  },
-  {
-    title: "Income and expenses, side by side.",
-    description:
-      "One toggle switches between what came in and what went out — no separate screens to hunt through.",
-  },
-  {
-    title: "A budget that talks back.",
-    description:
-      "Set a monthly limit once. The ring fills as you spend, and turns red the moment you're over.",
-  },
-];
-
-const insightCards = [
-  {
-    eyebrow: "Trend",
-    title: "This month vs. last.",
-    description: "Income and expenses, side by side, every month.",
-  },
-  {
-    eyebrow: "Categories",
-    title: "Where it actually went.",
-    description: "Ranked spending by category, largest first.",
-  },
-  {
-    eyebrow: "Budget",
-    title: "How much is left.",
-    description: "One ring. One number. No spreadsheet required.",
-  },
-];
-
-const faqItems = [
-  {
-    q: "Is it really free?",
-    a: "Yes — the app is free to use, with no trial period and no credit card required to sign up.",
-  },
-  {
-    q: "Does it connect to my bank?",
-    a: "No. Every transaction is entered by you, on purpose. Nothing is pulled from your bank, and no banking credentials ever touch the app.",
-  },
-  {
-    q: "Where is my data stored?",
-    a: "In your account, tied to your sign-in — not shared, sold, or handed to advertisers.",
-  },
-  {
-    q: "Can I track savings goals, not just spending?",
-    a: "Yes. Create a goal with a target amount, pick an icon and color, and add or remove funds as you save.",
-  },
-  {
-    q: "What if I go over budget?",
-    a: "The budget ring and your stats turn red the moment you cross your monthly limit, so it's impossible to miss.",
-  },
-];
-
-/* ---------------- small preview widgets ---------------- */
-
-function BudgetRingPreview({ pct = 0.68 }) {
-  const size = 120;
-  const stroke = 10;
-  const radius = (size - stroke) / 2;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference * (1 - pct);
-
+function SectionBlock({ tone = "plain", eyebrow, title, children }) {
   return (
-    <div className="promo-ring-wrap" style={{ width: size, height: size }}>
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke="rgba(255,255,255,0.25)"
-          strokeWidth={stroke}
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill="none"
-          stroke="#ffffff"
-          strokeWidth={stroke}
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-          transform={`rotate(-90 ${size / 2} ${size / 2})`}
-        />
-      </svg>
-      <div className="promo-ring-center">
-        <span className="promo-ring-value">{Math.round(pct * 100)}%</span>
-        <span className="promo-ring-label">of budget</span>
+    <section className={`section-block tone-${tone}`}>
+      {eyebrow && <span className="section-block__eyebrow">{eyebrow}</span>}
+      {title && <h2 className="section-block__title">{title}</h2>}
+      <div className="section-block__body">{children}</div>
+    </section>
+  );
+}
+
+function HeroBlock({ title, subtitle }) {
+  return (
+    <div className="hero-block">
+      <div className="hero-block__blob" aria-hidden="true" />
+      <div className="hero-block__phone">
+        <div className="hero-block__screen" />
       </div>
+      <h1 className="hero-block__title">{title}</h1>
+      <p className="hero-block__subtitle">{subtitle}</p>
     </div>
   );
 }
 
-function TrendBarsPreview() {
-  const months = [
-    { label: "May", income: 62, expenses: 40 },
-    { label: "Jun", income: 58, expenses: 52 },
-    { label: "Jul", income: 70, expenses: 45 },
-    { label: "Aug", income: 66, expenses: 38 },
-  ];
-  const max = 80;
-
+function SplitBlock({ reverse = false, visualTone = "blue", visualLabel = "Visual", children }) {
   return (
-    <div className="promo-trend">
-      {months.map((m) => (
-        <div className="promo-trend-col" key={m.label}>
-          <div className="promo-trend-bars">
-            <span
-              className="promo-trend-bar promo-trend-bar-income"
-              style={{ height: `${(m.income / max) * 100}%` }}
-            />
-            <span
-              className="promo-trend-bar promo-trend-bar-expense"
-              style={{ height: `${(m.expenses / max) * 100}%` }}
-            />
+    <div className={`split-block ${reverse ? "split-block--reverse" : ""}`}>
+      <div className={`split-block__visual tone-${visualTone}`}>
+        <span>{visualLabel}</span>
+      </div>
+      <div className="split-block__text">{children}</div>
+    </div>
+  );
+}
+
+function GridBlock({ columns = 3, children }) {
+  return (
+    <div className="grid-block" style={{ "--grid-cols": columns }}>
+      {children}
+    </div>
+  );
+}
+
+function ListBlock({ items }) {
+  return (
+    <ul className="list-block">
+      {items.map((item, i) => (
+        <li key={i} className="list-block__item">
+          <span className="list-block__dot" style={{ "--dot-tone": item.tone || "blue" }} />
+          <div>
+            <h4>{item.title}</h4>
+            <p>{item.description}</p>
           </div>
-          <span className="promo-trend-label">{m.label}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function GalleryBlock({ count = 4 }) {
+  return (
+    <div className="gallery-block">
+      {Array.from({ length: count }).map((_, i) => (
+        <div key={i} className="gallery-block__frame">
+          <span>Screenshot {i + 1}</span>
         </div>
       ))}
     </div>
   );
 }
 
-/**
- * ScreenshotPlaceholder
- * Marks a spot meant for a real app screenshot. Swap the whole element
- * for an <img src={...} alt="..." className="promo-screenshot" /> once
- * you have the capture — the className carries the frame styling either
- * way, so the layout won't shift when you swap it in.
- */
-function ScreenshotPlaceholder({ label, tone = "light" }) {
+function BannerBlock({ tone = "dark", children }) {
+  return (
+    <div className={`banner-block tone-${tone}`}>
+      <p>{children}</p>
+    </div>
+  );
+}
+
+function CardBlock({ icon = "●", title, summary, detail, flippable = false, tone = "white" }) {
+  const [flipped, setFlipped] = useState(false);
   return (
     <div
-      className={
-        "promo-screenshot promo-screenshot--placeholder" +
-        (tone === "dark" ? " promo-screenshot--dark" : "")
-      }
+      className={`card-block ${flippable ? "card-block--flippable" : ""} ${flipped ? "is-flipped" : ""}`}
+      onClick={() => flippable && setFlipped((f) => !f)}
     >
-      <span className="promo-screenshot-icon">🖼️</span>
-      <span className="promo-screenshot-label">{label}</span>
+      <div className="card-block__inner">
+        <div className={`card-block__face card-block__face--front tone-${tone}`}>
+          <span className="card-block__icon">{icon}</span>
+          <h4>{title}</h4>
+          <p>{summary}</p>
+          {flippable && <span className="card-block__hint">Tap to expand →</span>}
+        </div>
+        {flippable && (
+          <div className={`card-block__face card-block__face--back tone-${tone}`}>
+            <h4>{title}</h4>
+            <p>{detail}</p>
+            <span className="card-block__hint">← Tap to close</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
-function FAQItem({ q, a, isOpen, onToggle }) {
+/* ------------------------------------------------------------------ */
+/*  LAYOUT WRAPPERS                                                    */
+/* ------------------------------------------------------------------ */
+
+function Row2Layout({ children }) {
+  return <div className="layout-row2">{children}</div>;
+}
+
+function Row3Layout({ children }) {
+  return <div className="layout-row3">{children}</div>;
+}
+
+function StackThenRowLayout({ children }) {
+  return <div className="layout-stack-row">{children}</div>;
+}
+
+function AsymmetricLayout({ wide, narrow }) {
   return (
-    <div className={"promo-faq-item" + (isOpen ? " promo-faq-item--open" : "")}>
-      <button className="promo-faq-question" onClick={onToggle}>
-        <span>{q}</span>
-        <span className="promo-faq-icon">{isOpen ? "–" : "+"}</span>
-      </button>
-      {isOpen && <p className="promo-faq-answer">{a}</p>}
+    <div className="layout-asymmetric">
+      <div className="layout-asymmetric__wide">{wide}</div>
+      <div className="layout-asymmetric__narrow">{narrow}</div>
     </div>
   );
 }
 
-/* ---------------- page ---------------- */
+function LayoutSwatch({ label, tone = "blue", wide = false }) {
+  return <div className={`layout-swatch tone-${tone} ${wide ? "layout-swatch--wide" : ""}`}>{label}</div>;
+}
 
-function Home() {
-  const [openFAQ, setOpenFAQ] = useState(null);
+/* ------------------------------------------------------------------ */
+/*  PAGE                                                               */
+/* ------------------------------------------------------------------ */
 
+export default function Home() {
   return (
-    <div className="promo-home">
-      {/* ---------------- Hero ---------------- */}
-      <section className="promo-hero">
-        <span className="promo-hero-eyebrow">Financial Planner</span>
-        <h1 className="promo-hero-title">
-          Every dollar.
-          <br />
-          One place.
-        </h1>
-        <p className="promo-hero-subtitle">
-          Track spending, set a budget, and save toward what matters —
-          free, entirely manual, and entirely yours.
-        </p>
-        <div className="promo-hero-actions">
-          <a className="promo-btn promo-btn-primary" href="#signup">
-            Sign Up Free
-          </a>
-          <a className="promo-btn promo-btn-secondary" href="#features">
-            See how it works
-          </a>
-        </div>
+    <div className="home">
+      <header className="home__header">
+        <span className="home__kicker">Component library</span>
+        <h1>Block Catalog</h1>
+        <p>A working set of reusable pieces, styled the Apple.com way — bright color cards, big rounded corners, bold type.</p>
+      </header>
 
-        <div className="promo-hero-card-showcase">
-          <div className="promo-hero-card-frame">
-            <img
-              src={lancherixCard}
-              alt="Lancherix Card"
-              className="promo-hero-card-img"
+      <main className="home__body">
+        <SectionBlock tone="plain">
+          <HeroBlock
+            title="[Project Title]"
+            subtitle="[One confident line describing what this project does and who it's for.]"
+          />
+        </SectionBlock>
+
+        <SectionBlock tone="blue" eyebrow="Overview" title="Start here. See everything.">
+          <SplitBlock visualTone="blue" visualLabel="Screenshot">
+            <h4>[Section heading]</h4>
+            <p>[Short paragraph — the problem this project solves, or how a specific part of the stack works.]</p>
+          </SplitBlock>
+        </SectionBlock>
+
+        <SectionBlock tone="plain" eyebrow="Stack" title="Built with the right tools.">
+          <GridBlock columns={3}>
+            <CardBlock icon="🍃" title="MongoDB" summary="[Role in this project]" tone="white" />
+            <CardBlock icon="⚙️" title="Express" summary="[Role in this project]" tone="white" />
+            <CardBlock icon="⚛️" title="React" summary="[Role in this project]" tone="white" />
+          </GridBlock>
+        </SectionBlock>
+
+        <SectionBlock tone="green" eyebrow="Features" title="Your even more capable app.">
+          <ListBlock
+            items={[
+              { title: "[Feature name]", description: "[What it does and why it matters.]", tone: "green" },
+              { title: "[Feature name]", description: "[What it does and why it matters.]", tone: "green" },
+              { title: "[Feature name]", description: "[What it does and why it matters.]", tone: "green" },
+            ]}
+          />
+        </SectionBlock>
+
+        <SectionBlock tone="plain" eyebrow="Gallery" title="A closer look.">
+          <GalleryBlock count={4} />
+        </SectionBlock>
+
+        <SectionBlock tone="plain">
+          <BannerBlock tone="dark">[Short, confident callout — a stat, a quote, or a link to the live demo.]</BannerBlock>
+        </SectionBlock>
+
+        <SectionBlock tone="orange" eyebrow="Details" title="Always on hand.">
+          <GridBlock columns={3}>
+            <CardBlock
+              icon="🔐"
+              title="[Feature A]"
+              summary="[Short summary]"
+              detail="[Longer explanation shown on flip — how it works, why it was built this way.]"
+              flippable
+              tone="white"
             />
-            <div className="promo-hero-card-sheen" />
-          </div>
-        </div>
-      </section>
-
-      <p className="promo-hero-footnote">
-        No bank connection. No subscription. Just your numbers, kept honestly. {" "}
-        <a href="#privacy">Learn more</a>
-      </p>
-
-      {/* ---------------- Budgeting (blue block) ---------------- */}
-      <section className="promo-block promo-block-blue" id="features">
-        <h2 className="promo-block-title">
-          Budgeting
-          <br />
-          Start here. Track anywhere.
-        </h2>
-
-        <div className="promo-block-layout">
-          <div className="promo-ring-showcase">
-            <BudgetRingPreview pct={0.68} />
-            <p className="promo-ring-caption">
-              $1,360 spent of a $2,000 monthly budget
-            </p>
-          </div>
-
-          <div className="promo-tile-grid">
-            {budgetFeatures.map((f) => (
-              <div className="promo-tile" key={f.title}>
-                <h3>{f.title}</h3>
-                <p>{f.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <ScreenshotPlaceholder label="Dashboard / budgeting screenshot" />
-      </section>
-
-      {/* ---------------- Goals (orange block) ---------------- */}
-      <section className="promo-block promo-block-orange">
-        <h2 className="promo-block-title">
-          Goals
-          <br />
-          Always in sight.
-        </h2>
-        <p className="promo-block-subtitle">
-          Pick an icon, pick a color, set a target. Add funds whenever you
-          can, and watch the ring close.
-        </p>
-
-        <div className="promo-goal-row">
-          {goalPreview.map((g) => {
-            const size = 84;
-            const stroke = 8;
-            const radius = (size - stroke) / 2;
-            const circumference = 2 * Math.PI * radius;
-            const offset = circumference * (1 - g.pct);
-            return (
-              <div className="promo-goal-tile" key={g.label}>
-                <div
-                  className="promo-goal-ring"
-                  style={{ width: size, height: size }}
-                >
-                  <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-                    <circle
-                      cx={size / 2}
-                      cy={size / 2}
-                      r={radius}
-                      fill="none"
-                      stroke="rgba(255,255,255,0.3)"
-                      strokeWidth={stroke}
-                    />
-                    <circle
-                      cx={size / 2}
-                      cy={size / 2}
-                      r={radius}
-                      fill="none"
-                      stroke="#ffffff"
-                      strokeWidth={stroke}
-                      strokeDasharray={circumference}
-                      strokeDashoffset={offset}
-                      strokeLinecap="round"
-                      transform={`rotate(-90 ${size / 2} ${size / 2})`}
-                    />
-                  </svg>
-                  <span className="promo-goal-emoji">{g.icon}</span>
-                </div>
-                <span className="promo-goal-label">{g.label}</span>
-              </div>
-            );
-          })}
-        </div>
-
-        <ScreenshotPlaceholder label="Goals screen screenshot" />
-      </section>
-
-      {/* ---------------- Reports (green block) ---------------- */}
-      <section className="promo-block promo-block-green">
-        <h2 className="promo-block-title">
-          Reports
-          <br />
-          See the trend.
-        </h2>
-
-        <div className="promo-block-layout">
-          <div className="promo-trend-showcase">
-            <TrendBarsPreview />
-            <div className="promo-trend-legend">
-              <span>
-                <i className="promo-dot promo-dot-income" /> Income
-              </span>
-              <span>
-                <i className="promo-dot promo-dot-expense" /> Expenses
-              </span>
-            </div>
-          </div>
-
-          <div className="promo-category-list">
-            {categoryPreview.map((c) => (
-              <div className="promo-category-row" key={c.name}>
-                <span
-                  className="promo-category-dot"
-                  style={{ background: c.color }}
-                />
-                <span className="promo-category-name">{c.name}</span>
-                <span className="promo-category-track">
-                  <span
-                    className="promo-category-fill"
-                    style={{ width: `${c.pct}%`, background: c.color }}
-                  />
-                </span>
-                <span className="promo-category-pct">{c.pct}%</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <ScreenshotPlaceholder label="Reports screen screenshot" />
-      </section>
-
-      {/* ---------------- Dark insight cards ---------------- */}
-      <section className="promo-insights">
-        <h2 className="promo-insights-title">Three ways to see it.</h2>
-        <div className="promo-insights-row">
-          {insightCards.map((c) => (
-            <div className="promo-insight-card" key={c.title}>
-              <ScreenshotPlaceholder
-                label={`${c.eyebrow} screenshot`}
-                tone="dark"
-              />
-              <span className="promo-insight-eyebrow">{c.eyebrow}</span>
-              <h3>{c.title}</h3>
-              <p>{c.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ---------------- Privacy / trust ---------------- */}
-      <section className="promo-privacy" id="privacy">
-        <span className="promo-privacy-lock">🔒</span>
-        <h2>The wall around your data.</h2>
-        <p>
-          There's no bank link to authorize and no account numbers to hand
-          over — every entry is typed in by you. Nothing is shared with
-          advertisers, and nothing is sold. It's your budget, kept exactly
-          as privately as a notebook, with none of the arithmetic.
-        </p>
-      </section>
-
-      {/* ---------------- FAQ ---------------- */}
-      <section className="promo-faq">
-        <h2 className="promo-faq-title">Questions? Answers.</h2>
-        <div className="promo-faq-list">
-          {faqItems.map((item, i) => (
-            <FAQItem
-              key={item.q}
-              q={item.q}
-              a={item.a}
-              isOpen={openFAQ === i}
-              onToggle={() => setOpenFAQ(openFAQ === i ? null : i)}
+            <CardBlock
+              icon="⚡"
+              title="[Feature B]"
+              summary="[Short summary]"
+              detail="[Longer explanation shown on flip.]"
+              flippable
+              tone="white"
             />
-          ))}
-        </div>
-      </section>
+            <CardBlock icon="✨" title="[Feature C]" summary="[Short summary — not flippable]" tone="white" />
+          </GridBlock>
+        </SectionBlock>
+      </main>
 
-      {/* ---------------- Cross-sell row ---------------- */}
-      <section className="promo-more" id="signup">
-        <h2 className="promo-more-title">More to explore.</h2>
-        <div className="promo-more-row">
-          <Card
-            eyebrow="Get started"
-            title="Sign up free."
-            description="Create an account in under a minute — no card required."
-            accent="#0071e3"
-            href="#signup-form"
+      <div className="home__divider">
+        <span>Layout wrappers</span>
+      </div>
+
+      <main className="home__body">
+        <SectionBlock tone="plain" eyebrow="L1" title="Two columns, equal width">
+          <Row2Layout>
+            <LayoutSwatch label="A" tone="blue" />
+            <LayoutSwatch label="B" tone="coral" />
+          </Row2Layout>
+        </SectionBlock>
+
+        <SectionBlock tone="plain" eyebrow="L2" title="Three columns, equal width">
+          <Row3Layout>
+            <LayoutSwatch label="A" tone="blue" />
+            <LayoutSwatch label="B" tone="green" />
+            <LayoutSwatch label="C" tone="orange" />
+          </Row3Layout>
+        </SectionBlock>
+
+        <SectionBlock tone="plain" eyebrow="L3" title="Two stacked, then one full-width">
+          <StackThenRowLayout>
+            <LayoutSwatch label="A" tone="blue" />
+            <LayoutSwatch label="B" tone="coral" />
+            <LayoutSwatch label="C — full width" tone="purple" wide />
+          </StackThenRowLayout>
+        </SectionBlock>
+
+        <SectionBlock tone="plain" eyebrow="L4" title="Wide + narrow column">
+          <AsymmetricLayout
+            wide={<LayoutSwatch label="Wide — 70%" tone="blue" />}
+            narrow={<LayoutSwatch label="Narrow — 30%" tone="green" />}
           />
-          <Card
-            eyebrow="Our story"
-            title="Why we built this."
-            description="Started as a personal tool. Now it's yours too."
-            accent="#ff9500"
-            href="#about"
-          />
-          <Card
-            eyebrow="Trust"
-            title="How your data works."
-            description="Manual entry, no bank link, nothing sold."
-            accent="#34c759"
-            href="#privacy"
-          />
-        </div>
-      </section>
+        </SectionBlock>
+      </main>
     </div>
   );
 }
-
-export default Home;
