@@ -4,7 +4,7 @@ import './Card.css';
 
 // Swap these for your real asset filenames — paths follow the same
 // '../ArtWork/…' convention Studio.jsx uses.
-import logoCard from '../ArtWork/LancherixCardLogoWhite.png';
+import logoCard from '../ArtWork/grandCanyon.jpg';
 import cardHero from '../ArtWork/CardHero.png';
 import dashboardShot from '../ArtWork/CardDashboardShot.png';
 import budgetShot from '../ArtWork/CardBudgetShot.png';
