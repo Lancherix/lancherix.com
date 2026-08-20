@@ -5,12 +5,12 @@ import './Card.css';
 // Swap these for your real asset filenames — paths follow the same
 // '../ArtWork/…' convention Studio.jsx uses.
 import logoCard from '../ArtWork/grandCanyon.jpg';
-import cardHero from '../ArtWork/CardHero.png';
-import dashboardShot from '../ArtWork/CardDashboardShot.png';
-import budgetShot from '../ArtWork/CardBudgetShot.png';
-import goalsShot from '../ArtWork/CardGoalsShot.png';
-import cardMacro from '../ArtWork/CardMacro.png';
-import cardPhone from '../ArtWork/CardPhone.png';
+import cardHero from '../ArtWork//grandCanyon.jpg';
+import dashboardShot from '../ArtWork/grandCanyon.jpg';
+import budgetShot from '../ArtWork/grandCanyon.jpg';
+import goalsShot from '../ArtWork/grandCanyon.jpg';
+import cardMacro from '../ArtWork/grandCanyon.jpg';
+import cardPhone from '../ArtWork/grandCanyon.jpg';
 
 function CardMobile() {
   const { t } = useTranslation();
