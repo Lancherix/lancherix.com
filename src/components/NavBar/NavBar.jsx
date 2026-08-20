@@ -37,7 +37,7 @@ function NavBar() {
           onMouseEnter={() => handleMouseEnter('store')}
           onMouseLeave={handleMouseLeave}
         >
-          <Link target='_blanck' to="https://card.lancherix.com" className="Link"><button className='NavBar-button'>Card</button></Link>
+          <Link to="/card" className="Link"><button className='NavBar-button'>Card</button></Link>
         </div>
         <div
           className="NavBar-Store"

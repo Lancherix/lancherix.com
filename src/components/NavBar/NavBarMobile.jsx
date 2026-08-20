@@ -36,7 +36,7 @@ function NavBarMobile() {
           Studio
         </Link>
 
-        <Link to="https://card.lancherix.com" onClick={() => setMenuOpen(false)}>
+        <Link to="/card" onClick={() => setMenuOpen(false)}>
           Card
         </Link>
 

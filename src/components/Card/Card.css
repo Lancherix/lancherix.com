@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+/* ============================================================
+   Tokens — scoped to .CardPage so this doesn't collide with the
+   in-app --cal-* variables used elsewhere in the codebase.
+   Palette: ink navy stage, brand blue accent (matches the app's
+   primary-btn / symbolBlue), brushed-metal neutrals for the card
+   itself. Numerals use a mono face throughout, echoing embossed
+   card digits — that's the signature thread running through hero
+   stats, the feature toggle, and the aspect band.
+   ============================================================ */
+
+.CardPage {
+  --cc-bg: #0a0d12;
+  --cc-bg-elevated: #12161f;
+  --cc-text: #f5f6f8;
+  --cc-muted: #8b93a1;
+  --cc-accent: #2e7cf6;
+  --cc-accent-soft: rgba(46, 124, 246, 0.16);
+  --cc-border: rgba(255, 255, 255, 0.09);
+  --cc-radius-lg: 28px;
+  --cc-radius: 16px;
+  --cc-radius-sm: 10px;
+  --cc-font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --cc-font-body: 'Inter', sans-serif;
+  --cc-font-mono: 'IBM Plex Mono', monospace;
+
+  background: var(--cc-bg);
+  color: var(--cc-text);
+  font-family: var(--cc-font-body);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.CardPage h1,
+.CardPage h2 {
+  font-family: var(--cc-font-display);
+  margin: 0;
+}
+
+.CardPage p {
+  font-family: var(--cc-font-body);
+  color: var(--cc-muted);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.Home-HeroCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4vw;
+  min-height: 90vh;
+  padding: 4vh 6vw 6vh;
+  box-sizing: border-box;
+}
+
+.Home-HeroCard::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 6vw;
+  width: 42vw;
+  height: 42vw;
+  max-width: 640px;
+  max-height: 640px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, var(--cc-accent-soft) 0%, transparent 70%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.Home-HeroCard-Copy {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.Home-HeroCard-Logo {
+  height: 26px;
+  width: auto;
+  margin-bottom: 4vh;
+}
+
+.Home-HeroCard-Copy h1 {
+  font-size: clamp(2.4rem, 4.6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin-bottom: 2.4vh;
+}
+
+.Home-HeroCard-Copy p {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  max-width: 460px;
+}
+
+.Home-HeroCard-Actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 4.5vh;
+}
+
+.Home-HeroCard-Actions button {
+  font-family: var(--cc-font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.Home-HeroCard-Actions button:first-child {
+  background: linear-gradient(135deg, #5b9dff, var(--cc-accent));
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(46, 124, 246, 0.35);
+}
+
+.Home-HeroCard-Actions button:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 38px rgba(46, 124, 246, 0.45);
+}
+
+.Home-HeroCard-Actions button.ghost {
+  background: transparent;
+  border-color: var(--cc-border);
+  color: var(--cc-text);
+}
+
+.Home-HeroCard-Actions button.ghost:hover {
+  border-color: var(--cc-accent);
+  color: var(--cc-accent);
+}
+
+.Home-HeroCard-Art {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  perspective: 1400px;
+}
+
+.Home-HeroCard-Art img {
+  width: min(30vw, 460px);
+  filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.6));
+  transform: rotate3d(0.3, -1, 0.05, 18deg);
+  animation: cardFloat 6s ease-in-out infinite;
+  transition: transform 0.5s ease;
+}
+
+.Home-HeroCard-Art:hover img {
+  transform: rotate3d(0.1, -1, 0.02, 6deg) translateY(-6px);
+  animation-play-state: paused;
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: rotate3d(0.3, -1, 0.05, 18deg) translateY(0);
+  }
+  50% {
+    transform: rotate3d(0.3, -1, 0.05, 18deg) translateY(-14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Home-HeroCard-Art img {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   STATS STRIP — embossed mono numerals
+   ============================================================ */
+
+.Home-StatsCard {
+  display: flex;
+  justify-content: center;
+  gap: 6vw;
+  padding: 4.5vh 6vw;
+  border-top: 1px solid var(--cc-border);
+  border-bottom: 1px solid var(--cc-border);
+}
+
+.Home-StatsCard-Item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-num {
+  font-family: var(--cc-font-mono);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.14), 0 -1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.stat-label {
+  font-family: var(--cc-font-body);
+  font-size: 0.75rem;
+  color: var(--cc-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+/* ============================================================
+   SECONDARY
+   ============================================================ */
+
+.Home-SecondaryCard {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 12vh 6vw 6vh;
+}
+
+.Home-SecondaryCard h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 2.2vh;
+}
+
+.Home-SecondaryCard p {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+}
+
+/* ============================================================
+   FEATURES
+   ============================================================ */
+
+.Home-FeaturesCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+  padding: 6vh 6vw 12vh;
+}
+
+.Home-FeaturesCard img {
+  width: min(72vw, 940px);
+  border-radius: var(--cc-radius-lg);
+  border: 1px solid var(--cc-border);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+}
+
+.Home-FeaturesOptionsCard {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--cc-bg-elevated);
+  border: 1px solid var(--cc-border);
+  border-radius: 999px;
+}
+
+.Home-FeaturesOptionsCard button {
+  border: none;
+  background: transparent;
+  color: var(--cc-muted);
+  font-family: var(--cc-font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.Home-FeaturesOptionsCard button:hover {
+  color: var(--cc-text);
+}
+
+.Home-FeaturesOptionsCard button.active {
+  background: var(--cc-accent);
+  color: #fff;
+}
+
+/* ============================================================
+   ASPECT
+   ============================================================ */
+
+.Home-AspectCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+  padding: 8vh 6vw 14vh;
+}
+
+.Home-AspectImg1Card {
+  width: 24vw;
+  max-width: 340px;
+  border-radius: var(--cc-radius);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  transform: rotate(-4deg);
+}
+
+.Home-AspectImg2Card {
+  width: 20vw;
+  max-width: 280px;
+  border-radius: var(--cc-radius);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  transform: rotate(3deg) translateY(24px);
+}
+
+.Home-AspectCard2 {
+  max-width: 380px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.Home-AspectCard2 h1 {
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 1.8vh;
+}
+
+/* ============================================================
+   RESPONSIVE FALLBACK
+   (CardMobile.jsx is the intended small-screen path, mirroring
+   how StudioMobile.jsx is swapped in elsewhere — this is just a
+   safety net if Card.jsx renders on a narrow viewport directly.)
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .Home-HeroCard {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+    padding-top: 8vh;
+  }
+
+  .Home-HeroCard-Copy {
+    max-width: 100%;
+  }
+
+  .Home-HeroCard-Actions {
+    justify-content: center;
+  }
+
+  .Home-StatsCard {
+    gap: 8vw;
+  }
+
+  .Home-AspectCard {
+    flex-direction: column;
+    gap: 6vh;
+  }
+
+  .Home-AspectImg1Card,
+  .Home-AspectImg2Card {
+    width: 70vw;
+    max-width: 320px;
+    transform: none;
+  }
+}
