@@ -507,7 +507,7 @@ export default function Card() {
       <footer id="signup" className="bg-gray-950 text-white py-20 text-center px-6">
         <h3 className="text-3xl font-extrabold mb-4">Ready to see where your money goes?</h3>
         <a
-          href="#"
+          href="#signup"
           className="inline-block bg-blue-600 px-7 py-3.5 rounded-full font-semibold hover:bg-blue-700 transition-colors mb-14"
         >
           Sign Up Free
