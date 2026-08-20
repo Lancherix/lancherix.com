@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Card from "./Card";
+import Card from "../Card/Card";
 import "./Home.css";
 
 // TODO: point this at the real asset once it's added — assumed path/name
