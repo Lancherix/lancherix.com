@@ -10,9 +10,12 @@
       (transaction rows, the report list, budget rings, goal cards)
       should look pixel-for-pixel like it does inside the real app.
    2) "Promo" layer — the --lcx-* tokens and everything else. This is
-      new chrome (hero, section colorwash, flip cards, FAQ, footer)
-      built around the replicated pieces, and it's where the color
-      and personality live.
+      new chrome (hero, section colorwash, flip cards, FAQ) built
+      around the replicated pieces, and it's where the color and
+      personality live.
+
+   NOTE: this page has no footer of its own — the global <Foot />
+   rendered in App.js covers every route, including /card.
 ================================================================== */
 
 :root {
@@ -89,6 +92,11 @@
   font-weight: 700;
   letter-spacing: -0.01em;
   white-space: nowrap;
+}
+
+.lcx-icon-img {
+  display: block;
+  object-fit: contain;
 }
 
 /* ============================================================
@@ -482,7 +490,7 @@
 }
 
 /* ============================================================
-   2) PROMO LAYER — hero, sections, flip cards, FAQ, footer
+   2) PROMO LAYER — hero, sections, flip cards, FAQ
    ============================================================ */
 
 .lcx-reveal {
@@ -597,6 +605,7 @@
 .lcx-hero-mark {
   width: 20px;
   height: 20px;
+  object-fit: contain;
 }
 
 .lcx-hero-headline {
@@ -650,9 +659,11 @@
   letter-spacing: -0.01em;
 }
 
-.lcx-hero-card-label svg {
+.lcx-hero-card-label svg,
+.lcx-hero-card-label img {
   width: 22px;
   height: 22px;
+  object-fit: contain;
 }
 
 .lcx-hero-float {
@@ -1073,101 +1084,4 @@
 .lcx-cta-button:hover {
   transform: translateY(-1px);
   background: #1a82f0;
-}
-
-/* ---- footer: flows in-page, no fixed positioning, more color ---- */
-
-.lcx-footer {
-  position: static;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 48px var(--lcx-pad) 32px;
-}
-
-.lcx-footer-top {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 32px;
-  padding-bottom: 36px;
-}
-
-@media (max-width: 720px) {
-  .lcx-footer-top {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.lcx-footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--lcx-font-display);
-  font-weight: 700;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.lcx-footer-brand svg {
-  width: 20px;
-  height: 20px;
-}
-
-.lcx-footer-tagline {
-  font-size: 13px;
-  color: var(--lcx-on-dark-muted);
-  max-width: 26ch;
-  margin: 0;
-}
-
-.lcx-footer-col-title {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin: 0 0 14px;
-}
-
-.lcx-footer-col:nth-of-type(1) .lcx-footer-col-title {
-  color: var(--lcx-blue);
-}
-.lcx-footer-col:nth-of-type(2) .lcx-footer-col-title {
-  color: var(--lcx-studio);
-}
-.lcx-footer-col:nth-of-type(3) .lcx-footer-col-title {
-  color: var(--lcx-purple);
-}
-
-.lcx-footer-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.lcx-footer-links a {
-  color: var(--lcx-on-dark-muted);
-  text-decoration: none;
-  font-size: 13.5px;
-  transition: color 0.15s ease;
-}
-
-.lcx-footer-links a:hover {
-  color: var(--lcx-on-dark);
-}
-
-.lcx-footer-bottom {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 12px;
-  color: var(--lcx-on-dark-muted);
 }

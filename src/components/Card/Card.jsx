@@ -1,14 +1,27 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Card.css";
 
+import card from '../ArtWork/LancherixCard.png';
+import logoDarkBackgrounds from '../ArtWork/logotypeBlueWhite.png';
+import logoLightBackgrounds from '../ArtWork/logotypeBlueWhite.png';
+
+import airplaneIcon from '../ArtWork/icons/airplane.svg';
+import foodIcon from '../ArtWork/icons/food.svg';
+import transportIcon from '../ArtWork/icons/transport.svg';
+import schoolIcon from '../ArtWork/icons/school.svg';
+import leisureIcon from '../ArtWork/icons/leisure.svg';
+import shoppingIcon from '../ArtWork/icons/shopping.svg';
+import savingsIcon from '../ArtWork/icons/savings.svg';
+import laptopIcon from '../ArtWork/icons/laptop.svg';
+import shieldIcon from '../ArtWork/icons/shield.svg';
+
 /* ==================================================================
-   NOTE FOR WHOEVER WIRES THIS IN
-   - Swap <Icon> below for the real `import Icon from "./Icon"` once
-     you share Icon.jsx / the SVG set — this local version only covers
-     the categories used on this page as a stand-in.
-   - Swap the hero's SVG wave for `import cardImage from "./assets/card.png"`
-     and drop an <img src={cardImage} /> in .lcx-hero-card once you
-     share the PNG.
+   NOTE
+   - Icon assets are pulled from ../ArtWork/icons/*.svg. If any of
+     school / leisure / shopping / savings / laptop / shield don't
+     exist yet at that path, add them there (same convention as
+     food.svg / transport.svg / airplane.svg) or swap the ICONS map
+     below to point wherever they actually live.
 ================================================================== */
 
 function formatMoney(n) {
@@ -19,30 +32,22 @@ function formatMoney(n) {
   })}`;
 }
 
-function Icon({ name, size = 16, color = "currentColor" }) {
-  const common = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: color, strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" };
-  switch (name) {
-    case "food":
-      return <svg {...common}><path d="M7 3v7a2 2 0 0 0 4 0V3M9 10v11M17 3c-1.5 1-2 3-2 5s.5 4 2 5v8" /></svg>;
-    case "transport":
-      return <svg {...common}><rect x="3" y="6" width="18" height="12" rx="2" /><circle cx="7.5" cy="18" r="1.5" /><circle cx="16.5" cy="18" r="1.5" /></svg>;
-    case "school":
-      return <svg {...common}><path d="M2 9l10-5 10 5-10 5-10-5Z" /><path d="M6 11v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5" /></svg>;
-    case "leisure":
-      return <svg {...common}><rect x="2" y="8" width="20" height="10" rx="4" /><circle cx="8" cy="13" r="1.4" /><circle cx="16" cy="13" r="1.4" /></svg>;
-    case "shopping":
-      return <svg {...common}><path d="M6 8V6a4 4 0 0 1 8 0v2" /><rect x="3" y="8" width="14" height="12" rx="2" transform="translate(1)" /></svg>;
-    case "savings":
-      return <svg {...common}><circle cx="12" cy="13" r="7" /><path d="M12 6V3M9 3h6" /></svg>;
-    case "laptop":
-      return <svg {...common}><rect x="4" y="4" width="16" height="10" rx="1.5" /><path d="M2 18h20" /></svg>;
-    case "airplane":
-      return <svg {...common}><path d="M2 16l20-8-8 20-2-8-8-2Z" /></svg>;
-    case "shield":
-      return <svg {...common}><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3Z" /></svg>;
-    default:
-      return <svg {...common}><circle cx="12" cy="12" r="8" /></svg>;
-  }
+const ICONS = {
+  food: foodIcon,
+  transport: transportIcon,
+  school: schoolIcon,
+  leisure: leisureIcon,
+  shopping: shoppingIcon,
+  savings: savingsIcon,
+  laptop: laptopIcon,
+  airplane: airplaneIcon,
+  shield: shieldIcon,
+};
+
+function Icon({ name, size = 16 }) {
+  const src = ICONS[name];
+  if (!src) return null;
+  return <img src={src} alt="" width={size} height={size} className="lcx-icon-img" />;
 }
 
 /* ---------------- scroll / animation helpers ---------------- */
@@ -152,9 +157,7 @@ function Hero() {
   return (
     <div className="card-hero">
       <div className="lcx-hero-word">
-        <svg className="lcx-hero-mark" viewBox="0 0 24 24" fill="none">
-          <path d="M2 15c2-3 4-3 6 0s4 3 6 0 4-3 6 0 4 3 4 3" stroke="#0071e3" strokeWidth="2.4" strokeLinecap="round" />
-        </svg>
+        <img src={logoLightBackgrounds} alt="Lancherix" className="lcx-hero-mark" />
         Lancherix Card
       </div>
 
@@ -163,24 +166,9 @@ function Hero() {
 
       <div ref={visualRef} className={`lcx-hero-visual ${visualIn ? "lcx-in" : ""}`}>
         <div className="lcx-hero-card">
-          {/* Replace with <img src={cardImage} alt="Lancherix Card" /> once the PNG is wired in */}
-          <svg viewBox="0 0 560 350" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="lcxWave" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#bfe0ff" />
-                <stop offset="45%" stopColor="#4da3f7" />
-                <stop offset="75%" stopColor="#0058c2" />
-                <stop offset="100%" stopColor="#ff9500" />
-              </linearGradient>
-            </defs>
-            <rect width="560" height="350" fill="url(#lcxWave)" />
-            <path d="M0 210 C 90 150, 180 270, 280 210 S 470 150, 560 210 V350 H0 Z" fill="rgba(255,255,255,0.18)" />
-            <path d="M0 260 C 100 200, 200 320, 300 260 S 480 200, 560 260 V350 H0 Z" fill="rgba(255,255,255,0.28)" />
-          </svg>
+          <img src={card} alt="Lancherix Card" />
           <div className="lcx-hero-card-label">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M2 15c2-3 4-3 6 0s4 3 6 0 4-3 6 0 4 3 4 3" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" />
-            </svg>
+            <img src={logoDarkBackgrounds} alt="" />
             Lancherix
           </div>
         </div>
@@ -199,7 +187,7 @@ function Hero() {
 }
 
 /* ==================================================================
-   1 — Transactions (dw-tx-* markup replicated from DashboardWidgets)
+   1 — Transactions
 ================================================================== */
 
 const TRANSACTIONS = [
@@ -245,7 +233,7 @@ function TransactionsStory() {
               {TRANSACTIONS.map((tx, i) => (
                 <div key={tx.name} className="dw-tx-row" style={{ transitionDelay: `${i * 0.08}s` }}>
                   <span className="dw-tx-icon" style={{ background: tx.color + "22" }}>
-                    <Icon name={tx.icon} size={16} color={tx.color} />
+                    <Icon name={tx.icon} size={16} />
                   </span>
                   <span className="dw-tx-info">
                     <span className="dw-tx-name">{tx.name}</span>
@@ -263,7 +251,7 @@ function TransactionsStory() {
 }
 
 /* ==================================================================
-   2 — Budget (bt-* markup replicated from BudgetTab.jsx/css)
+   2 — Budget
 ================================================================== */
 
 const CATEGORIES = [
@@ -362,7 +350,7 @@ function BudgetStory() {
               return (
                 <div className="bt-cat-row" key={cat.name}>
                   <span className="bt-cat-icon" style={{ background: cat.color + "22" }}>
-                    <Icon name={cat.icon} size={16} color={cat.color} />
+                    <Icon name={cat.icon} size={16} />
                   </span>
                   <span className="bt-cat-info">
                     <span className="bt-cat-top">
@@ -389,7 +377,7 @@ function BudgetStory() {
 }
 
 /* ==================================================================
-   3 — Reports (dw-report-* markup replicated from DashboardWidgets)
+   3 — Reports
 ================================================================== */
 
 const BREAKDOWN = [
@@ -470,7 +458,7 @@ function ReportsStory() {
 }
 
 /* ==================================================================
-   4 — Goals (dw-goal-* markup replicated from DashboardWidgets)
+   4 — Goals
 ================================================================== */
 
 const GOALS = [
@@ -504,7 +492,7 @@ function GoalRing({ pct, color, icon, inView }) {
         />
       </svg>
       <div className="dw-goal-ring-center">
-        <Icon name={icon} size={20} color={color} />
+        <Icon name={icon} size={20} />
       </div>
     </div>
   );
@@ -605,7 +593,8 @@ function Faq() {
 }
 
 /* ==================================================================
-   Studio transition + closing CTA + footer
+   Studio transition + closing CTA
+   (no footer here anymore — the global <Foot /> in App.js covers it)
 ================================================================== */
 
 function StudioAndCta() {
@@ -648,54 +637,6 @@ function StudioAndCta() {
           </a>
         </Reveal>
       </div>
-
-      <footer className="lcx-footer">
-        <div className="lcx-footer-top">
-          <div className="lcx-footer-col">
-            <div className="lcx-footer-brand">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M2 15c2-3 4-3 6 0s4 3 6 0 4-3 6 0 4 3 4 3" stroke="#0071e3" strokeWidth="2.4" strokeLinecap="round" />
-              </svg>
-              Lancherix
-            </div>
-            <p className="lcx-footer-tagline">One account. More of your life, organized.</p>
-          </div>
-
-          <div className="lcx-footer-col">
-            <p className="lcx-footer-col-title">Card</p>
-            <ul className="lcx-footer-links">
-              <li><a href="#transactions">Transactions</a></li>
-              <li><a href="#budget">Budget</a></li>
-              <li><a href="#reports">Reports</a></li>
-              <li><a href="#goals">Goals</a></li>
-            </ul>
-          </div>
-
-          <div className="lcx-footer-col">
-            <p className="lcx-footer-col-title">Studio</p>
-            <ul className="lcx-footer-links">
-              <li><a href="#studio">Work</a></li>
-              <li><a href="#studio">Studies</a></li>
-              <li><a href="#studio">Chores</a></li>
-              <li><a href="#studio">Projects</a></li>
-            </ul>
-          </div>
-
-          <div className="lcx-footer-col">
-            <p className="lcx-footer-col-title">Company</p>
-            <ul className="lcx-footer-links">
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#privacy">Privacy</a></li>
-              <li><a href="#terms">Terms</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="lcx-footer-bottom">
-          <span>© {new Date().getFullYear()} Lancherix</span>
-          <span>Made for people managing their own money.</span>
-        </div>
-      </footer>
     </div>
   );
 }
