@@ -29,3 +29,48 @@
   font-size: 2rem;
   overflow-y: hidden;
 }
+
+.card-features {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  background-color: lightblue;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  align-items: center;
+  padding: 10vh 0;
+  font-size: 2rem;
+  overflow-y: hidden;
+}
+
+.card-qa {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  background-color: lightcoral;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  align-items: center;
+  padding: 10vh 0;
+  font-size: 2rem;
+  overflow-y: hidden;
+}
+
+.card-more {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  background-color: lightcyan;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  align-items: center;
+  padding: 10vh 0;
+  font-size: 2rem;
+  overflow-y: hidden;
+}
