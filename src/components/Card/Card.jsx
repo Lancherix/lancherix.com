@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Card.css";
 
 import card from '../ArtWork/LancherixCard.png';
-/* import logoDarkBackgrounds from '../ArtWork/logotypeBlueWhite.png'; */
-import logoLightBackgrounds from '../ArtWork/logotypeBlueWhite.png';
+/* import logoDarkBackgrounds from '../ArtWork/logotypeBlueWhite.png';
+import logoLightBackgrounds from '../ArtWork/logotypeBlueWhite.png'; */
 
 import airplaneIcon from '../ArtWork/icons/airplane.svg';
 import foodIcon from '../ArtWork/icons/food.svg';
