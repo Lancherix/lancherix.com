@@ -755,7 +755,7 @@
   transition: opacity 0.55s ease, transform 0.55s ease, background 0.2s ease;
 }
 
-.lcx-story-visual.lcx-in .lcx-tx-row {
+.lcx-story-visual.lcx-in .dw-tx-row {
   opacity: 1;
   transform: translateX(0);
 }
