@@ -348,7 +348,7 @@ function BudgetStory() {
           </div>
 
           <div className="lcx-cat-list">
-            {CATEGORIES.map((cat) => {
+            {CATEGORIES.map((tx, cat) => {
               const pct = Math.min((cat.spent / cat.limit) * 100, 100);
               return (
                 <div className="bt-cat-row" key={cat.name}>
@@ -470,7 +470,7 @@ const GOALS = [
   { name: "Emergency Fund", saved: 50, target: 1000, icon: "shield", color: "#ff2d55" },
 ];
 
-function GoalRing({ pct, color, icon, inView }) {
+function GoalRing({ tx, pct, color, icon, inView }) {
   const size = 56;
   const stroke = 6;
   const radius = (size - stroke) / 2;
