@@ -244,8 +244,8 @@ const Home = () => {
 
               <div>
                 <h4>Social</h4>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
+                <a href="/instagram">Instagram</a>
+                <a href="/instagram">Twitter</a>
               </div>
 
             </div>
@@ -258,8 +258,8 @@ const Home = () => {
             </span>
 
             <div>
-              <a href="#">Privacy</a>
-              <a href="#">Terms</a>
+              <a href="/instagram">Privacy</a>
+              <a href="/instagram">Terms</a>
             </div>
           </div>
 
