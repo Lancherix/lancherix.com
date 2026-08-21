@@ -173,9 +173,6 @@ function Hero() {
 
   return (
     <div className="card-hero">
-      <div className="lcx-hero-word">
-        <img src={logoLightBackgrounds} alt="Lancherix" className="lcx-hero-mark" />
-      </div>
 
       <h1 className="lcx-hero-headline">Take control of your money.</h1>
       <p className="lcx-hero-sub">A simpler way to manage your personal finances.</p>
@@ -208,7 +205,6 @@ function TransactionsStory() {
     <div className="lcx-story">
       <div className="lcx-story-text">
         <Reveal>
-          <span className="lcx-eyebrow-dot" style={{ background: "var(--lcx-blue)" }} />
           <h2 className="lcx-headline">Know exactly what you're spending.</h2>
           <p className="lcx-sub">
             Every purchase, organized the moment it happens — including the expenses that come back every month.
@@ -310,7 +306,6 @@ function BudgetStory() {
     <div className="lcx-story">
       <div className="lcx-story-text">
         <Reveal>
-          <span className="lcx-eyebrow-dot" style={{ background: "var(--lcx-orange)" }} />
           <h2 className="lcx-headline">Spend with a plan.</h2>
           <p className="lcx-sub">
             Set your overall budget, then give every category that matters to you its own limit.
@@ -401,7 +396,6 @@ function ReportsStory() {
     <div className="lcx-story">
       <div className="lcx-story-text">
         <Reveal>
-          <span className="lcx-eyebrow-dot" style={{ background: "var(--lcx-green)" }} />
           <h2 className="lcx-headline">See the bigger picture.</h2>
           <p className="lcx-sub">Understand your income, expenses, and spending habits, all in one clear view.</p>
         </Reveal>
@@ -508,7 +502,6 @@ function GoalsStory() {
     <div className="lcx-story">
       <div className="lcx-story-text">
         <Reveal>
-          <span className="lcx-eyebrow-dot" style={{ background: "var(--lcx-pink)" }} />
           <h2 className="lcx-headline">Turn plans into progress.</h2>
           <p className="lcx-sub">
             Whether it's something you want, something you need, or somewhere you want to go —
@@ -606,7 +599,7 @@ function StudioAndCta() {
       <div className="lcx-studio">
         <Reveal>
           <h2 className="lcx-studio-headline">
-            Also discover Lancherix <span>Studio</span>
+            Also discover Lancherix Studio
           </h2>
           <a className="lcx-cta-button" href="https://www.lancherix.com/studio">
             Learn more

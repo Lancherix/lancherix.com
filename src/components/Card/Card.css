@@ -526,14 +526,6 @@
   margin: 0 auto;
 }
 
-.lcx-eyebrow-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-bottom: 16px;
-}
-
 .lcx-headline {
   font-family: var(--lcx-font-display);
   font-weight: 800;
@@ -587,17 +579,6 @@
   background: radial-gradient(ellipse 60% 50% at 20% 10%, var(--lcx-blue-soft), transparent 60%),
     radial-gradient(ellipse 50% 45% at 85% 30%, var(--lcx-orange-soft), transparent 60%),
     radial-gradient(ellipse 55% 45% at 60% 95%, var(--lcx-purple-soft), transparent 60%), var(--cal-bg);
-}
-
-.lcx-hero-word {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--lcx-font-display);
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--lcx-muted);
-  margin-bottom: 28px;
 }
 
 .lcx-hero-mark {
@@ -978,13 +959,6 @@
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin: 0;
-}
-
-.lcx-studio-headline span {
-  color: #fff;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.4);
-  text-underline-offset: 6px;
 }
 
 .lcx-cta-button {
