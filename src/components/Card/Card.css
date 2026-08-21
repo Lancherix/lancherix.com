@@ -14,3 +14,19 @@
 
   line-height: 1.5;
 }
+
+.card-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  background-color: aliceblue;
+  background-image: url('../ArtWork/backgroundImage.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  align-items: center;
+  padding: 10vh 0;
+  font-size: 2rem;
+  overflow-y: hidden;
+}

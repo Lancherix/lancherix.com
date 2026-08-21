@@ -4,7 +4,7 @@ import "./Card.css";
 const Card = () => {
   return (
     <div className="card">
-
+      <div className="card-hero"></div>
     </div>
   );
 };
