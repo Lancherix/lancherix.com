@@ -174,7 +174,6 @@ function Hero() {
   return (
     <div className="card-hero">
       <h1 className="lcx-hero-headline">Take control of your finances.</h1>
-      <p className="lcx-hero-sub">A simpler way to manage your personal finances.</p>
 
       <a className="lcx-cta-button" href="https://card.lancherix.com">
         Open Lancherix Card

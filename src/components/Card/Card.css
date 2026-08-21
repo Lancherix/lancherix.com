@@ -597,13 +597,6 @@
   margin: 0 0 20px;
 }
 
-.lcx-hero-sub {
-  font-size: clamp(17px, 2.4vw, 22px);
-  color: var(--lcx-muted);
-  max-width: 34ch;
-  margin: 0 0 56px;
-}
-
 .lcx-hero-visual {
   position: relative;
   width: min(560px, 100%);
