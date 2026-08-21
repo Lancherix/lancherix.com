@@ -13,7 +13,7 @@ import leisureIcon from '../ArtWork/icons/entertainment.svg';
 import shoppingIcon from '../ArtWork/icons/shopping.svg';
 import savingsIcon from '../ArtWork/icons/savings.svg';
 import laptopIcon from '../ArtWork/icons/laptop.svg';
-import shieldIcon from '../ArtWork/icons/shield.svg';
+import shieldIcon from '../ArtWork/icons/ticket.svg';
 
 /* ==================================================================
    NOTE
@@ -44,10 +44,27 @@ const ICONS = {
   shield: shieldIcon,
 };
 
-function Icon({ name, size = 16 }) {
+function Icon({ name, size = 16, color = "currentColor" }) {
   const src = ICONS[name];
   if (!src) return null;
-  return <img src={src} alt="" width={size} height={size} className="lcx-icon-img" />;
+  return (
+    <span
+      className="lcx-icon-img"
+      style={{
+        width: size,
+        height: size,
+        backgroundColor: color,
+        WebkitMaskImage: `url(${src})`,
+        maskImage: `url(${src})`,
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+      }}
+    />
+  );
 }
 
 /* ---------------- scroll / animation helpers ---------------- */
@@ -158,7 +175,6 @@ function Hero() {
     <div className="card-hero">
       <div className="lcx-hero-word">
         <img src={logoLightBackgrounds} alt="Lancherix" className="lcx-hero-mark" />
-        Lancherix Card
       </div>
 
       <h1 className="lcx-hero-headline">Take control of your money.</h1>
@@ -167,19 +183,6 @@ function Hero() {
       <div ref={visualRef} className={`lcx-hero-visual ${visualIn ? "lcx-in" : ""}`}>
         <div className="lcx-hero-card">
           <img src={card} alt="Lancherix Card" />
-          <div className="lcx-hero-card-label">
-            <img src={logoDarkBackgrounds} alt="" />
-            Lancherix
-          </div>
-        </div>
-
-        <div className="lcx-hero-float lcx-hero-float-remaining">
-          <span className="lcx-float-label">Budget remaining</span>
-          <span className="lcx-float-value lcx-num">$249.31</span>
-        </div>
-        <div className="lcx-hero-float lcx-hero-float-goal">
-          <span className="lcx-float-label">Trip Home</span>
-          <span className="lcx-float-value lcx-num">$50 / $800</span>
         </div>
       </div>
     </div>
@@ -233,7 +236,7 @@ function TransactionsStory() {
               {TRANSACTIONS.map((tx, i) => (
                 <div key={tx.name} className="dw-tx-row" style={{ transitionDelay: `${i * 0.08}s` }}>
                   <span className="dw-tx-icon" style={{ background: tx.color + "22" }}>
-                    <Icon name={tx.icon} size={16} />
+                    <Icon name={tx.icon} size={16} color={tx.color} />
                   </span>
                   <span className="dw-tx-info">
                     <span className="dw-tx-name">{tx.name}</span>
@@ -350,7 +353,7 @@ function BudgetStory() {
               return (
                 <div className="bt-cat-row" key={cat.name}>
                   <span className="bt-cat-icon" style={{ background: cat.color + "22" }}>
-                    <Icon name={cat.icon} size={16} />
+                    <Icon name={tx.icon} size={16} color={tx.color} />
                   </span>
                   <span className="bt-cat-info">
                     <span className="bt-cat-top">
@@ -492,7 +495,7 @@ function GoalRing({ pct, color, icon, inView }) {
         />
       </svg>
       <div className="dw-goal-ring-center">
-        <Icon name={icon} size={20} />
+        <Icon name={tx.icon} size={20} color={tx.color} />
       </div>
     </div>
   );

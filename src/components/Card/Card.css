@@ -77,7 +77,6 @@
   background: var(--cal-bg);
   color: var(--lcx-ink);
   font-family: var(--lcx-font-body);
-  overflow-x: hidden;
 }
 
 .card img,
@@ -95,8 +94,7 @@
 }
 
 .lcx-icon-img {
-  display: block;
-  object-fit: contain;
+  display: inline-block;
 }
 
 /* ============================================================
