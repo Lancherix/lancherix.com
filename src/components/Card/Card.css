@@ -974,6 +974,7 @@
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.15s ease, background 0.15s ease;
+  margin-top: 5vh;
 }
 
 .lcx-cta-button:hover {

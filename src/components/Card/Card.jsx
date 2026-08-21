@@ -212,7 +212,7 @@ function TransactionsStory() {
         </Reveal>
         <FlipCard
           phrase="Every expense. Organized."
-          figureLabel="spent this week"
+          figureLabel="Spent this week"
           figureValue="$142.24"
           accent="var(--lcx-blue)"
           ariaLabel="Flip to learn more about transactions"
@@ -313,7 +313,7 @@ function BudgetStory() {
         </Reveal>
         <FlipCard
           phrase="Know what's left."
-          figureLabel="categories on track"
+          figureLabel="Categories on track"
           figureValue="5 / 6"
           accent="var(--lcx-orange)"
           ariaLabel="Flip to learn more about budgets"
@@ -401,7 +401,7 @@ function ReportsStory() {
         </Reveal>
         <FlipCard
           phrase="Understand your spending."
-          figureLabel="of spending this month"
+          figureLabel="Spending this month"
           figureValue="27% Food"
           accent="var(--lcx-green)"
           ariaLabel="Flip to learn more about reports"
@@ -459,8 +459,8 @@ function ReportsStory() {
 ================================================================== */
 
 const GOALS = [
-  { name: "MacBook", saved: 100, target: 1500, icon: "laptop", color: "#0071e3" },
-  { name: "Trip Home", saved: 350, target: 800, icon: "airplane", color: "#34c759" },
+  { name: "MacBook", saved: 400, target: 1500, icon: "laptop", color: "#0071e3" },
+  { name: "Trip Home", saved: 520, target: 800, icon: "airplane", color: "#34c759" },
   { name: "Emergency Fund", saved: 640, target: 1000, icon: "shield", color: "#ff2d55" },
 ];
 
@@ -510,8 +510,8 @@ function GoalsStory() {
         </Reveal>
         <FlipCard
           phrase="Clear progress."
-          figureLabel="saved toward Trip Home"
-          figureValue="$350 / $800"
+          figureLabel="Saved toward Trip Home"
+          figureValue="$520 / $800"
           accent="var(--lcx-pink)"
           ariaLabel="Flip to learn more about goals"
         >
