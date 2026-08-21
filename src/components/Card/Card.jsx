@@ -173,9 +173,12 @@ function Hero() {
 
   return (
     <div className="card-hero">
-
-      <h1 className="lcx-hero-headline">Take control of your money.</h1>
+      <h1 className="lcx-hero-headline">Take control of your finances.</h1>
       <p className="lcx-hero-sub">A simpler way to manage your personal finances.</p>
+
+      <a className="lcx-cta-button" href="https://card.lancherix.com">
+        Open Lancherix Card
+      </a>
 
       <div ref={visualRef} className={`lcx-hero-visual ${visualIn ? "lcx-in" : ""}`}>
         <div className="lcx-hero-card">
@@ -461,7 +464,7 @@ function ReportsStory() {
 const GOALS = [
   { name: "MacBook", saved: 400, target: 1500, icon: "laptop", color: "#0071e3" },
   { name: "Trip Home", saved: 520, target: 800, icon: "airplane", color: "#34c759" },
-  { name: "Emergency Fund", saved: 640, target: 1000, icon: "shield", color: "#ff2d55" },
+  { name: "Emergency Fund", saved: 800, target: 1000, icon: "shield", color: "#ff2d55" },
 ];
 
 function GoalRing({ tx, pct, color, icon, inView }) {
@@ -601,7 +604,7 @@ function StudioAndCta() {
           <h2 className="lcx-studio-headline">
             Also discover Lancherix Studio
           </h2>
-          <a className="lcx-cta-button" href="https://www.lancherix.com/studio">
+          <a className="lcx-cta-buttonB" href="https://www.lancherix.com/studio">
             Learn more
           </a>
         </Reveal>

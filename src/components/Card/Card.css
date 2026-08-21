@@ -687,6 +687,44 @@
   font-size: 18px;
 }
 
+.lcx-cta-button {
+  display: inline-block;
+  font-family: var(--lcx-font-display);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.lcx-cta-button:hover {
+  transform: translateY(-1px);
+}
+
+/* default (light backgrounds, e.g. hero) — solid blue */
+.card-hero .lcx-cta-button {
+  background: var(--lcx-blue);
+  color: #fff;
+  margin: 8px 0 40px;
+}
+
+.card-hero .lcx-cta-button:hover {
+  background: #1a82f0;
+}
+
+/* on the blue Studio panel — white pill, blue text */
+.card-more .lcx-cta-button {
+  background: #fff;
+  color: var(--lcx-blue);
+}
+
+.card-more .lcx-cta-button:hover {
+  background: #f0f6ff;
+}
+
 /* ---- stories ---- */
 
 .card-features {
@@ -961,7 +999,7 @@
   margin: 0;
 }
 
-.lcx-cta-button {
+.lcx-cta-buttonB {
   display: inline-block;
   background: #fff;
   color: var(--lcx-blue);
@@ -977,7 +1015,7 @@
   margin-top: 5vh;
 }
 
-.lcx-cta-button:hover {
+.lcx-cta-buttonB:hover {
   transform: translateY(-1px);
   background: #f0f6ff;
 }
