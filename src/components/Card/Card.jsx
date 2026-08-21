@@ -9,7 +9,7 @@ import airplaneIcon from '../ArtWork/icons/airplane.svg';
 import foodIcon from '../ArtWork/icons/food.svg';
 import transportIcon from '../ArtWork/icons/transport.svg';
 import schoolIcon from '../ArtWork/icons/school.svg';
-import leisureIcon from '../ArtWork/icons/leisure.svg';
+import leisureIcon from '../ArtWork/icons/entertainment.svg';
 import shoppingIcon from '../ArtWork/icons/shopping.svg';
 import savingsIcon from '../ArtWork/icons/savings.svg';
 import laptopIcon from '../ArtWork/icons/laptop.svg';
