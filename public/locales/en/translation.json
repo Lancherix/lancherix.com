@@ -37,5 +37,108 @@
       "title": "Make it Your Own.",
       "description": "Your workspace should feel personal. Adjust wallpapers, accent colors and themes to match the way you think and work."
     }
+  },
+  "card": {
+    "hero": {
+      "headline": "Take control of your finances.",
+      "cta": "Open Lancherix Card",
+      "imageAlt": "Lancherix Card"
+    },
+    "flip": {
+      "tapToLearnMore": "Tap to learn more",
+      "tapToFlipBack": "Tap to flip back",
+      "defaultAriaLabel": "Flip card"
+    },
+    "categories": {
+      "food": "Food",
+      "shopping": "Shopping",
+      "transport": "Transport",
+      "transportRecurring": "Transport · Recurring",
+      "school": "School",
+      "leisure": "Leisure",
+      "savings": "Savings"
+    },
+    "transactions": {
+      "headline": "Know exactly what you're spending.",
+      "sub": "Every purchase, organized the moment it happens — including the expenses that come back every month.",
+      "flip": {
+        "phrase": "Every expense. Organized.",
+        "figureLabel": "Spent this week",
+        "ariaLabel": "Flip to learn more about transactions",
+        "back": "Transactions and recurring expenses live side by side, so a coffee and a subscription are just as easy to find. Categorize what you spend, see when it happened, and recognize what keeps coming back."
+      }
+    },
+    "budget": {
+      "headline": "Spend with a plan.",
+      "sub": "Set your overall budget, then give every category that matters to you its own limit.",
+      "left": "left",
+      "spent": "Spent",
+      "budgetLabel": "Budget",
+      "flip": {
+        "phrase": "Know what's left.",
+        "figureLabel": "Categories on track",
+        "ariaLabel": "Flip to learn more about budgets",
+        "back": "Your budget moves with your spending. See what you have left overall, and which categories — food, transport, savings, and the rest — are approaching their limit before they go over."
+      }
+    },
+    "reports": {
+      "headline": "See the bigger picture.",
+      "sub": "Understand your income, expenses, and spending habits, all in one clear view.",
+      "month": "August",
+      "flip": {
+        "phrase": "Understand your spending.",
+        "figureLabel": "Spending this month",
+        "ariaLabel": "Flip to learn more about reports",
+        "back": "Reports bring every transaction together so you can see where your money goes and recognize patterns over time — without digging through statements to find them."
+      }
+    },
+    "goals": {
+      "headline": "Turn plans into progress.",
+      "sub": "Whether it's something you want, something you need, or somewhere you want to go — set a goal and keep your progress in sight.",
+      "flip": {
+        "phrase": "Clear progress.",
+        "figureLabel": "Saved toward Trip Home",
+        "ariaLabel": "Flip to learn more about goals",
+        "back": "Goals give your saving a destination. Set a target for anything — a laptop, a trip, a cushion for the unexpected — and watch it get closer every time you put something aside."
+      }
+    },
+    "goalNames": {
+      "macbook": "MacBook",
+      "tripHome": "Trip Home",
+      "emergencyFund": "Emergency Fund"
+    },
+    "faq": {
+      "title": "Still curious?",
+      "items": {
+        "whatIsCard": {
+          "q": "What is Lancherix Card?",
+          "a": "Lancherix Card is a personal finance management app. It brings your transactions, budgets, reports, and goals together so you always know where you stand."
+        },
+        "whoIsFor": {
+          "q": "Who is Lancherix Card for?",
+          "a": "Students, young adults, people living independently for the first time, and families — anyone who wants a clearer view of their personal finances."
+        },
+        "recurring": {
+          "q": "Can I track recurring expenses?",
+          "a": "Yes. Subscriptions, memberships, and other expenses that come back every month are tracked separately from everyday spending, so nothing catches you off guard."
+        },
+        "categoryBudgets": {
+          "q": "Can I create category budgets?",
+          "a": "Yes. Alongside your overall monthly budget, you can set an individual limit for each category — food, transport, school, and however many more you'd like."
+        },
+        "goals": {
+          "q": "Can I set financial goals?",
+          "a": "Yes. Create a goal for anything you're saving toward, set a target amount, and track your progress alongside your everyday budget."
+        },
+        "currencies": {
+          "q": "What currencies can I use?",
+          "a": "Lancherix Card supports multiple currencies, so your balances and budgets always show up the way you expect."
+        }
+      }
+    },
+    "studio": {
+      "headline": "Also discover Lancherix Studio",
+      "cta": "Learn more"
+    }
   }
 }

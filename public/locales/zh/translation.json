@@ -37,5 +37,108 @@
       "title": "打造专属于你的空间。",
       "description": "你的工作空间应该是个性化的。调整壁纸、强调色和主题，以匹配你的思维和工作方式。"
     }
+  },
+  "card": {
+    "hero": {
+      "headline": "掌控你的财务。",
+      "cta": "打开 Lancherix Card",
+      "imageAlt": "Lancherix Card"
+    },
+    "flip": {
+      "tapToLearnMore": "点击了解更多",
+      "tapToFlipBack": "点击翻回",
+      "defaultAriaLabel": "可翻转卡片"
+    },
+    "categories": {
+      "food": "餐饮",
+      "shopping": "购物",
+      "transport": "交通",
+      "transportRecurring": "交通 · 定期",
+      "school": "学习",
+      "leisure": "娱乐",
+      "savings": "储蓄"
+    },
+    "transactions": {
+      "headline": "清楚知道你把钱花在了哪里。",
+      "sub": "每一笔消费,在发生的瞬间就被整理好——包括每月都会出现的固定支出。",
+      "flip": {
+        "phrase": "每一笔支出，井井有条。",
+        "figureLabel": "本周支出",
+        "ariaLabel": "翻转以了解更多交易信息",
+        "back": "普通交易和定期支出并列显示,一杯咖啡和一项订阅一样容易找到。为你的支出分类,查看发生时间,识别哪些是反复出现的。"
+      }
+    },
+    "budget": {
+      "headline": "有计划地花钱。",
+      "sub": "设定你的总预算,再为每个对你重要的类别设置各自的限额。",
+      "left": "剩余",
+      "spent": "已花费",
+      "budgetLabel": "预算",
+      "flip": {
+        "phrase": "清楚知道还剩多少。",
+        "figureLabel": "在限额内的类别",
+        "ariaLabel": "翻转以了解更多预算信息",
+        "back": "你的预算会随支出而变化。查看总体还剩多少,以及餐饮、交通、储蓄等各个类别在超出限额之前的接近程度。"
+      }
+    },
+    "reports": {
+      "headline": "看清全局。",
+      "sub": "在一个清晰的视图中了解你的收入、支出和消费习惯。",
+      "month": "8 月",
+      "flip": {
+        "phrase": "了解你的消费。",
+        "figureLabel": "本月支出",
+        "ariaLabel": "翻转以了解更多报告信息",
+        "back": "报告汇总每一笔交易,让你看清钱花去了哪里,并随时间发现规律——无需翻查账单。"
+      }
+    },
+    "goals": {
+      "headline": "把计划变成进展。",
+      "sub": "无论是你想要的、需要的,还是想去的地方——设定一个目标,随时掌握你的进度。",
+      "flip": {
+        "phrase": "清晰的进展。",
+        "figureLabel": "为回家旅行已存",
+        "ariaLabel": "翻转以了解更多目标信息",
+        "back": "目标为你的储蓄指明方向。为任何事情设定目标——一台笔记本电脑、一次旅行、一笔应急储备——每存一笔钱,就离目标更近一步。"
+      }
+    },
+    "goalNames": {
+      "macbook": "MacBook",
+      "tripHome": "回家旅行",
+      "emergencyFund": "应急基金"
+    },
+    "faq": {
+      "title": "还有疑问？",
+      "items": {
+        "whatIsCard": {
+          "q": "什么是 Lancherix Card？",
+          "a": "Lancherix Card 是一款个人财务管理应用。它将你的交易、预算、报告和目标汇总在一起,让你随时清楚自己的财务状况。"
+        },
+        "whoIsFor": {
+          "q": "Lancherix Card 适合谁使用？",
+          "a": "学生、年轻人、首次独立生活的人以及家庭——任何想更清楚地了解自己个人财务的人。"
+        },
+        "recurring": {
+          "q": "我可以追踪定期支出吗？",
+          "a": "可以。订阅、会员费等每月重复出现的支出会与日常消费分开追踪,不会让你措手不及。"
+        },
+        "categoryBudgets": {
+          "q": "我可以设置分类预算吗？",
+          "a": "可以。除了每月总预算外,你还可以为每个类别单独设置限额——餐饮、交通、学习,以及你想添加的任意数量。"
+        },
+        "goals": {
+          "q": "我可以设定财务目标吗？",
+          "a": "可以。为你正在储蓄的任何事情设定目标,设置目标金额,并与日常预算一起追踪你的进度。"
+        },
+        "currencies": {
+          "q": "我可以使用哪些货币？",
+          "a": "Lancherix Card 支持多种货币,让你的余额和预算始终按你期望的方式显示。"
+        }
+      }
+    },
+    "studio": {
+      "headline": "也来了解 Lancherix Studio",
+      "cta": "了解更多"
+    }
   }
 }

@@ -37,5 +37,108 @@
       "title": "Torne-o seu.",
       "description": "Seu espaço de trabalho deve parecer pessoal. Ajuste papéis de parede, cores de destaque e temas de acordo com sua forma de pensar e trabalhar."
     }
+  },
+  "card": {
+    "hero": {
+      "headline": "Assuma o controle das suas finanças.",
+      "cta": "Abrir Lancherix Card",
+      "imageAlt": "Lancherix Card"
+    },
+    "flip": {
+      "tapToLearnMore": "Toque para saber mais",
+      "tapToFlipBack": "Toque para voltar",
+      "defaultAriaLabel": "Cartão que vira"
+    },
+    "categories": {
+      "food": "Alimentação",
+      "shopping": "Compras",
+      "transport": "Transporte",
+      "transportRecurring": "Transporte · Recorrente",
+      "school": "Escola",
+      "leisure": "Lazer",
+      "savings": "Poupança"
+    },
+    "transactions": {
+      "headline": "Saiba exatamente no que você está gastando.",
+      "sub": "Cada compra, organizada no momento em que acontece — incluindo as despesas que voltam todo mês.",
+      "flip": {
+        "phrase": "Cada despesa. Organizada.",
+        "figureLabel": "Gasto esta semana",
+        "ariaLabel": "Virar para saber mais sobre transações",
+        "back": "Transações e despesas recorrentes ficam lado a lado, então um café e uma assinatura são igualmente fáceis de encontrar. Categorize seus gastos, veja quando aconteceram e reconheça o que se repete."
+      }
+    },
+    "budget": {
+      "headline": "Gaste com um plano.",
+      "sub": "Defina seu orçamento geral e depois dê a cada categoria importante para você seu próprio limite.",
+      "left": "restante",
+      "spent": "Gasto",
+      "budgetLabel": "Orçamento",
+      "flip": {
+        "phrase": "Saiba o que resta.",
+        "figureLabel": "Categorias em dia",
+        "ariaLabel": "Virar para saber mais sobre orçamentos",
+        "back": "Seu orçamento se ajusta conforme seus gastos. Veja o que resta no geral e quais categorias — alimentação, transporte, poupança e as demais — estão se aproximando do limite antes de ultrapassá-lo."
+      }
+    },
+    "reports": {
+      "headline": "Veja o panorama geral.",
+      "sub": "Entenda sua renda, despesas e hábitos de consumo em uma visão clara e única.",
+      "month": "Agosto",
+      "flip": {
+        "phrase": "Entenda seus gastos.",
+        "figureLabel": "Gastos deste mês",
+        "ariaLabel": "Virar para saber mais sobre relatórios",
+        "back": "Os relatórios reúnem cada transação para que você veja para onde vai o seu dinheiro e identifique padrões ao longo do tempo — sem precisar vasculhar extratos."
+      }
+    },
+    "goals": {
+      "headline": "Transforme planos em progresso.",
+      "sub": "Seja algo que você quer, precisa, ou um lugar para onde quer ir — defina uma meta e acompanhe seu progresso.",
+      "flip": {
+        "phrase": "Progresso claro.",
+        "figureLabel": "Poupado para Viagem para Casa",
+        "ariaLabel": "Virar para saber mais sobre metas",
+        "back": "As metas dão um destino à sua poupança. Defina um objetivo para qualquer coisa — um notebook, uma viagem, uma reserva para imprevistos — e veja-o se aproximar cada vez que você guardar algo."
+      }
+    },
+    "goalNames": {
+      "macbook": "MacBook",
+      "tripHome": "Viagem para Casa",
+      "emergencyFund": "Fundo de Emergência"
+    },
+    "faq": {
+      "title": "Ainda com dúvidas?",
+      "items": {
+        "whatIsCard": {
+          "q": "O que é o Lancherix Card?",
+          "a": "O Lancherix Card é um app de gestão de finanças pessoais. Ele reúne suas transações, orçamentos, relatórios e metas em um só lugar, para que você sempre saiba como está."
+        },
+        "whoIsFor": {
+          "q": "Para quem é o Lancherix Card?",
+          "a": "Estudantes, jovens adultos, pessoas morando sozinhas pela primeira vez e famílias — qualquer pessoa que queira uma visão mais clara das suas finanças pessoais."
+        },
+        "recurring": {
+          "q": "Posso acompanhar despesas recorrentes?",
+          "a": "Sim. Assinaturas, mensalidades e outras despesas que se repetem todo mês são rastreadas separadamente dos gastos do dia a dia, para que nada te pegue de surpresa."
+        },
+        "categoryBudgets": {
+          "q": "Posso criar orçamentos por categoria?",
+          "a": "Sim. Além do seu orçamento mensal geral, você pode definir um limite individual para cada categoria — alimentação, transporte, escola e quantas outras quiser."
+        },
+        "goals": {
+          "q": "Posso definir metas financeiras?",
+          "a": "Sim. Crie uma meta para qualquer coisa que esteja poupando, defina um valor alvo e acompanhe seu progresso junto ao seu orçamento do dia a dia."
+        },
+        "currencies": {
+          "q": "Quais moedas posso usar?",
+          "a": "O Lancherix Card suporta várias moedas, para que seus saldos e orçamentos sempre apareçam como você espera."
+        }
+      }
+    },
+    "studio": {
+      "headline": "Conheça também o Lancherix Studio",
+      "cta": "Saiba mais"
+    }
   }
 }

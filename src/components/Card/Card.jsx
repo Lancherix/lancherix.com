@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import "./Card.css";
 
 import card from '../ArtWork/LancherixCard.png';
-/* import logoDarkBackgrounds from '../ArtWork/logotypeBlueWhite.png';
-import logoLightBackgrounds from '../ArtWork/logotypeBlueWhite.png'; */
 
 import airplaneIcon from '../ArtWork/icons/airplane.svg';
 import foodIcon from '../ArtWork/icons/food.svg';
@@ -14,15 +13,6 @@ import shoppingIcon from '../ArtWork/icons/shopping.svg';
 import savingsIcon from '../ArtWork/icons/savings.svg';
 import laptopIcon from '../ArtWork/icons/laptop.svg';
 import shieldIcon from '../ArtWork/icons/ticket.svg';
-
-/* ==================================================================
-   NOTE
-   - Icon assets are pulled from ../ArtWork/icons/*.svg. If any of
-     school / leisure / shopping / savings / laptop / shield don't
-     exist yet at that path, add them there (same convention as
-     food.svg / transport.svg / airplane.svg) or swap the ICONS map
-     below to point wherever they actually live.
-================================================================== */
 
 function formatMoney(n) {
   const sign = n < 0 ? "-" : "";
@@ -127,7 +117,8 @@ function Reveal({ as: Tag = "div", className = "", children }) {
 
 /* ---------------- flip card, used across every story ---------------- */
 
-function FlipCard({ phrase, figureLabel, figureValue, accent, children, ariaLabel }) {
+function FlipCard({ phrase, figureLabel, figureValue, accent, children, ariaLabel, hint }) {
+  const { t } = useTranslation();
   const [flipped, setFlipped] = useState(false);
   const toggle = () => setFlipped((f) => !f);
 
@@ -138,7 +129,7 @@ function FlipCard({ phrase, figureLabel, figureValue, accent, children, ariaLabe
       role="button"
       tabIndex={0}
       aria-pressed={flipped}
-      aria-label={ariaLabel || "Flip card"}
+      aria-label={ariaLabel || t('card.flip.defaultAriaLabel')}
       onClick={toggle}
       onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), toggle())}
     >
@@ -153,11 +144,11 @@ function FlipCard({ phrase, figureLabel, figureValue, accent, children, ariaLabe
               <div className="lcx-flip-hint">{figureLabel}</div>
             </div>
           )}
-          <div className="lcx-flip-hint">Tap to learn more</div>
+          <div className="lcx-flip-hint">{t('card.flip.tapToLearnMore')}</div>
         </div>
         <div className="lcx-flip-face lcx-flip-back">
           {children}
-          <div className="lcx-flip-hint">Tap to flip back</div>
+          <div className="lcx-flip-hint">{t('card.flip.tapToFlipBack')}</div>
         </div>
       </div>
     </div>
@@ -169,19 +160,20 @@ function FlipCard({ phrase, figureLabel, figureValue, accent, children, ariaLabe
 ================================================================== */
 
 function Hero() {
+  const { t } = useTranslation();
   const [visualRef, visualIn] = useInView({ threshold: 0.4 });
 
   return (
     <div className="card-hero">
-      <h1 className="lcx-hero-headline">Take control of your finances.</h1>
+      <h1 className="lcx-hero-headline">{t('card.hero.headline')}</h1>
 
       <a className="lcx-cta-button" href="https://card.lancherix.com">
-        Open Lancherix Card
+        {t('card.hero.cta')}
       </a>
 
       <div ref={visualRef} className={`lcx-hero-visual ${visualIn ? "lcx-in" : ""}`}>
         <div className="lcx-hero-card">
-          <img src={card} alt="Lancherix Card" />
+          <img src={card} alt={t('card.hero.imageAlt')} />
         </div>
       </div>
     </div>
@@ -193,37 +185,32 @@ function Hero() {
 ================================================================== */
 
 const TRANSACTIONS = [
-  { name: "Couche-Tard", cat: "Food", amount: -4.25, icon: "food", color: "#ff9500" },
-  { name: "La Banquise", cat: "Food", amount: -18.5, icon: "food", color: "#ff9500" },
-  { name: "Renaud-Bray", cat: "Shopping", amount: -18.99, icon: "shopping", color: "#34c759" },
-  { name: "STM Monthly Pass", cat: "Transport · Recurring", amount: -100, icon: "transport", color: "#0071e3" },
-  { name: "Café Aunja", cat: "Food", amount: -5.25, icon: "food", color: "#ff9500" },
+  { name: "Couche-Tard", catKey: "food", amount: -4.25, icon: "food", color: "#ff9500" },
+  { name: "La Banquise", catKey: "food", amount: -18.5, icon: "food", color: "#ff9500" },
+  { name: "Renaud-Bray", catKey: "shopping", amount: -18.99, icon: "shopping", color: "#34c759" },
+  { name: "STM Monthly Pass", catKey: "transportRecurring", amount: -100, icon: "transport", color: "#0071e3" },
+  { name: "Café Aunja", catKey: "food", amount: -5.25, icon: "food", color: "#ff9500" },
 ];
 
 function TransactionsStory() {
+  const { t } = useTranslation();
   const [visualRef, visualIn] = useInView();
 
   return (
     <div className="lcx-story">
       <div className="lcx-story-text">
         <Reveal>
-          <h2 className="lcx-headline">Know exactly what you're spending.</h2>
-          <p className="lcx-sub">
-            Every purchase, organized the moment it happens — including the expenses that come back every month.
-          </p>
+          <h2 className="lcx-headline">{t('card.transactions.headline')}</h2>
+          <p className="lcx-sub">{t('card.transactions.sub')}</p>
         </Reveal>
         <FlipCard
-          phrase="Every expense. Organized."
-          figureLabel="Spent this week"
+          phrase={t('card.transactions.flip.phrase')}
+          figureLabel={t('card.transactions.flip.figureLabel')}
           figureValue="$142.24"
           accent="var(--lcx-blue)"
-          ariaLabel="Flip to learn more about transactions"
+          ariaLabel={t('card.transactions.flip.ariaLabel')}
         >
-          <p>
-            Transactions and recurring expenses live side by side, so a coffee and a subscription
-            are just as easy to find. Categorize what you spend, see when it happened, and
-            recognize what keeps coming back.
-          </p>
+          <p>{t('card.transactions.flip.back')}</p>
         </FlipCard>
       </div>
 
@@ -238,7 +225,7 @@ function TransactionsStory() {
                   </span>
                   <span className="dw-tx-info">
                     <span className="dw-tx-name">{tx.name}</span>
-                    <span className="dw-tx-sub">{tx.cat}</span>
+                    <span className="dw-tx-sub">{t(`card.categories.${tx.catKey}`)}</span>
                   </span>
                   <span className="dw-tx-amount lcx-num">{formatMoney(tx.amount)}</span>
                 </div>
@@ -256,15 +243,16 @@ function TransactionsStory() {
 ================================================================== */
 
 const CATEGORIES = [
-  { name: "Food", spent: 258.3, limit: 350, color: "#ff9500", icon: "food" },
-  { name: "Transport", spent: 100, limit: 100, color: "#0071e3", icon: "transport" },
-  { name: "School", spent: 101.8, limit: 150, color: "#5856d6", icon: "school" },
-  { name: "Leisure", spent: 122, limit: 150, color: "#ff2d55", icon: "leisure" },
-  { name: "Shopping", spent: 78.6, limit: 100, color: "#34c759", icon: "shopping" },
-  { name: "Savings", spent: 200, limit: 200, color: "#ffcc00", icon: "savings" },
+  { key: "food", spent: 258.3, limit: 350, color: "#ff9500", icon: "food" },
+  { key: "transport", spent: 100, limit: 100, color: "#0071e3", icon: "transport" },
+  { key: "school", spent: 101.8, limit: 150, color: "#5856d6", icon: "school" },
+  { key: "leisure", spent: 122, limit: 150, color: "#ff2d55", icon: "leisure" },
+  { key: "shopping", spent: 78.6, limit: 100, color: "#34c759", icon: "shopping" },
+  { key: "savings", spent: 200, limit: 200, color: "#ffcc00", icon: "savings" },
 ];
 
 function BudgetRing({ spent, limit, inView }) {
+  const { t } = useTranslation();
   const size = 120;
   const stroke = 12;
   const radius = (size - stroke) / 2;
@@ -293,13 +281,14 @@ function BudgetRing({ spent, limit, inView }) {
       </svg>
       <div className="bt-ring-center">
         <span className="bt-ring-value lcx-num">{formatMoney(displayRemaining)}</span>
-        <span className="bt-ring-label">left</span>
+        <span className="bt-ring-label">{t('card.budget.left')}</span>
       </div>
     </div>
   );
 }
 
 function BudgetStory() {
+  const { t } = useTranslation();
   const [visualRef, visualIn] = useInView();
   const totalLimit = CATEGORIES.reduce((s, c) => s + c.limit, 0);
   const totalSpent = CATEGORIES.reduce((s, c) => s + c.spent, 0);
@@ -308,23 +297,17 @@ function BudgetStory() {
     <div className="lcx-story">
       <div className="lcx-story-text">
         <Reveal>
-          <h2 className="lcx-headline">Spend with a plan.</h2>
-          <p className="lcx-sub">
-            Set your overall budget, then give every category that matters to you its own limit.
-          </p>
+          <h2 className="lcx-headline">{t('card.budget.headline')}</h2>
+          <p className="lcx-sub">{t('card.budget.sub')}</p>
         </Reveal>
         <FlipCard
-          phrase="Know what's left."
-          figureLabel="Categories on track"
+          phrase={t('card.budget.flip.phrase')}
+          figureLabel={t('card.budget.flip.figureLabel')}
           figureValue="5 / 6"
           accent="var(--lcx-orange)"
-          ariaLabel="Flip to learn more about budgets"
+          ariaLabel={t('card.budget.flip.ariaLabel')}
         >
-          <p>
-            Your budget moves with your spending. See what you have left overall, and which
-            categories — food, transport, savings, and the rest — are approaching their limit
-            before they go over.
-          </p>
+          <p>{t('card.budget.flip.back')}</p>
         </FlipCard>
       </div>
 
@@ -334,11 +317,11 @@ function BudgetStory() {
             <BudgetRing spent={totalSpent} limit={totalLimit} inView={visualIn} />
             <div className="bt-overview-stats">
               <div>
-                <div className="bt-overview-stat-label">Spent</div>
+                <div className="bt-overview-stat-label">{t('card.budget.spent')}</div>
                 <div className="bt-overview-stat-value lcx-num">{formatMoney(totalSpent)}</div>
               </div>
               <div>
-                <div className="bt-overview-stat-label">Budget</div>
+                <div className="bt-overview-stat-label">{t('card.budget.budgetLabel')}</div>
                 <div className="bt-overview-stat-value lcx-num">{formatMoney(totalLimit)}</div>
               </div>
             </div>
@@ -348,13 +331,13 @@ function BudgetStory() {
             {CATEGORIES.map((cat) => {
               const pct = Math.min((cat.spent / cat.limit) * 100, 100);
               return (
-                <div className="bt-cat-row" key={cat.name}>
+                <div className="bt-cat-row" key={cat.key}>
                   <span className="bt-cat-icon" style={{ background: cat.color + "22" }}>
                     <Icon name={cat.icon} size={16} color={cat.color} />
                   </span>
                   <span className="bt-cat-info">
                     <span className="bt-cat-top">
-                      <span className="bt-cat-name">{cat.name}</span>
+                      <span className="bt-cat-name">{t(`card.categories.${cat.key}`)}</span>
                       <span className="bt-cat-amounts lcx-num">
                         {formatMoney(cat.spent)} / {formatMoney(cat.limit)}
                       </span>
@@ -381,14 +364,15 @@ function BudgetStory() {
 ================================================================== */
 
 const BREAKDOWN = [
-  { name: "Food", amount: 258.3, pct: 27, color: "#ff9500" },
-  { name: "Savings", amount: 200, pct: 21, color: "#ffcc00" },
-  { name: "Leisure", amount: 122, pct: 13, color: "#ff2d55" },
-  { name: "School", amount: 101.8, pct: 11, color: "#5856d6" },
-  { name: "Transport", amount: 100, pct: 11, color: "#0071e3" },
+  { key: "food", amount: 258.3, pct: 27, color: "#ff9500" },
+  { key: "savings", amount: 200, pct: 21, color: "#ffcc00" },
+  { key: "leisure", amount: 122, pct: 13, color: "#ff2d55" },
+  { key: "school", amount: 101.8, pct: 11, color: "#5856d6" },
+  { key: "transport", amount: 100, pct: 11, color: "#0071e3" },
 ];
 
 function ReportsStory() {
+  const { t } = useTranslation();
   const [visualRef, visualIn] = useInView();
   const income = 1250;
   const expenses = 950.69;
@@ -398,20 +382,17 @@ function ReportsStory() {
     <div className="lcx-story">
       <div className="lcx-story-text">
         <Reveal>
-          <h2 className="lcx-headline">See the bigger picture.</h2>
-          <p className="lcx-sub">Understand your income, expenses, and spending habits, all in one clear view.</p>
+          <h2 className="lcx-headline">{t('card.reports.headline')}</h2>
+          <p className="lcx-sub">{t('card.reports.sub')}</p>
         </Reveal>
         <FlipCard
-          phrase="Understand your spending."
-          figureLabel="Spending this month"
-          figureValue="27% Food"
+          phrase={t('card.reports.flip.phrase')}
+          figureLabel={t('card.reports.flip.figureLabel')}
+          figureValue={`27% ${t('card.categories.food')}`}
           accent="var(--lcx-green)"
-          ariaLabel="Flip to learn more about reports"
+          ariaLabel={t('card.reports.flip.ariaLabel')}
         >
-          <p>
-            Reports bring every transaction together so you can see where your money goes and
-            recognize patterns over time — without digging through statements to find them.
-          </p>
+          <p>{t('card.reports.flip.back')}</p>
         </FlipCard>
       </div>
 
@@ -430,15 +411,15 @@ function ReportsStory() {
                     style={{ height: visualIn ? `${(expenses / maxVal) * 100}%` : "0%" }}
                   />
                 </div>
-                <span className="dw-report-trend-label">August</span>
+                <span className="dw-report-trend-label">{t('card.reports.month')}</span>
               </div>
             </div>
 
             <div className="dw-report-cats">
               {BREAKDOWN.map((b) => (
-                <div className="dw-report-cat-row" key={b.name}>
+                <div className="dw-report-cat-row" key={b.key}>
                   <span className="dw-report-cat-dot" style={{ background: b.color }} />
-                  <span className="dw-report-cat-name">{b.name}</span>
+                  <span className="dw-report-cat-name">{t(`card.categories.${b.key}`)}</span>
                   <span className="dw-report-cat-bar-track">
                     <span
                       className="dw-report-cat-bar-fill"
@@ -461,12 +442,12 @@ function ReportsStory() {
 ================================================================== */
 
 const GOALS = [
-  { name: "MacBook", saved: 400, target: 1500, icon: "laptop", color: "#0071e3" },
-  { name: "Trip Home", saved: 520, target: 800, icon: "airplane", color: "#34c759" },
-  { name: "Emergency Fund", saved: 800, target: 1000, icon: "shield", color: "#ff2d55" },
+  { key: "macbook", saved: 400, target: 1500, icon: "laptop", color: "#0071e3" },
+  { key: "tripHome", saved: 520, target: 800, icon: "airplane", color: "#34c759" },
+  { key: "emergencyFund", saved: 800, target: 1000, icon: "shield", color: "#ff2d55" },
 ];
 
-function GoalRing({ tx, pct, color, icon, inView }) {
+function GoalRing({ pct, color, icon, inView }) {
   const size = 56;
   const stroke = 6;
   const radius = (size - stroke) / 2;
@@ -498,30 +479,24 @@ function GoalRing({ tx, pct, color, icon, inView }) {
 }
 
 function GoalsStory() {
+  const { t } = useTranslation();
   const [visualRef, visualIn] = useInView();
 
   return (
     <div className="lcx-story">
       <div className="lcx-story-text">
         <Reveal>
-          <h2 className="lcx-headline">Turn plans into progress.</h2>
-          <p className="lcx-sub">
-            Whether it's something you want, something you need, or somewhere you want to go —
-            set a goal and keep your progress in sight.
-          </p>
+          <h2 className="lcx-headline">{t('card.goals.headline')}</h2>
+          <p className="lcx-sub">{t('card.goals.sub')}</p>
         </Reveal>
         <FlipCard
-          phrase="Clear progress."
-          figureLabel="Saved toward Trip Home"
+          phrase={t('card.goals.flip.phrase')}
+          figureLabel={t('card.goals.flip.figureLabel')}
           figureValue="$520 / $800"
           accent="var(--lcx-pink)"
-          ariaLabel="Flip to learn more about goals"
+          ariaLabel={t('card.goals.flip.ariaLabel')}
         >
-          <p>
-            Goals give your saving a destination. Set a target for anything — a laptop, a trip, a
-            cushion for the unexpected — and watch it get closer every time you put something
-            aside.
-          </p>
+          <p>{t('card.goals.flip.back')}</p>
         </FlipCard>
       </div>
 
@@ -530,9 +505,9 @@ function GoalsStory() {
           {GOALS.map((g) => {
             const pct = Math.min(g.saved / g.target, 1);
             return (
-              <div className="lcx-panel dw-goal-card" key={g.name}>
+              <div className="lcx-panel dw-goal-card" key={g.key}>
                 <GoalRing pct={pct} color={g.color} icon={g.icon} inView={visualIn} />
-                <span className="dw-goal-card-name">{g.name}</span>
+                <span className="dw-goal-card-name">{t(`card.goalNames.${g.key}`)}</span>
                 <span className="dw-goal-card-amounts lcx-num">
                   {formatMoney(g.saved)} / {formatMoney(g.target)}
                 </span>
@@ -549,14 +524,7 @@ function GoalsStory() {
    FAQ
 ================================================================== */
 
-const FAQS = [
-  { q: "What is Lancherix Card?", a: "Lancherix Card is a personal finance management app. It brings your transactions, budgets, reports, and goals together so you always know where you stand." },
-  { q: "Who is Lancherix Card for?", a: "Students, young adults, people living independently for the first time, and families — anyone who wants a clearer view of their personal finances." },
-  { q: "Can I track recurring expenses?", a: "Yes. Subscriptions, memberships, and other expenses that come back every month are tracked separately from everyday spending, so nothing catches you off guard." },
-  { q: "Can I create category budgets?", a: "Yes. Alongside your overall monthly budget, you can set an individual limit for each category — food, transport, school, and however many more you'd like." },
-  { q: "Can I set financial goals?", a: "Yes. Create a goal for anything you're saving toward, set a target amount, and track your progress alongside your everyday budget." },
-  { q: "What currencies can I use?", a: "Lancherix Card supports multiple currencies, so your balances and budgets always show up the way you expect." },
-];
+const FAQ_KEYS = ["whatIsCard", "whoIsFor", "recurring", "categoryBudgets", "goals", "currencies"];
 
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false);
@@ -578,12 +546,17 @@ function FaqItem({ q, a }) {
 }
 
 function Faq() {
+  const { t } = useTranslation();
   return (
     <div className="card-qa">
       <div className="lcx-qa-inner">
-        <h2 className="lcx-qa-title">Still curious?</h2>
-        {FAQS.map((f) => (
-          <FaqItem key={f.q} q={f.q} a={f.a} />
+        <h2 className="lcx-qa-title">{t('card.faq.title')}</h2>
+        {FAQ_KEYS.map((key) => (
+          <FaqItem
+            key={key}
+            q={t(`card.faq.items.${key}.q`)}
+            a={t(`card.faq.items.${key}.a`)}
+          />
         ))}
       </div>
     </div>
@@ -592,19 +565,18 @@ function Faq() {
 
 /* ==================================================================
    Studio transition + closing CTA
-   (no footer here anymore — the global <Foot /> in App.js covers it)
+   (no footer here — the global <Foot /> in App.js covers it)
 ================================================================== */
 
 function StudioAndCta() {
+  const { t } = useTranslation();
   return (
     <div className="card-more">
       <div className="lcx-studio">
         <Reveal>
-          <h2 className="lcx-studio-headline">
-            Also discover Lancherix Studio
-          </h2>
+          <h2 className="lcx-studio-headline">{t('card.studio.headline')}</h2>
           <a className="lcx-cta-buttonB" href="https://www.lancherix.com/studio">
-            Learn more
+            {t('card.studio.cta')}
           </a>
         </Reveal>
       </div>
