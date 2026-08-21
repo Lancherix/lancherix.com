@@ -466,8 +466,8 @@ function ReportsStory() {
 
 const GOALS = [
   { name: "MacBook", saved: 100, target: 1500, icon: "laptop", color: "#0071e3" },
-  { name: "Trip Home", saved: 50, target: 800, icon: "airplane", color: "#34c759" },
-  { name: "Emergency Fund", saved: 50, target: 1000, icon: "shield", color: "#ff2d55" },
+  { name: "Trip Home", saved: 350, target: 800, icon: "airplane", color: "#34c759" },
+  { name: "Emergency Fund", saved: 640, target: 1000, icon: "shield", color: "#ff2d55" },
 ];
 
 function GoalRing({ tx, pct, color, icon, inView }) {
@@ -516,9 +516,9 @@ function GoalsStory() {
           </p>
         </Reveal>
         <FlipCard
-          phrase="Small steps. Clear progress."
+          phrase="Clear progress."
           figureLabel="saved toward Trip Home"
-          figureValue="$50 / $800"
+          figureValue="$350 / $800"
           accent="var(--lcx-pink)"
           ariaLabel="Flip to learn more about goals"
         >
@@ -601,42 +601,15 @@ function Faq() {
 ================================================================== */
 
 function StudioAndCta() {
-  const [tilesRef, tilesIn] = useInView();
-
   return (
     <div className="card-more">
       <div className="lcx-studio">
         <Reveal>
-          <p className="lcx-studio-lede">Your money is only part of the picture.</p>
           <h2 className="lcx-studio-headline">
-            Meet Lancherix <span>Studio</span>.
+            Also discover Lancherix <span>Studio</span>
           </h2>
-          <p className="lcx-studio-sub">
-            Organize your work, studies, chores, projects, and everything else that makes up your day.
-          </p>
-        </Reveal>
-
-        <div ref={tilesRef} className={`lcx-studio-tiles ${tilesIn ? "lcx-in" : ""}`}>
-          <div className="lcx-studio-tile" style={{ "--lcx-tile-color": "#0071e3" }}>Work</div>
-          <div className="lcx-studio-tile" style={{ "--lcx-tile-color": "#5856d6" }}>Studies</div>
-          <div className="lcx-studio-tile" style={{ "--lcx-tile-color": "#34c759" }}>Chores</div>
-          <div className="lcx-studio-tile" style={{ "--lcx-tile-color": "#ff9500" }}>Projects</div>
-        </div>
-
-        <Reveal>
-          <p className="lcx-studio-tagline">
-            One Lancherix account.
-            <br />
-            More of your life, organized.
-          </p>
-        </Reveal>
-      </div>
-
-      <div className="lcx-cta">
-        <Reveal>
-          <h2 className="lcx-cta-headline">Start managing your money.</h2>
-          <a className="lcx-cta-button" href="#get-started">
-            Get Started
+          <a className="lcx-cta-button" href="https://www.lancherix.com/studio">
+            Learn more
           </a>
         </Reveal>
       </div>

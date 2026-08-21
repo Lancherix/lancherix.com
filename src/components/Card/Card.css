@@ -821,7 +821,7 @@
 .lcx-flip-front {
   position: relative;
   background: var(--lcx-accent-soft, var(--lcx-blue-soft));
-  border-top: 3px solid var(--lcx-flip-accent, var(--lcx-blue));
+  border: 1px solid var(--lcx-flip-accent, var(--lcx-blue));
 }
 
 .lcx-flip-back {
@@ -951,123 +951,46 @@
   max-width: 60ch;
 }
 
-/* ---- Studio transition + closing CTA ---- */
+/* ---- Studio callout ---- */
 
 .card-more {
   position: static;
-  background: var(--lcx-dark);
-  color: var(--lcx-on-dark);
+  background: linear-gradient(135deg, #0071e3 0%, #0058c2 45%, #5856d6 100%);
+  color: #fff;
 }
 
 .lcx-studio {
   position: relative;
-  padding: clamp(90px, 14vw, 170px) var(--lcx-pad) clamp(60px, 10vw, 110px);
+  padding: clamp(90px, 14vw, 170px) var(--lcx-pad);
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
-  overflow: hidden;
-}
-
-.lcx-studio::before {
-  content: "";
-  position: absolute;
-  inset: -20% -10% auto -10%;
-  height: 420px;
-  background: radial-gradient(ellipse 60% 60% at 50% 30%, var(--lcx-studio-soft), transparent 70%);
-  pointer-events: none;
-}
-
-.lcx-studio-lede {
-  font-family: var(--lcx-font-display);
-  font-weight: 600;
-  font-size: clamp(20px, 2.6vw, 26px);
-  color: var(--lcx-on-dark-muted);
-  margin: 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 }
 
 .lcx-studio-headline {
   font-family: var(--lcx-font-display);
   font-weight: 800;
-  font-size: clamp(34px, 6vw, 62px);
+  font-size: clamp(30px, 5vw, 50px);
   letter-spacing: -0.02em;
-  margin: 0 0 20px;
-}
-
-.lcx-studio-headline span {
-  color: var(--lcx-studio);
-}
-
-.lcx-studio-sub {
-  font-size: clamp(16px, 2vw, 19px);
-  color: var(--lcx-on-dark-muted);
-  max-width: 42ch;
-  margin: 0 auto 48px;
-}
-
-.lcx-studio-tiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
-  margin-bottom: 56px;
-}
-
-.lcx-studio-tile {
-  background: var(--lcx-dark-raised);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 3px solid var(--lcx-tile-color, var(--lcx-studio));
-  border-radius: var(--lcx-radius-sm);
-  padding: 22px 12px;
-  font-size: 13px;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.lcx-studio-tiles.lcx-in .lcx-studio-tile {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.lcx-studio-tiles.lcx-in .lcx-studio-tile:nth-child(1) {
-  transition-delay: 0.05s;
-}
-.lcx-studio-tiles.lcx-in .lcx-studio-tile:nth-child(2) {
-  transition-delay: 0.15s;
-}
-.lcx-studio-tiles.lcx-in .lcx-studio-tile:nth-child(3) {
-  transition-delay: 0.25s;
-}
-.lcx-studio-tiles.lcx-in .lcx-studio-tile:nth-child(4) {
-  transition-delay: 0.35s;
-}
-
-.lcx-studio-tagline {
-  font-family: var(--lcx-font-display);
-  font-weight: 700;
-  font-size: clamp(20px, 3vw, 30px);
-  letter-spacing: -0.01em;
+  line-height: 1.1;
   margin: 0;
 }
 
-.lcx-cta {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: clamp(64px, 10vw, 110px) var(--lcx-pad);
-  text-align: center;
-}
-
-.lcx-cta-headline {
-  font-family: var(--lcx-font-display);
-  font-weight: 800;
-  font-size: clamp(28px, 4.5vw, 44px);
-  letter-spacing: -0.02em;
-  margin: 0 0 28px;
+.lcx-studio-headline span {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+  text-underline-offset: 6px;
 }
 
 .lcx-cta-button {
   display: inline-block;
-  background: var(--lcx-blue);
-  color: #fff;
+  background: #fff;
+  color: var(--lcx-blue);
   font-family: var(--lcx-font-display);
   font-weight: 600;
   font-size: 15px;
@@ -1081,5 +1004,5 @@
 
 .lcx-cta-button:hover {
   transform: translateY(-1px);
-  background: #1a82f0;
+  background: #f0f6ff;
 }
