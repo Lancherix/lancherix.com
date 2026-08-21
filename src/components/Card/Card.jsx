@@ -348,12 +348,12 @@ function BudgetStory() {
           </div>
 
           <div className="lcx-cat-list">
-            {CATEGORIES.map((tx, cat) => {
+            {CATEGORIES.map((cat) => {
               const pct = Math.min((cat.spent / cat.limit) * 100, 100);
               return (
                 <div className="bt-cat-row" key={cat.name}>
                   <span className="bt-cat-icon" style={{ background: cat.color + "22" }}>
-                    <Icon name={tx.icon} size={16} color={tx.color} />
+                    <Icon name={cat.icon} size={16} color={cat.color} />
                   </span>
                   <span className="bt-cat-info">
                     <span className="bt-cat-top">
@@ -495,7 +495,7 @@ function GoalRing({ tx, pct, color, icon, inView }) {
         />
       </svg>
       <div className="dw-goal-ring-center">
-        <Icon name={tx.icon} size={20} color={tx.color} />
+        <Icon name={icon} size={20} color={color} />
       </div>
     </div>
   );
