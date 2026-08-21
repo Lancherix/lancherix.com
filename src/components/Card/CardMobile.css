@@ -1,0 +1,16 @@
+.cardMobile {
+  min-height: 100vh;
+  background: var(--home-bg);
+  color: var(--home-text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  line-height: 1.5;
+}

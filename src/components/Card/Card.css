@@ -1,153 +1,16 @@
-/* ============================================================
-   Card — Apple-style light mode feature card
-   System font stack, quiet hairline-bordered surface, minimal
-   motion. Meant to sit in a grid on the promo homepage.
-   ============================================================ */
+.card {
+  min-height: 100vh;
+  background: var(--home-bg);
+  color: var(--home-text);
 
-.promo-card {
-  --card-accent: #0071e3;
-  --card-bg: #f5f5f7;
-  --card-surface: #ffffff;
-  --card-border: #d2d2d7;
-  --card-text: #1d1d1f;
-  --card-text-secondary: #6e6e73;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 
-  display: flex;
-  flex-direction: column;
-  background: var(--card-surface);
-  border: 1px solid var(--card-border);
-  border-radius: 20px;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Roboto,
-    Arial, sans-serif;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.promo-card--linked {
-  cursor: pointer;
-}
-
-.promo-card--linked:hover {
-  border-color: #b8b8bd;
-  transform: translateY(-2px);
-}
-
-.promo-card--linked:focus-visible {
-  outline: 2px solid var(--card-accent);
-  outline-offset: 2px;
-}
-
-/* ---------------- Media ---------------- */
-
-.promo-card-media {
-  background: var(--card-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px 32px 0;
-}
-
-.promo-card--large .promo-card-media {
-  padding: 48px 48px 0;
-}
-
-.promo-card-media img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px 12px 0 0;
-}
-
-/* ---------------- Body ---------------- */
-
-.promo-card-body {
-  padding: 24px 28px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.promo-card--large .promo-card-body {
-  padding: 28px 40px 40px;
-  gap: 8px;
-}
-
-.promo-card-eyebrow {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--card-accent);
-  letter-spacing: 0.01em;
-}
-
-.promo-card-title {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--card-text);
-  letter-spacing: -0.01em;
-}
-
-.promo-card--large .promo-card-title {
-  font-size: 28px;
-}
-
-.promo-card-description {
-  margin: 0;
-  font-size: 15px;
   line-height: 1.5;
-  color: var(--card-text-secondary);
-  font-weight: 400;
-}
-
-.promo-card-link {
-  margin-top: 10px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--card-accent);
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.promo-card-chevron {
-  transition: transform 0.15s ease;
-}
-
-.promo-card--linked:hover .promo-card-chevron {
-  transform: translateX(2px);
-}
-
-/* ---------------- Responsive ---------------- */
-
-@media (max-width: 480px) {
-  .promo-card-media,
-  .promo-card--large .promo-card-media {
-    padding: 24px 24px 0;
-  }
-
-  .promo-card-body,
-  .promo-card--large .promo-card-body {
-    padding: 20px 22px 24px;
-  }
-
-  .promo-card-title,
-  .promo-card--large .promo-card-title {
-    font-size: 20px;
-  }
-}
-
-/* ---------------- Reduced motion ---------------- */
-
-@media (prefers-reduced-motion: reduce) {
-  .promo-card,
-  .promo-card-chevron {
-    transition: none;
-  }
-
-  .promo-card--linked:hover {
-    transform: none;
-  }
 }
