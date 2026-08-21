@@ -19,7 +19,7 @@ function Studio() {
   };
 
   return (
-    <div className="Home">
+    <div className="Home-Studio">
       <div className='Home-HeroStudio'>
         <img src={logoStudio} alt={t('studio.hero.logoAlt')} />
         <h1>{t('studio.hero.title')}</h1>
