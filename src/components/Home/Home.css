@@ -255,6 +255,7 @@
 
 .Home-HeroCardContent button:hover {
   background: var(--home-text);
+  color: gray;
 }
 
 .Home-HeroCardVisual {
