@@ -10,8 +10,6 @@ import card from "../ArtWork/LancherixCard.png";
 const slides = [
   { id: 1, color: "#0071e3" },
   { id: 2, color: "#34c759" },
-  { id: 3, color: "#ff9f0a" },
-  { id: 4, color: "#7c4dff" },
 ];
 
 const REPEATS = 100;
