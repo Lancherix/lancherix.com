@@ -5,6 +5,7 @@ import "./Home.css";
 import left from "../ArtWork/icons/arrowLeft.svg";
 import right from "../ArtWork/icons/arrowRight.svg";
 import logoStudio from "../ArtWork/LancherixStudioLogoWhiteWhite.png";
+import card from "../ArtWork/LancherixCard.png";
 
 const slides = [
   { id: 1, color: "#0071e3" },
@@ -102,7 +103,11 @@ const Home = () => {
           {carouselSlides.map((slide, index) => (
             <div
               className={`hero-slide ${
-                slide.id === 1 ? "hero-slide-studio" : ""
+                slide.id === 1
+                  ? "hero-slide-studio"
+                  : slide.id === 2
+                  ? "hero-slide-card"
+                  : ""
               }`}
               key={`${slide.id}-${index}`}
               style={{
@@ -115,18 +120,19 @@ const Home = () => {
                     src={logoStudio}
                     alt={t("studio.hero.logoAlt")}
                   />
-                  <h1 className="Home-HeroStdioTitle">{t("studio.hero.title")}</h1>
+                  <h1 className="Home-HeroStdioTitle">
+                    {t("studio.hero.title")}
+                  </h1>
                   <p>{t("studio.hero.description")}</p>
                   <div>
                     <button
                       onClick={() =>
                         window.open(
-                          "https://www.lancherix.com/studio",
-                          "noopener,noreferrer"
+                          "https://www.lancherix.com/studio"
                         )
                       }
                     >
-                      {t('card.studio.cta')}
+                      {t("card.studio.cta")}
                     </button>
                     <button
                       onClick={() =>
@@ -138,6 +144,49 @@ const Home = () => {
                       }
                     >
                       {t("nav.login")}
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {slide.id === 2 && (
+                <div className="Home-HeroCard">
+                  <img
+                    src={card}
+                    alt={t("card.hero.imageAlt")}
+                  />
+
+                  <h1>
+                    {t("card.hero.headline")}
+                  </h1>
+
+                  <p>
+                    {t("card.hero.sub")}
+                  </p>
+
+                  <div>
+                    <button
+                      onClick={() =>
+                        window.open(
+                          "https://www.lancherix.com/card",
+                          "_blank",
+                          "noopener,noreferrer"
+                        )
+                      }
+                    >
+                      {t("card.hero.cta")}
+                    </button>
+
+                    <button
+                      onClick={() =>
+                        window.open(
+                          "https://card.lancherix.com",
+                          "_blank",
+                          "noopener,noreferrer"
+                        )
+                      }
+                    >
+                      {t("nav.open")}
                     </button>
                   </div>
                 </div>
