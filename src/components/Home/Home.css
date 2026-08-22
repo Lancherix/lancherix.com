@@ -176,94 +176,164 @@
   font-size: 4rem;
 }
 
+/* ========================================
+   LANCERIX CARD HERO
+======================================== */
+
 .Home-HeroCard {
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background-color: #34c759;
-  background: linear-gradient(180deg, #34c759 0%, #28b84e 100%);
-  color: white;
-  padding: 0;
-  font-size: 2rem;
+  padding: 0 10vw;
+  box-sizing: border-box;
   overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse 60% 50% at 20% 10%,
+      var(--lcx-blue-soft),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 85% 30%,
+      var(--lcx-orange-soft),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 60% 95%,
+      var(--lcx-purple-soft),
+      transparent 60%
+    ),
+    var(--cal-bg);
+  color: var(--home-text);
 }
 
-.Home-HeroCard img {
-  width: 42vh;
-  height: auto;
-  margin-top: 10vh;
-  object-fit: contain;
-  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.2));
+.Home-HeroCardContent {
+  position: relative;
+  z-index: 2;
+  width: 48%;
+  max-width: 650px;
 }
 
-.Home-HeroCard h1 {
-  font-size: 4rem;
-  line-height: 1.05;
-  margin-top: 3vh;
-  margin-bottom: 2.5vh;
-  text-align: center;
-  letter-spacing: -0.04em;
-}
-
-.Home-HeroCard p {
-  font-size: 1.4rem;
-  text-align: center;
-  width: 60vw;
-  max-width: 800px;
+.Home-HeroCardContent h1 {
   margin: 0;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
 }
 
-.Home-HeroCard > div {
+.Home-HeroCardContent p {
+  width: 90%;
+  margin: 3vh 0 0;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.Home-HeroCardContent button {
+  margin-top: 4vh;
+  padding: 1.3vh 2vh;
+  border: 1px solid var(--home-text);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--home-text);
+  font-size: 1.1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.Home-HeroCardContent button:hover {
+  background: var(--home-text);
+  color: var(--cal-bg);
+  transform: translateY(-2px);
+}
+
+.Home-HeroCardVisual {
+  position: relative;
+  z-index: 1;
+  width: 45%;
+  height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.Home-HeroCard button {
-  font-size: 1.2rem;
-  color: white;
-  border: 1px solid white;
-  background-color: transparent;
-  padding: 1.3vh 1.8vh;
-  margin: 4vh 1vw 0;
-  width: auto;
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease,
-    background-color 0.2s ease;
+.Home-HeroCardVisual::before {
+  content: "";
+  position: absolute;
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  filter: blur(70px);
 }
 
-.Home-HeroCard button:hover {
-  cursor: pointer;
-  border-color: lightgray;
-  color: lightgray;
-  background-color: rgba(255, 255, 255, 0.08);
+.Home-HeroCardVisual img {
+  position: relative;
+  width: min(34vw, 520px);
+  max-height: 70vh;
+  object-fit: contain;
+  transform: rotate(-8deg);
+  filter: drop-shadow(
+    0 35px 35px rgba(0, 0, 0, 0.18)
+  );
+  transition: transform 0.5s ease;
 }
+
+.Home-HeroCard:hover .Home-HeroCardVisual img {
+  transform: rotate(-4deg) translateY(-8px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
 
 @media (max-width: 768px) {
-  .Home-HeroCard img {
-    width: 58vw;
-    margin-top: 10vh;
+  .Home-HeroCard {
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vh 7vw 10vh;
+    text-align: center;
   }
 
-  .Home-HeroCard h1 {
-    font-size: 2.5rem;
-    margin-top: 3vh;
-    margin-bottom: 2.5vh;
+  .Home-HeroCardContent {
+    width: 100%;
+    max-width: 600px;
   }
 
-  .Home-HeroCard p {
-    width: 85vw;
+  .Home-HeroCardContent h1 {
+    font-size: 3rem;
+  }
+
+  .Home-HeroCardContent p {
+    width: 100%;
     font-size: 1.1rem;
   }
 
-  .Home-HeroCard button {
-    font-size: 1rem;
-    margin: 3vh 1.5vw 0;
+  .Home-HeroCardContent button {
+    margin-top: 3vh;
+  }
+
+  .Home-HeroCardVisual {
+    width: 100%;
+    height: 42%;
+    margin-top: 3vh;
+  }
+
+  .Home-HeroCardVisual img {
+    width: 65vw;
+    max-height: 35vh;
+    transform: rotate(-8deg);
+  }
+
+  .Home-HeroCard:hover .Home-HeroCardVisual img {
+    transform: rotate(-5deg);
   }
 }

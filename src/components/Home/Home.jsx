@@ -102,13 +102,12 @@ const Home = () => {
         >
           {carouselSlides.map((slide, index) => (
             <div
-              className={`hero-slide ${
-                slide.id === 1
+              className={`hero-slide ${slide.id === 1
                   ? "hero-slide-studio"
                   : slide.id === 2
-                  ? "hero-slide-card"
-                  : ""
-              }`}
+                    ? "hero-slide-card"
+                    : ""
+                }`}
               key={`${slide.id}-${index}`}
               style={{
                 backgroundColor: slide.color,
@@ -151,20 +150,9 @@ const Home = () => {
 
               {slide.id === 2 && (
                 <div className="Home-HeroCard">
-                  <img
-                    src={card}
-                    alt={t("card.hero.imageAlt")}
-                  />
-
-                  <h1>
-                    {t("card.hero.headline")}
-                  </h1>
-
-                  <p>
-                    {t("card.hero.sub")}
-                  </p>
-
-                  <div>
+                  <div className="Home-HeroCardContent">
+                    <h1>{t("card.hero.headline")}</h1>
+                    <p>{t("card.hero.sub")}</p>
                     <button
                       onClick={() =>
                         window.open(
@@ -176,18 +164,13 @@ const Home = () => {
                     >
                       {t("card.hero.cta")}
                     </button>
+                  </div>
 
-                    <button
-                      onClick={() =>
-                        window.open(
-                          "https://card.lancherix.com",
-                          "_blank",
-                          "noopener,noreferrer"
-                        )
-                      }
-                    >
-                      {t("nav.open")}
-                    </button>
+                  <div className="Home-HeroCardVisual">
+                    <img
+                      src={card}
+                      alt={t("card.hero.imageAlt")}
+                    />
                   </div>
                 </div>
               )}
@@ -215,9 +198,8 @@ const Home = () => {
           {slides.map((slide, index) => (
             <button
               key={slide.id}
-              className={`hero-dot ${
-                visibleSlide === index ? "active" : ""
-              }`}
+              className={`hero-dot ${visibleSlide === index ? "active" : ""
+                }`}
               onClick={() => goToSlide(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
