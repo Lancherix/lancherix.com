@@ -115,7 +115,7 @@ const Home = () => {
                     src={logoStudio}
                     alt={t("studio.hero.logoAlt")}
                   />
-                  <h1>{t("studio.hero.title")}</h1>
+                  <h1 className="Home-HeroStdioTitle">{t("studio.hero.title")}</h1>
                   <p>{t("studio.hero.description")}</p>
                   <div>
                     <button

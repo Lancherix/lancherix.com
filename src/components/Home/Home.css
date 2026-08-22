@@ -10,7 +10,6 @@
     "Helvetica Neue",
     Arial,
     sans-serif;
-  line-height: 1.5;
 }
 
 /* ========================================
@@ -171,4 +170,8 @@
   .hero-dots {
     bottom: 22px;
   }
+}
+
+.Home-HeroStdioTitle {
+  font-size: 4rem;
 }
