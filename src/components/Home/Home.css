@@ -83,19 +83,9 @@
     background 0.25s ease;
 }
 
-
-/*
- * Show arrows when hovering over the hero
- */
-
 .hero:hover .hero-arrow {
   opacity: 1;
 }
-
-
-/*
- * Left arrow area
- */
 
 .hero-arrow-left {
   left: 0;
@@ -105,11 +95,6 @@
   padding-left: 28px;
 }
 
-
-/*
- * Right arrow area
- */
-
 .hero-arrow-right {
   right: 0;
 
@@ -118,19 +103,9 @@
   padding-right: 28px;
 }
 
-
-/*
- * Subtle hover area
- */
-
 .hero-arrow:hover {
   background: rgba(0, 0, 0, 0.04);
 }
-
-
-/* ========================================
-   ARROW SVG
-======================================== */
 
 .hero-arrow img {
   width: 20px;
@@ -138,10 +113,6 @@
 
   object-fit: contain;
 
-  /*
-   * Turn the SVG white regardless of its
-   * original single color.
-   */
   filter:
     brightness(0)
     invert(1);
@@ -153,20 +124,9 @@
     opacity 0.2s ease;
 }
 
-
-/*
- * Make the arrow slightly more visible
- * when directly hovering over it.
- */
-
 .hero-arrow:hover img {
   opacity: 0.95;
 }
-
-
-/*
- * Small directional movement
- */
 
 .hero-arrow-left:hover img {
   transform: translateX(-2px);
@@ -197,9 +157,6 @@
   z-index: 20;
 }
 
-
-/* Individual dot */
-
 .hero-dot {
   width: 7px;
   height: 7px;
@@ -218,19 +175,9 @@
     background 0.25s ease;
 }
 
-
-/*
- * Dot hover
- */
-
 .hero-dot:hover {
   background: rgba(255, 255, 255, 0.8);
 }
-
-
-/*
- * Active dot
- */
 
 .hero-dot.active {
   background: rgba(255, 255, 255, 0.95);

@@ -11,14 +11,32 @@ const slides = [
   { id: 4, color: "#7c4dff" },
 ];
 
-const Home = () => {
-  const carouselSlides = [...slides, slides[0]];
+/*
+ * Repeat the slides many times.
+ *
+ * This gives the carousel plenty of room to move
+ * forward and backward without ever reaching an
+ * empty slide.
+ */
+const REPEATS = 100;
 
-  const [activeSlide, setActiveSlide] = useState(0);
+const carouselSlides = Array.from(
+  { length: REPEATS },
+  () => slides
+).flat();
+
+const MIDDLE = Math.floor(REPEATS / 2) * slides.length;
+
+const Home = () => {
+  const [activeSlide, setActiveSlide] = useState(MIDDLE);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
 
   /*
-   * Automatic slide timer
+   * Automatic sliding.
+   *
+   * Every time activeSlide changes, the timer starts
+   * again. This means manual navigation also resets
+   * the timer automatically.
    */
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,28 +47,41 @@ const Home = () => {
   }, [activeSlide]);
 
   /*
-   * When reaching the cloned first slide,
-   * wait for the animation to finish and
-   * silently return to the real first slide.
+   * Keep the carousel safely around the middle.
+   *
+   * Because there are many copies of the slides,
+   * this reset is effectively invisible.
    */
   useEffect(() => {
-    if (activeSlide !== slides.length) {
-      return;
-    }
-
-    const resetTimer = setTimeout(() => {
+    if (
+      activeSlide < MIDDLE - 20 ||
+      activeSlide > MIDDLE + 20
+    ) {
       setTransitionEnabled(false);
-      setActiveSlide(0);
+
+      const normalizedSlide =
+        activeSlide % slides.length;
+
+      setActiveSlide(
+        MIDDLE + normalizedSlide
+      );
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           setTransitionEnabled(true);
         });
       });
-    }, 800);
-
-    return () => clearTimeout(resetTimer);
+    }
   }, [activeSlide]);
+
+  /*
+   * Next
+   */
+  const goToNext = () => {
+    setTransitionEnabled(true);
+
+    setActiveSlide((current) => current + 1);
+  };
 
   /*
    * Previous
@@ -58,44 +89,45 @@ const Home = () => {
   const goToPrevious = () => {
     setTransitionEnabled(true);
 
-    if (activeSlide === 0) {
-      setActiveSlide(slides.length - 1);
-    } else {
-      setActiveSlide((current) => current - 1);
-    }
+    setActiveSlide((current) => current - 1);
   };
 
   /*
-   * Next
-   */
-  const goToNext = () => {
-    setTransitionEnabled(true);
-    setActiveSlide((current) => current + 1);
-  };
-
-  /*
-   * Dots
-   */
-  const goToSlide = (index) => {
-    setTransitionEnabled(true);
-
-    /*
-     * If we're on slide 4 and choose slide 1,
-     * use the cloned slide so the movement stays forward.
-     */
-    if (activeSlide === slides.length - 1 && index === 0) {
-      setActiveSlide(slides.length);
-    } else {
-      setActiveSlide(index);
-    }
-  };
-
-  /*
-   * The cloned first slide still represents
-   * the first pagination dot.
+   * Current visible slide.
+   *
+   * The modulo operation converts the large internal
+   * index back into 0, 1, 2 or 3.
    */
   const visibleSlide =
-    activeSlide === slides.length ? 0 : activeSlide;
+    ((activeSlide % slides.length) + slides.length) %
+    slides.length;
+
+  /*
+   * Go directly to a slide.
+   */
+  const goToSlide = (index) => {
+    const current = visibleSlide;
+
+    /*
+     * Calculate the shortest forward/backward
+     * distance to the requested slide.
+     */
+    let difference = index - current;
+
+    if (difference > slides.length / 2) {
+      difference -= slides.length;
+    }
+
+    if (difference < -slides.length / 2) {
+      difference += slides.length;
+    }
+
+    setTransitionEnabled(true);
+
+    setActiveSlide(
+      (currentIndex) => currentIndex + difference
+    );
+  };
 
   return (
     <main className="home">
@@ -122,7 +154,7 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Previous */}
+        {/* Previous arrow */}
         <button
           className="hero-arrow hero-arrow-left"
           onClick={goToPrevious}
@@ -131,7 +163,7 @@ const Home = () => {
           <img src={left} alt="" />
         </button>
 
-        {/* Next */}
+        {/* Next arrow */}
         <button
           className="hero-arrow hero-arrow-right"
           onClick={goToNext}
