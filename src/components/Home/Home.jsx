@@ -5,6 +5,7 @@ import "./Home.css";
 import left from "../ArtWork/icons/arrowLeft.svg";
 import right from "../ArtWork/icons/arrowRight.svg";
 import logoStudio from "../ArtWork/LancherixStudioLogoWhiteWhite.png";
+import logoCard from '../ArtWork/LancherixCardLogoBlueBlackAffinity.png';
 import card from "../ArtWork/LancherixCard.png";
 
 const slides = [
@@ -147,6 +148,10 @@ const Home = () => {
               {slide.id === 2 && (
                 <div className="Home-HeroCard">
                   <div className="Home-HeroCardContent">
+                    <img
+                      src={logoCard}
+                      alt={t("studio.hero.logoAlt")}
+                    />
                     <h1>{t("card.hero.headline")}</h1>
 
                     <div className="Home-HeroCardButtons">
