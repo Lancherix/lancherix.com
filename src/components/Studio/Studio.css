@@ -86,7 +86,6 @@
     width: auto;
     border-radius: 7px;
     transition: transform 0.15s ease, background 0.15s ease;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .Home-HeroStudio button:hover {
