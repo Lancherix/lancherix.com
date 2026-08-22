@@ -254,7 +254,6 @@
 
 .Home-HeroCardContent button:hover {
   background: var(--home-text);
-  color: lightgray;
   transform: translateY(-1px);
 }
 
