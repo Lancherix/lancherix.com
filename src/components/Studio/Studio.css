@@ -81,9 +81,10 @@
     color: white;
     border: 1px solid white;
     background-color: transparent;
-    padding: 1.3vh;
+    padding: 1.3vh 2vh;
     margin: 4vh 1vw 0 1vw;
     width: auto;
+    border-radius: 7px;
 }
 
 .Home-HeroStudio button:hover {
