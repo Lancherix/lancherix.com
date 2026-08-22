@@ -247,15 +247,15 @@
   font-size: 1.1rem;
   font-family: inherit;
   cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   border-radius: 7px;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
 .Home-HeroCardContent button:hover {
   background: var(--home-text);
-  color: gray;
+  color: lightgray;
+  transform: translateY(-1px);
 }
 
 .Home-HeroCardVisual {

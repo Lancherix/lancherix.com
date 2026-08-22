@@ -85,12 +85,14 @@
     margin: 4vh 1vw 0 1vw;
     width: auto;
     border-radius: 7px;
+    transition: transform 0.15s ease, background 0.15s ease;
 }
 
 .Home-HeroStudio button:hover {
     cursor: pointer;
     border: 1x solid lightgray;
     color: lightgray;
+    transform: translateY(-1px);
 }
 
 .Home-SecondaryStudio {
