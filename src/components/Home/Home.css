@@ -1,10 +1,7 @@
 .home {
   min-height: 100vh;
-
   background: var(--home-bg);
-
   color: var(--home-text);
-
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -13,10 +10,8 @@
     "Helvetica Neue",
     Arial,
     sans-serif;
-
   line-height: 1.5;
 }
-
 
 /* ========================================
    HERO
@@ -24,13 +19,10 @@
 
 .hero {
   position: relative;
-
   width: 100%;
   height: 100vh;
-
   overflow: hidden;
 }
-
 
 /* ========================================
    SLIDES
@@ -38,22 +30,17 @@
 
 .hero-track {
   display: flex;
-
   width: 100%;
   height: 100%;
-
   will-change: transform;
 }
 
 .hero-slide {
   position: relative;
-
   flex: 0 0 100%;
-
   width: 100%;
   height: 100%;
 }
-
 
 /* ========================================
    STUDIO HERO
@@ -65,224 +52,67 @@
 
 .Home-HeroStudio {
   position: relative;
-
-  width: 100%;
-  height: 100%;
-
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  color: white;
-}
-
-
-/* Background image */
-
-.Home-HeroStudio-background {
-  position: absolute;
-
-  inset: 0;
-
-  background-image: url("../ArtWork/backgroundImage.jpeg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  z-index: 0;
-}
-
-
-/* Dark overlay */
-
-.Home-HeroStudio-background::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.08),
-      rgba(0, 0, 0, 0.35)
-    );
-}
-
-
-/* Content */
-
-.Home-HeroStudio-content {
-  position: relative;
-
-  z-index: 1;
-
-  width: min(720px, 85%);
-
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-
-/* Logo */
-
-.Home-HeroStudio-content > img {
-  width: 92px;
-  height: auto;
-
-  margin-bottom: 24px;
-
-  object-fit: contain;
-}
-
-
-/* Title */
-
-.Home-HeroStudio-content h1 {
-  margin: 0;
-
-  font-size: clamp(
-    42px,
-    6vw,
-    76px
-  );
-
-  line-height: 1.02;
-
-  letter-spacing: -0.045em;
-
-  font-weight: 700;
-}
-
-
-/* Description */
-
-.Home-HeroStudio-content p {
-  max-width: 620px;
-
-  margin: 22px 0 0;
-
-  font-size: clamp(
-    17px,
-    2vw,
-    21px
-  );
-
-  line-height: 1.5;
-
-  color: rgba(
-    255,
-    255,
-    255,
-    0.88
-  );
-}
-
-
-/* ========================================
-   STUDIO BUTTONS
-======================================== */
-
-.Home-HeroStudio-buttons {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  margin-top: 32px;
-}
-
-.Home-HeroStudio-buttons button {
-  min-width: 120px;
-
-  padding: 12px 22px;
-
-  border: none;
-
-  border-radius: 999px;
-
-  font-family: inherit;
-
-  font-size: 15px;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  background: rgba(
-    255,
-    255,
-    255,
-    0.95
-  );
-
-  color: #111;
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    opacity 0.2s ease;
-}
-
-.Home-HeroStudio-buttons button:hover {
-  transform: scale(1.03);
-
-  background: white;
-}
-
-.Home-HeroStudio-buttons button:active {
-  transform: scale(0.98);
-}
-
-
-/* Secondary button */
-
-.Home-HeroStudio-buttons
-  button:last-child {
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.16
-    );
-
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: aliceblue;
+  background-image: url("../ArtWork/backgroundImage.jpeg");
+  background-size: cover;
+  background-position: center;
   color: white;
-
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.35
-    );
-
-  backdrop-filter: blur(12px);
-
-  -webkit-backdrop-filter:
-    blur(12px);
+  padding: 0;
+  font-size: 2rem;
+  overflow: hidden;
 }
 
-.Home-HeroStudio-buttons
-  button:last-child:hover {
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.24
-    );
+.Home-HeroStudio img {
+  margin-top: 12vh;
+  width: 45vh;
+  height: auto;
 }
 
+.Home-HeroStudio h1 {
+  margin-top: 3.5vh;
+  margin-bottom: 3.5vh;
+}
+
+.Home-HeroStudio p {
+  font-size: 1.4rem;
+  text-align: center;
+  width: 60vw;
+  margin: 0;
+}
+
+.Home-HeroStudio > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Home-HeroStudio button {
+  font-size: 1.2rem;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 1.3vh;
+  margin: 4vh 1vw 0;
+  width: auto;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.Home-HeroStudio button:hover {
+  cursor: pointer;
+  border-color: lightgray;
+  color: lightgray;
+  background-color: rgba(255, 255, 255, 0.08);
+}
 
 /* ========================================
    ARROWS
@@ -290,27 +120,17 @@
 
 .hero-arrow {
   position: absolute;
-
   top: 0;
-
   width: 18%;
   height: 100%;
-
   display: flex;
   align-items: center;
-
   padding: 0;
-
   border: none;
-
   background: transparent;
-
   cursor: pointer;
-
   opacity: 0;
-
   z-index: 10;
-
   transition:
     opacity 0.25s ease,
     background 0.25s ease;
@@ -322,42 +142,28 @@
 
 .hero-arrow-left {
   left: 0;
-
   justify-content: flex-start;
-
   padding-left: 28px;
 }
 
 .hero-arrow-right {
   right: 0;
-
   justify-content: flex-end;
-
   padding-right: 28px;
 }
 
 .hero-arrow:hover {
-  background:
-    rgba(
-      0,
-      0,
-      0,
-      0.04
-    );
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .hero-arrow img {
   width: 20px;
   height: 20px;
-
   object-fit: contain;
-
   filter:
     brightness(0)
     invert(1);
-
   opacity: 0.72;
-
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
@@ -368,15 +174,12 @@
 }
 
 .hero-arrow-left:hover img {
-  transform:
-    translateX(-2px);
+  transform: translateX(-2px);
 }
 
 .hero-arrow-right:hover img {
-  transform:
-    translateX(2px);
+  transform: translateX(2px);
 }
-
 
 /* ========================================
    DOTS
@@ -384,76 +187,42 @@
 
 .hero-dots {
   position: absolute;
-
   left: 50%;
   bottom: 28px;
-
-  transform:
-    translateX(-50%);
-
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-
   gap: 8px;
-
   z-index: 20;
 }
 
 .hero-dot {
   width: 7px;
   height: 7px;
-
   padding: 0;
-
   border: none;
-
   border-radius: 50%;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.55
-    );
-
+  background: rgba(255, 255, 255, 0.55);
   cursor: pointer;
-
   transition:
     transform 0.25s ease,
     background 0.25s ease;
 }
 
 .hero-dot:hover {
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.8
-    );
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .hero-dot.active {
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.95
-    );
-
-  transform:
-    scale(1.25);
+  background: rgba(255, 255, 255, 0.95);
+  transform: scale(1.25);
 }
-
 
 /* ========================================
    MOBILE
 ======================================== */
 
 @media (max-width: 768px) {
-
   .hero-arrow {
     width: 25%;
   }
@@ -475,35 +244,25 @@
     bottom: 22px;
   }
 
-
-  /* Studio */
-
-  .Home-HeroStudio-content {
-    width: 88%;
+  .Home-HeroStudio img {
+    width: 55vw;
+    margin-top: 12vh;
   }
 
-  .Home-HeroStudio-content > img {
-    width: 72px;
-
-    margin-bottom: 20px;
+  .Home-HeroStudio h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
   }
 
-  .Home-HeroStudio-content p {
-    margin-top: 18px;
+  .Home-HeroStudio p {
+    width: 85vw;
+    font-size: 1.1rem;
   }
 
-  .Home-HeroStudio-buttons {
-    width: 100%;
-
-    flex-direction: column;
-
-    margin-top: 26px;
-  }
-
-  .Home-HeroStudio-buttons
-    button {
-    width: 100%;
-
-    max-width: 240px;
+  .Home-HeroStudio button {
+    font-size: 1rem;
+    margin: 3vh 1.5vw 0;
   }
 }
