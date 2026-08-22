@@ -241,7 +241,7 @@
 
 .Home-HeroCardContent button {
   padding: 1.3vh 2vh;
-  border: 1px solid var(--home-text);
+  border: 1px solid black;
   background: transparent;
   color: black;
   font-size: 1.1rem;
