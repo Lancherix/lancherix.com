@@ -159,7 +159,7 @@ const Home = () => {
                           window.location.href = "https://www.lancherix.com/card";
                         }}
                       >
-                        {t("card.hero.cta")}
+                        {t("card.studio.cta")}
                       </button>
 
                       <button
@@ -171,7 +171,7 @@ const Home = () => {
                           )
                         }
                       >
-                        {t("nav.open")}
+                        {t("card.hero.cta")}
                       </button>
                     </div>
                   </div>
