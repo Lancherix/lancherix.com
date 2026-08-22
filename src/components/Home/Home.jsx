@@ -123,11 +123,9 @@ const Home = () => {
                   <p>{t("studio.hero.description")}</p>
                   <div>
                     <button
-                      onClick={() =>
-                        window.open(
-                          "https://www.lancherix.com/studio"
-                        )
-                      }
+                      onClick={() => {
+                        window.location.href = "https://www.lancherix.com/studio"
+                      }}
                     >
                       {t("card.studio.cta")}
                     </button>
