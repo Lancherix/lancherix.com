@@ -12,31 +12,62 @@ const slides = [
 ];
 
 const Home = () => {
+  /*
+   * Add the first slide again at the end.
+   *
+   * This allows:
+   *
+   * 1 → 2 → 3 → 4 → 1
+   *
+   * to visually continue moving forward.
+   */
+  const carouselSlides = [...slides, slides[0]];
+
   const [activeSlide, setActiveSlide] = useState(0);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [timerKey, setTimerKey] = useState(0);
 
   /*
    * Automatic sliding
-   *
-   * The timerKey dependency means that whenever
-   * the user manually changes the slide, this effect
-   * is recreated and the 5-second timer starts again.
    */
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveSlide((current) => (current + 1) % slides.length);
+      setActiveSlide((current) => current + 1);
     }, 5000);
 
     return () => clearInterval(interval);
   }, [timerKey]);
 
   /*
-   * Change slide manually and restart timer
+   * When the carousel reaches the cloned first slide,
+   * wait until the animation finishes and then instantly
+   * move back to the real first slide.
    */
-  const changeSlide = (index) => {
-    setActiveSlide(index);
+  useEffect(() => {
+    if (activeSlide === slides.length) {
+      const timeout = setTimeout(() => {
+        setTransitionEnabled(false);
+        setActiveSlide(0);
 
-    // Restart the automatic timer
+        /*
+         * Re-enable the transition after the position
+         * has been reset.
+         */
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setTransitionEnabled(true);
+          });
+        });
+      }, 800);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [activeSlide]);
+
+  /*
+   * Restart timer after manual navigation
+   */
+  const restartTimer = () => {
     setTimerKey((current) => current + 1);
   };
 
@@ -44,19 +75,60 @@ const Home = () => {
    * Previous slide
    */
   const goToPrevious = () => {
-    changeSlide(
-      (activeSlide - 1 + slides.length) % slides.length
-    );
+    setTransitionEnabled(true);
+
+    setActiveSlide((current) => {
+      if (current === 0) {
+        /*
+         * If we're on the first slide, go to the
+         * real last slide.
+         */
+        return slides.length - 1;
+      }
+
+      return current - 1;
+    });
+
+    restartTimer();
   };
 
   /*
    * Next slide
    */
   const goToNext = () => {
-    changeSlide(
-      (activeSlide + 1) % slides.length
-    );
+    setTransitionEnabled(true);
+
+    setActiveSlide((current) => current + 1);
+
+    restartTimer();
   };
+
+  /*
+   * Dots
+   */
+  const goToSlide = (index) => {
+    setTransitionEnabled(true);
+
+    /*
+     * If we're currently on the last slide and the
+     * user clicks the first dot, use the cloned first
+     * slide so it still moves forward.
+     */
+    if (activeSlide === slides.length - 1 && index === 0) {
+      setActiveSlide(slides.length);
+    } else {
+      setActiveSlide(index);
+    }
+
+    restartTimer();
+  };
+
+  /*
+   * The visible dot should always correspond to
+   * the original four slides.
+   */
+  const visibleSlide =
+    activeSlide === slides.length ? 0 : activeSlide;
 
   return (
     <main className="home">
@@ -67,12 +139,15 @@ const Home = () => {
           className="hero-track"
           style={{
             transform: `translateX(-${activeSlide * 100}%)`,
+            transition: transitionEnabled
+              ? "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)"
+              : "none",
           }}
         >
-          {slides.map((slide) => (
+          {carouselSlides.map((slide, index) => (
             <div
               className="hero-slide"
-              key={slide.id}
+              key={`${slide.id}-${index}`}
               style={{
                 backgroundColor: slide.color,
               }}
@@ -104,9 +179,9 @@ const Home = () => {
             <button
               key={slide.id}
               className={`hero-dot ${
-                activeSlide === index ? "active" : ""
+                visibleSlide === index ? "active" : ""
               }`}
-              onClick={() => changeSlide(index)}
+              onClick={() => goToSlide(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

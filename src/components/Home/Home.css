@@ -41,9 +41,6 @@
   width: 100%;
   height: 100%;
 
-  transition:
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-
   will-change: transform;
 }
 
@@ -88,8 +85,7 @@
 
 
 /*
- * The arrow area becomes visible when
- * the user hovers over the hero.
+ * Show arrows when hovering over the hero
  */
 
 .hero:hover .hero-arrow {
@@ -97,7 +93,9 @@
 }
 
 
-/* Left */
+/*
+ * Left arrow area
+ */
 
 .hero-arrow-left {
   left: 0;
@@ -108,7 +106,9 @@
 }
 
 
-/* Right */
+/*
+ * Right arrow area
+ */
 
 .hero-arrow-right {
   right: 0;
@@ -120,7 +120,7 @@
 
 
 /*
- * Subtle hover background
+ * Subtle hover area
  */
 
 .hero-arrow:hover {
@@ -138,6 +138,16 @@
 
   object-fit: contain;
 
+  /*
+   * Turn the SVG white regardless of its
+   * original single color.
+   */
+  filter:
+    brightness(0)
+    invert(1);
+
+  opacity: 0.72;
+
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
@@ -145,7 +155,17 @@
 
 
 /*
- * Small movement when hovering
+ * Make the arrow slightly more visible
+ * when directly hovering over it.
+ */
+
+.hero-arrow:hover img {
+  opacity: 0.95;
+}
+
+
+/*
+ * Small directional movement
  */
 
 .hero-arrow-left:hover img {
@@ -199,17 +219,21 @@
 }
 
 
-/* Dot hover */
+/*
+ * Dot hover
+ */
 
 .hero-dot:hover {
   background: rgba(255, 255, 255, 0.8);
 }
 
 
-/* Active dot */
+/*
+ * Active dot
+ */
 
 .hero-dot.active {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
 
   transform: scale(1.25);
 }
