@@ -127,7 +127,7 @@ const Home = () => {
                         )
                       }
                     >
-                      {t("nav.register")}
+                      {t('card.studio.cta')}
                     </button>
                     <button
                       onClick={() =>
