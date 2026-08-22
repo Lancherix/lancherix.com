@@ -121,8 +121,7 @@ const Home = () => {
                     <button
                       onClick={() =>
                         window.open(
-                          "https://studio.lancherix.com/register",
-                          "_blank",
+                          "https://www.lancherix.com/studio",
                           "noopener,noreferrer"
                         )
                       }
