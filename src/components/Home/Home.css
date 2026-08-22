@@ -232,8 +232,14 @@
   line-height: 1.5;
 }
 
-.Home-HeroCardContent button {
+.Home-HeroCardButtons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-top: 4vh;
+}
+
+.Home-HeroCardContent button {
   padding: 1.3vh 2vh;
   border: 1px solid var(--home-text);
   border-radius: 999px;
@@ -244,14 +250,12 @@
   cursor: pointer;
   transition:
     background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+    color 0.2s ease;
 }
 
 .Home-HeroCardContent button:hover {
   background: var(--home-text);
   color: var(--cal-bg);
-  transform: translateY(-2px);
 }
 
 .Home-HeroCardVisual {
@@ -283,11 +287,6 @@
   filter: drop-shadow(
     0 35px 35px rgba(0, 0, 0, 0.18)
   );
-  transition: transform 0.5s ease;
-}
-
-.Home-HeroCard:hover .Home-HeroCardVisual img {
-  transform: rotate(-4deg) translateY(-8px);
 }
 
 
@@ -317,8 +316,13 @@
     font-size: 1.1rem;
   }
 
-  .Home-HeroCardContent button {
+  .Home-HeroCardButtons {
+    justify-content: center;
     margin-top: 3vh;
+  }
+
+  .Home-HeroCardContent button {
+    font-size: 1rem;
   }
 
   .Home-HeroCardVisual {
@@ -330,10 +334,5 @@
   .Home-HeroCardVisual img {
     width: 65vw;
     max-height: 35vh;
-    transform: rotate(-8deg);
-  }
-
-  .Home-HeroCard:hover .Home-HeroCardVisual img {
-    transform: rotate(-5deg);
   }
 }

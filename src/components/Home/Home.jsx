@@ -103,10 +103,10 @@ const Home = () => {
           {carouselSlides.map((slide, index) => (
             <div
               className={`hero-slide ${slide.id === 1
-                  ? "hero-slide-studio"
-                  : slide.id === 2
-                    ? "hero-slide-card"
-                    : ""
+                ? "hero-slide-studio"
+                : slide.id === 2
+                  ? "hero-slide-card"
+                  : ""
                 }`}
               key={`${slide.id}-${index}`}
               style={{
@@ -152,18 +152,28 @@ const Home = () => {
                 <div className="Home-HeroCard">
                   <div className="Home-HeroCardContent">
                     <h1>{t("card.hero.headline")}</h1>
-                    <p>{t("card.hero.sub")}</p>
-                    <button
-                      onClick={() =>
-                        window.open(
-                          "https://www.lancherix.com/card",
-                          "_blank",
-                          "noopener,noreferrer"
-                        )
-                      }
-                    >
-                      {t("card.hero.cta")}
-                    </button>
+
+                    <div className="Home-HeroCardButtons">
+                      <button
+                        onClick={() => {
+                          window.location.href = "https://www.lancherix.com/card";
+                        }}
+                      >
+                        {t("card.hero.cta")}
+                      </button>
+
+                      <button
+                        onClick={() =>
+                          window.open(
+                            "https://card.lancherix.com",
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
+                      >
+                        {t("nav.open")}
+                      </button>
+                    </div>
                   </div>
 
                   <div className="Home-HeroCardVisual">
