@@ -12,95 +12,65 @@ const slides = [
 ];
 
 const Home = () => {
-  /*
-   * Add the first slide again at the end.
-   *
-   * This allows:
-   *
-   * 1 → 2 → 3 → 4 → 1
-   *
-   * to visually continue moving forward.
-   */
   const carouselSlides = [...slides, slides[0]];
 
   const [activeSlide, setActiveSlide] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
-  const [timerKey, setTimerKey] = useState(0);
 
   /*
-   * Automatic sliding
+   * Automatic slide timer
    */
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setTimeout(() => {
       setActiveSlide((current) => current + 1);
     }, 5000);
 
-    return () => clearInterval(interval);
-  }, [timerKey]);
-
-  /*
-   * When the carousel reaches the cloned first slide,
-   * wait until the animation finishes and then instantly
-   * move back to the real first slide.
-   */
-  useEffect(() => {
-    if (activeSlide === slides.length) {
-      const timeout = setTimeout(() => {
-        setTransitionEnabled(false);
-        setActiveSlide(0);
-
-        /*
-         * Re-enable the transition after the position
-         * has been reset.
-         */
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            setTransitionEnabled(true);
-          });
-        });
-      }, 800);
-
-      return () => clearTimeout(timeout);
-    }
+    return () => clearTimeout(timer);
   }, [activeSlide]);
 
   /*
-   * Restart timer after manual navigation
+   * When reaching the cloned first slide,
+   * wait for the animation to finish and
+   * silently return to the real first slide.
    */
-  const restartTimer = () => {
-    setTimerKey((current) => current + 1);
-  };
+  useEffect(() => {
+    if (activeSlide !== slides.length) {
+      return;
+    }
+
+    const resetTimer = setTimeout(() => {
+      setTransitionEnabled(false);
+      setActiveSlide(0);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTransitionEnabled(true);
+        });
+      });
+    }, 800);
+
+    return () => clearTimeout(resetTimer);
+  }, [activeSlide]);
 
   /*
-   * Previous slide
+   * Previous
    */
   const goToPrevious = () => {
     setTransitionEnabled(true);
 
-    setActiveSlide((current) => {
-      if (current === 0) {
-        /*
-         * If we're on the first slide, go to the
-         * real last slide.
-         */
-        return slides.length - 1;
-      }
-
-      return current - 1;
-    });
-
-    restartTimer();
+    if (activeSlide === 0) {
+      setActiveSlide(slides.length - 1);
+    } else {
+      setActiveSlide((current) => current - 1);
+    }
   };
 
   /*
-   * Next slide
+   * Next
    */
   const goToNext = () => {
     setTransitionEnabled(true);
-
     setActiveSlide((current) => current + 1);
-
-    restartTimer();
   };
 
   /*
@@ -110,22 +80,19 @@ const Home = () => {
     setTransitionEnabled(true);
 
     /*
-     * If we're currently on the last slide and the
-     * user clicks the first dot, use the cloned first
-     * slide so it still moves forward.
+     * If we're on slide 4 and choose slide 1,
+     * use the cloned slide so the movement stays forward.
      */
     if (activeSlide === slides.length - 1 && index === 0) {
       setActiveSlide(slides.length);
     } else {
       setActiveSlide(index);
     }
-
-    restartTimer();
   };
 
   /*
-   * The visible dot should always correspond to
-   * the original four slides.
+   * The cloned first slide still represents
+   * the first pagination dot.
    */
   const visibleSlide =
     activeSlide === slides.length ? 0 : activeSlide;
@@ -155,7 +122,7 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Previous arrow */}
+        {/* Previous */}
         <button
           className="hero-arrow hero-arrow-left"
           onClick={goToPrevious}
@@ -164,7 +131,7 @@ const Home = () => {
           <img src={left} alt="" />
         </button>
 
-        {/* Next arrow */}
+        {/* Next */}
         <button
           className="hero-arrow hero-arrow-right"
           onClick={goToNext}
@@ -173,7 +140,7 @@ const Home = () => {
           <img src={right} alt="" />
         </button>
 
-        {/* Pagination dots */}
+        {/* Dots */}
         <div className="hero-dots">
           {slides.map((slide, index) => (
             <button
