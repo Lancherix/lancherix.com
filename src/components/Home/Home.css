@@ -48,7 +48,7 @@
 .hero-arrow {
   position: absolute;
   top: 0;
-  width: 18%;
+  width: 10%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -255,7 +255,6 @@
 
 .Home-HeroCardContent button:hover {
   background: var(--home-text);
-  color: var(--cal-bg);
 }
 
 .Home-HeroCardVisual {
