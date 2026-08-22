@@ -6,7 +6,6 @@ import left from "../ArtWork/icons/arrowLeft.svg";
 import right from "../ArtWork/icons/arrowRight.svg";
 
 import logoStudio from "../ArtWork/LancherixStudioLogoWhiteWhite.png";
-import studioBackground from "../ArtWork/backgroundImage.jpeg";
 
 const slides = [
   { id: 1, color: "#0071e3" },
