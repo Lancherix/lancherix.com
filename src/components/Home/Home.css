@@ -2,6 +2,7 @@
   min-height: 100vh;
 
   background: var(--home-bg);
+
   color: var(--home-text);
 
   font-family:
@@ -45,10 +46,241 @@
 }
 
 .hero-slide {
+  position: relative;
+
   flex: 0 0 100%;
 
   width: 100%;
   height: 100%;
+}
+
+
+/* ========================================
+   STUDIO HERO
+======================================== */
+
+.hero-slide-studio {
+  overflow: hidden;
+}
+
+.Home-HeroStudio {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: white;
+}
+
+
+/* Background image */
+
+.Home-HeroStudio-background {
+  position: absolute;
+
+  inset: 0;
+
+  background-image: url("../ArtWork/studioBackground.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+
+/* Dark overlay */
+
+.Home-HeroStudio-background::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.35)
+    );
+}
+
+
+/* Content */
+
+.Home-HeroStudio-content {
+  position: relative;
+
+  z-index: 1;
+
+  width: min(720px, 85%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Logo */
+
+.Home-HeroStudio-content > img {
+  width: 92px;
+  height: auto;
+
+  margin-bottom: 24px;
+
+  object-fit: contain;
+}
+
+
+/* Title */
+
+.Home-HeroStudio-content h1 {
+  margin: 0;
+
+  font-size: clamp(
+    42px,
+    6vw,
+    76px
+  );
+
+  line-height: 1.02;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 700;
+}
+
+
+/* Description */
+
+.Home-HeroStudio-content p {
+  max-width: 620px;
+
+  margin: 22px 0 0;
+
+  font-size: clamp(
+    17px,
+    2vw,
+    21px
+  );
+
+  line-height: 1.5;
+
+  color: rgba(
+    255,
+    255,
+    255,
+    0.88
+  );
+}
+
+
+/* ========================================
+   STUDIO BUTTONS
+======================================== */
+
+.Home-HeroStudio-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.Home-HeroStudio-buttons button {
+  min-width: 120px;
+
+  padding: 12px 22px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.95
+  );
+
+  color: #111;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.Home-HeroStudio-buttons button:hover {
+  transform: scale(1.03);
+
+  background: white;
+}
+
+.Home-HeroStudio-buttons button:active {
+  transform: scale(0.98);
+}
+
+
+/* Secondary button */
+
+.Home-HeroStudio-buttons
+  button:last-child {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
+
+  color: white;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+}
+
+.Home-HeroStudio-buttons
+  button:last-child:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.24
+    );
 }
 
 
@@ -70,6 +302,7 @@
   padding: 0;
 
   border: none;
+
   background: transparent;
 
   cursor: pointer;
@@ -104,7 +337,13 @@
 }
 
 .hero-arrow:hover {
-  background: rgba(0, 0, 0, 0.04);
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.04
+    );
 }
 
 .hero-arrow img {
@@ -129,11 +368,13 @@
 }
 
 .hero-arrow-left:hover img {
-  transform: translateX(-2px);
+  transform:
+    translateX(-2px);
 }
 
 .hero-arrow-right:hover img {
-  transform: translateX(2px);
+  transform:
+    translateX(2px);
 }
 
 
@@ -147,7 +388,8 @@
   left: 50%;
   bottom: 28px;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   display: flex;
   align-items: center;
@@ -164,9 +406,16 @@
   padding: 0;
 
   border: none;
+
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.55);
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
 
   cursor: pointer;
 
@@ -176,13 +425,26 @@
 }
 
 .hero-dot:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
 }
 
 .hero-dot.active {
-  background: rgba(255, 255, 255, 0.95);
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.95
+    );
 
-  transform: scale(1.25);
+  transform:
+    scale(1.25);
 }
 
 
@@ -211,5 +473,37 @@
 
   .hero-dots {
     bottom: 22px;
+  }
+
+
+  /* Studio */
+
+  .Home-HeroStudio-content {
+    width: 88%;
+  }
+
+  .Home-HeroStudio-content > img {
+    width: 72px;
+
+    margin-bottom: 20px;
+  }
+
+  .Home-HeroStudio-content p {
+    margin-top: 18px;
+  }
+
+  .Home-HeroStudio-buttons {
+    width: 100%;
+
+    flex-direction: column;
+
+    margin-top: 26px;
+  }
+
+  .Home-HeroStudio-buttons
+    button {
+    width: 100%;
+
+    max-width: 240px;
   }
 }

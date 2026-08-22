@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./Home.css";
 
 import left from "../ArtWork/icons/arrowLeft.svg";
 import right from "../ArtWork/icons/arrowRight.svg";
+
+import logoStudio from "../ArtWork/logoStudio.svg";
+import studioBackground from "../ArtWork/studioBackground.jpg";
 
 const slides = [
   { id: 1, color: "#0071e3" },
@@ -15,8 +19,7 @@ const slides = [
  * Repeat the slides many times.
  *
  * This gives the carousel plenty of room to move
- * forward and backward without ever reaching an
- * empty slide.
+ * forward and backward without reaching an empty slide.
  */
 const REPEATS = 100;
 
@@ -25,18 +28,22 @@ const carouselSlides = Array.from(
   () => slides
 ).flat();
 
-const MIDDLE = Math.floor(REPEATS / 2) * slides.length;
+const MIDDLE =
+  Math.floor(REPEATS / 2) * slides.length;
 
 const Home = () => {
+  const { t } = useTranslation();
+
   const [activeSlide, setActiveSlide] = useState(MIDDLE);
-  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const [transitionEnabled, setTransitionEnabled] =
+    useState(true);
 
   /*
-   * Automatic sliding.
+   * Automatic sliding
    *
-   * Every time activeSlide changes, the timer starts
-   * again. This means manual navigation also resets
-   * the timer automatically.
+   * Every time activeSlide changes, the timer
+   * starts again. Manual navigation therefore
+   * also resets the timer.
    */
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -80,7 +87,9 @@ const Home = () => {
   const goToNext = () => {
     setTransitionEnabled(true);
 
-    setActiveSlide((current) => current + 1);
+    setActiveSlide(
+      (current) => current + 1
+    );
   };
 
   /*
@@ -89,21 +98,21 @@ const Home = () => {
   const goToPrevious = () => {
     setTransitionEnabled(true);
 
-    setActiveSlide((current) => current - 1);
+    setActiveSlide(
+      (current) => current - 1
+    );
   };
 
   /*
-   * Current visible slide.
-   *
-   * The modulo operation converts the large internal
-   * index back into 0, 1, 2 or 3.
+   * Current visible slide
    */
   const visibleSlide =
-    ((activeSlide % slides.length) + slides.length) %
+    ((activeSlide % slides.length) +
+      slides.length) %
     slides.length;
 
   /*
-   * Go directly to a slide.
+   * Go directly to a slide
    */
   const goToSlide = (index) => {
     const current = visibleSlide;
@@ -114,18 +123,25 @@ const Home = () => {
      */
     let difference = index - current;
 
-    if (difference > slides.length / 2) {
+    if (
+      difference >
+      slides.length / 2
+    ) {
       difference -= slides.length;
     }
 
-    if (difference < -slides.length / 2) {
+    if (
+      difference <
+      -slides.length / 2
+    ) {
       difference += slides.length;
     }
 
     setTransitionEnabled(true);
 
     setActiveSlide(
-      (currentIndex) => currentIndex + difference
+      (currentIndex) =>
+        currentIndex + difference
     );
   };
 
@@ -133,57 +149,167 @@ const Home = () => {
     <main className="home">
       <section className="hero">
 
-        {/* Slides */}
+        {/* ========================================
+            SLIDES
+        ======================================== */}
+
         <div
           className="hero-track"
           style={{
-            transform: `translateX(-${activeSlide * 100}%)`,
+            transform: `translateX(-${
+              activeSlide * 100
+            }%)`,
+
             transition: transitionEnabled
               ? "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)"
               : "none",
           }}
         >
-          {carouselSlides.map((slide, index) => (
-            <div
-              className="hero-slide"
-              key={`${slide.id}-${index}`}
-              style={{
-                backgroundColor: slide.color,
-              }}
-            />
-          ))}
+          {carouselSlides.map(
+            (slide, index) => (
+              <div
+                className={`hero-slide ${
+                  slide.id === 1
+                    ? "hero-slide-studio"
+                    : ""
+                }`}
+                key={`${slide.id}-${index}`}
+                style={{
+                  backgroundColor:
+                    slide.color,
+                }}
+              >
+
+                {/* ========================================
+                    STUDIO — FIRST SLIDE ONLY
+                ======================================== */}
+
+                {slide.id === 1 && (
+                  <div className="Home-HeroStudio">
+
+                    {/* Background */}
+                    <div className="Home-HeroStudio-background" />
+
+                    {/* Content */}
+                    <div className="Home-HeroStudio-content">
+
+                      {/* Logo */}
+                      <img
+                        src={logoStudio}
+                        alt={t(
+                          "studio.hero.logoAlt"
+                        )}
+                      />
+
+                      {/* Title */}
+                      <h1>
+                        {t(
+                          "studio.hero.title"
+                        )}
+                      </h1>
+
+                      {/* Description */}
+                      <p>
+                        {t(
+                          "studio.hero.description"
+                        )}
+                      </p>
+
+                      {/* Buttons */}
+                      <div className="Home-HeroStudio-buttons">
+
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://studio.lancherix.com/register",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                        >
+                          {t("nav.register")}
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() =>
+                            window.open(
+                              "https://studio.lancherix.com/login",
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                        >
+                          {t("nav.login")}
+                        </button>
+
+                      </div>
+
+                    </div>
+                  </div>
+                )}
+
+              </div>
+            )
+          )}
         </div>
 
-        {/* Previous arrow */}
+        {/* ========================================
+            PREVIOUS ARROW
+        ======================================== */}
+
         <button
           className="hero-arrow hero-arrow-left"
           onClick={goToPrevious}
           aria-label="Previous slide"
         >
-          <img src={left} alt="" />
+          <img
+            src={left}
+            alt=""
+          />
         </button>
 
-        {/* Next arrow */}
+        {/* ========================================
+            NEXT ARROW
+        ======================================== */}
+
         <button
           className="hero-arrow hero-arrow-right"
           onClick={goToNext}
           aria-label="Next slide"
         >
-          <img src={right} alt="" />
+          <img
+            src={right}
+            alt=""
+          />
         </button>
 
-        {/* Dots */}
+        {/* ========================================
+            DOTS
+        ======================================== */}
+
         <div className="hero-dots">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              className={`hero-dot ${
-                visibleSlide === index ? "active" : ""
-              }`}
-              onClick={() => goToSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+
+          {slides.map(
+            (slide, index) => (
+              <button
+                key={slide.id}
+                className={`hero-dot ${
+                  visibleSlide === index
+                    ? "active"
+                    : ""
+                }`}
+                onClick={() =>
+                  goToSlide(index)
+                }
+                aria-label={`Go to slide ${
+                  index + 1
+                }`}
+              />
+            )
+          )}
+
         </div>
 
       </section>
